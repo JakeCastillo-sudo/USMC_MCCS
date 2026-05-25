@@ -1,11 +1,32 @@
 "use client"
 
 import { useEffect, useState } from "react"
-import { Baby, AlertTriangle } from "lucide-react"
+import { Baby, AlertTriangle, Calculator, Clock } from "lucide-react"
 import ProgramCard from "@/components/resident/ProgramCard"
 import BookingModal from "@/components/resident/BookingModal"
 import { Skeleton } from "@/components/ui/skeleton"
 import type { Program } from "@/types"
+
+// DoD fee tiers — based on total family income (TFI)
+const FEE_TIERS = [
+  { tier: 1, income: "< $25,800",      weekly: 72,  monthly: 288  },
+  { tier: 2, income: "$25,800–$36,700", weekly: 107, monthly: 428  },
+  { tier: 3, income: "$36,701–$47,600", weekly: 144, monthly: 576  },
+  { tier: 4, income: "$47,601–$60,600", weekly: 175, monthly: 700  },
+  { tier: 5, income: "$60,601–$76,800", weekly: 205, monthly: 820  },
+  { tier: 6, income: "> $76,800",       weekly: 243, monthly: 972  },
+]
+
+// Waitlist position history for chart (weeks 1–8)
+const WAITLIST_HISTORY = [
+  { week: "Mar W1", cdc1: 203, cdc2: 51 },
+  { week: "Mar W3", cdc1: 199, cdc2: 49 },
+  { week: "Apr W1", cdc1: 194, cdc2: 47 },
+  { week: "Apr W3", cdc1: 191, cdc2: 46 },
+  { week: "May W1", cdc1: 189, cdc2: 45 },
+  { week: "May W2", cdc1: 188, cdc2: 44 },
+  { week: "May W3", cdc1: 187, cdc2: 43 },
+]
 
 const CDC_CENTERS = [
   {
@@ -59,6 +80,7 @@ export default function ChildcarePage() {
   const [programs, setPrograms] = useState<Program[]>([])
   const [loading, setLoading] = useState(true)
   const [bookingProgram, setBookingProgram] = useState<Program | null>(null)
+  const [selectedTier, setSelectedTier] = useState<number | null>(null)
 
   useEffect(() => {
     fetch("/api/programs?category=childcare")
@@ -150,6 +172,124 @@ export default function ChildcarePage() {
                 </button>
               </div>
             ))}
+          </div>
+        </section>
+
+        {/* Tuition Calculator */}
+        <section>
+          <div className="rounded-2xl bg-white shadow-sm overflow-hidden">
+            <div className="px-5 py-4 border-b border-zinc-100 flex items-center gap-2">
+              <Calculator className="h-4 w-4 text-[#003087]" />
+              <h2 className="text-sm font-bold text-zinc-900">Income-Based Tuition Calculator</h2>
+            </div>
+            <div className="p-5">
+              <p className="text-xs text-zinc-500 mb-3">
+                DoD CDC fees are based on Total Family Income (TFI). Select your income tier to see your rate.
+              </p>
+              <div className="space-y-1">
+                {FEE_TIERS.map((tier) => (
+                  <button
+                    key={tier.tier}
+                    onClick={() => setSelectedTier(selectedTier === tier.tier ? null : tier.tier)}
+                    className={`w-full text-left rounded-xl px-4 py-2.5 transition-all border ${
+                      selectedTier === tier.tier
+                        ? "border-[#003087] bg-blue-50"
+                        : "border-transparent hover:border-zinc-200 hover:bg-zinc-50"
+                    }`}
+                  >
+                    <div className="flex items-center justify-between">
+                      <span className="text-xs font-medium text-zinc-700">
+                        Tier {tier.tier} · {tier.income}
+                      </span>
+                      <div className="flex gap-4 text-xs">
+                        <span className="text-zinc-500">
+                          <span className="font-bold text-zinc-800">${tier.weekly}/wk</span>
+                        </span>
+                        <span className="font-bold" style={{ color: "#003087" }}>
+                          ${tier.monthly}/mo
+                        </span>
+                      </div>
+                    </div>
+                  </button>
+                ))}
+              </div>
+              {selectedTier && (
+                <div className="mt-4 rounded-xl border border-blue-200 bg-blue-50 p-4">
+                  <p className="text-xs text-[#003087] font-semibold mb-1">Your estimated rate (Tier {selectedTier})</p>
+                  <div className="flex gap-6">
+                    <div>
+                      <p className="text-xs text-zinc-500">Weekly</p>
+                      <p className="text-2xl font-bold" style={{ color: "#003087" }}>
+                        ${FEE_TIERS[selectedTier - 1].weekly}
+                      </p>
+                    </div>
+                    <div>
+                      <p className="text-xs text-zinc-500">Monthly</p>
+                      <p className="text-2xl font-bold" style={{ color: "#003087" }}>
+                        ${FEE_TIERS[selectedTier - 1].monthly}
+                      </p>
+                    </div>
+                    <div>
+                      <p className="text-xs text-zinc-500">Annual</p>
+                      <p className="text-2xl font-bold" style={{ color: "#003087" }}>
+                        ${(FEE_TIERS[selectedTier - 1].monthly * 12).toLocaleString()}
+                      </p>
+                    </div>
+                  </div>
+                  <p className="text-[10px] text-zinc-400 mt-2">
+                    * Rates reflect full-day infant/toddler care. Preschool and school-age rates may vary.
+                  </p>
+                </div>
+              )}
+            </div>
+          </div>
+        </section>
+
+        {/* Waitlist Transparency */}
+        <section>
+          <div className="rounded-2xl bg-white shadow-sm overflow-hidden">
+            <div className="px-5 py-4 border-b border-zinc-100 flex items-center gap-2">
+              <Clock className="h-4 w-4 text-amber-500" />
+              <h2 className="text-sm font-bold text-zinc-900">Waitlist Trend (8 Weeks)</h2>
+            </div>
+            <div className="p-5">
+              <p className="text-xs text-zinc-500 mb-4">
+                Waitlist positions for CDC-1 Mainside and CDC-2 Las Pulgas are updated weekly.
+              </p>
+              <div className="space-y-3">
+                {WAITLIST_HISTORY.map((w, i) => {
+                  const maxCdc1 = 210
+                  return (
+                    <div key={i}>
+                      <div className="flex items-center justify-between text-xs mb-0.5">
+                        <span className="text-zinc-500 w-16">{w.week}</span>
+                        <div className="flex gap-4">
+                          <span className="text-red-600 font-mono">{w.cdc1} (CDC-1)</span>
+                          <span className="text-amber-600 font-mono">{w.cdc2} (CDC-2)</span>
+                        </div>
+                      </div>
+                      <div className="flex gap-1">
+                        <div className="flex-1 h-2 rounded-full bg-zinc-100 overflow-hidden">
+                          <div
+                            className="h-full rounded-full bg-red-400 transition-all"
+                            style={{ width: `${(w.cdc1 / maxCdc1) * 100}%` }}
+                          />
+                        </div>
+                        <div className="w-24 h-2 rounded-full bg-zinc-100 overflow-hidden">
+                          <div
+                            className="h-full rounded-full bg-amber-400 transition-all"
+                            style={{ width: `${(w.cdc2 / 55) * 100}%` }}
+                          />
+                        </div>
+                      </div>
+                    </div>
+                  )
+                })}
+              </div>
+              <p className="text-xs text-zinc-500 mt-4">
+                Estimated wait time: <span className="font-bold text-zinc-700">8–14 months</span> for CDC-1 · <span className="font-bold text-zinc-700">4–6 months</span> for CDC-2
+              </p>
+            </div>
           </div>
         </section>
 

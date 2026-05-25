@@ -8,6 +8,7 @@ import {
   Activity,
   Star,
   Users,
+  TrendingUp,
 } from "lucide-react"
 import { cn } from "@/lib/utils"
 import StormBreakerBadge from "@/components/shared/StormBreakerBadge"
@@ -18,6 +19,7 @@ const navLinks = [
   { label: "Utilization", href: "/dashboard/utilization",  icon: Activity        },
   { label: "Satisfaction",href: "/dashboard/satisfaction", icon: Star            },
   { label: "Engagement",  href: "/dashboard/engagement",   icon: Users           },
+  { label: "Forecast",    href: "/dashboard/forecast",     icon: TrendingUp      },
 ]
 
 export default function DashboardSidebar() {

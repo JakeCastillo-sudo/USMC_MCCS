@@ -1,7 +1,7 @@
 "use client"
 
 import { useEffect, useState } from "react"
-import { Trees, Waves, Anchor, Fish, Mountain, Bike, ChevronRight } from "lucide-react"
+import { Trees, Waves, Anchor, Fish, Mountain, Bike, ChevronRight, Flag, Home } from "lucide-react"
 import BookingModal from "@/components/resident/BookingModal"
 import ProgramCard from "@/components/resident/ProgramCard"
 import { Skeleton } from "@/components/ui/skeleton"
@@ -40,6 +40,35 @@ const OUTDOOR_FEATURES = [
     color: "from-amber-500 to-orange-600",
     badge: "Weekend Only",
   },
+]
+
+// Tee times for next 7 days
+const TEE_TIMES = [
+  { day: "Mon 5/25", slots: ["6:00 AM", "7:30 AM", "9:00 AM", "1:00 PM"], available: [true, true, false, true] },
+  { day: "Tue 5/26", slots: ["6:30 AM", "8:00 AM", "10:30 AM"], available: [false, true, true] },
+  { day: "Wed 5/27", slots: ["7:00 AM", "9:00 AM", "11:00 AM", "2:00 PM"], available: [true, true, true, false] },
+  { day: "Thu 5/28", slots: ["6:00 AM", "7:30 AM", "12:00 PM"], available: [true, false, true] },
+  { day: "Fri 5/29", slots: ["6:30 AM", "9:00 AM", "1:30 PM"], available: [true, true, true] },
+  { day: "Sat 5/30", slots: ["6:00 AM", "7:00 AM", "8:00 AM", "9:00 AM"], available: [false, false, true, true] },
+  { day: "Sun 5/31", slots: ["7:00 AM", "8:30 AM", "10:00 AM"], available: [false, true, true] },
+]
+
+// Beach cottage calendar (30 days)
+const today = new Date(2026, 4, 25) // May 25, 2026
+const COTTAGE_CALENDAR = Array.from({ length: 35 }, (_, i) => {
+  const d = new Date(today)
+  d.setDate(d.getDate() + i - today.getDay())
+  const isWeekend = d.getDay() === 0 || d.getDay() === 6
+  const isPast = d < today
+  const status = isPast ? "past" : isWeekend && i < 14 ? "booked" : i === 6 || i === 13 ? "limited" : "available"
+  return { date: d, status }
+})
+
+const EQUIPMENT_CATEGORIES = [
+  { name: "Surfboards", icon: "🏄", items: ["6'8\" Shortboard", "9'0\" Longboard", "7'6\" Funboard"], pricePerDay: 15 },
+  { name: "Kayaks", icon: "🛶", items: ["Single Kayak", "Tandem Kayak", "Sea Kayak"], pricePerDay: 25 },
+  { name: "Camping Gear", icon: "⛺", items: ["4-person Tent", "Sleeping Bags", "Camp Stove"], pricePerDay: 20 },
+  { name: "Stand-Up Paddle", icon: "🏊", items: ["SUP Board + Paddle", "iSUP Inflatable"], pricePerDay: 30 },
 ]
 
 const AQUATICS = [
@@ -176,21 +205,122 @@ export default function RecreationPage() {
           </div>
         </section>
 
+        {/* Tee Time Availability */}
+        <section>
+          <div className="flex items-center gap-2 mb-3">
+            <Flag className="h-4 w-4 text-emerald-600" />
+            <h2 className="text-base font-bold text-zinc-900">Golf Tee Times — Next 7 Days</h2>
+          </div>
+          <div className="space-y-2">
+            {TEE_TIMES.map((day) => (
+              <div key={day.day} className="rounded-xl bg-white shadow-sm p-4">
+                <p className="text-xs font-semibold text-zinc-500 mb-2">{day.day}</p>
+                <div className="flex flex-wrap gap-2">
+                  {day.slots.map((slot, i) => (
+                    <button
+                      key={slot}
+                      disabled={!day.available[i]}
+                      onClick={() => setBookingProgram(makeOutdoorProgram("marine-memorial-golf", "Marine Memorial Golf Course", `Tee time: ${slot}`))}
+                      className={`rounded-lg px-3 py-1.5 text-xs font-semibold transition-all ${
+                        day.available[i]
+                          ? "bg-emerald-50 text-emerald-700 border border-emerald-200 hover:bg-emerald-100"
+                          : "bg-zinc-100 text-zinc-400 cursor-not-allowed line-through"
+                      }`}
+                    >
+                      {slot}
+                    </button>
+                  ))}
+                </div>
+              </div>
+            ))}
+          </div>
+        </section>
+
+        {/* Beach Cottage Calendar */}
+        <section>
+          <div className="flex items-center gap-2 mb-3">
+            <Home className="h-4 w-4 text-cyan-600" />
+            <h2 className="text-base font-bold text-zinc-900">Del Mar Beach Cottages — May/Jun</h2>
+          </div>
+          <div className="rounded-2xl bg-white shadow-sm p-4">
+            {/* Day headers */}
+            <div className="grid grid-cols-7 gap-0.5 mb-1">
+              {["Su", "Mo", "Tu", "We", "Th", "Fr", "Sa"].map((d) => (
+                <div key={d} className="text-center text-[10px] font-semibold text-zinc-400 py-1">{d}</div>
+              ))}
+            </div>
+            {/* Calendar grid */}
+            <div className="grid grid-cols-7 gap-0.5">
+              {COTTAGE_CALENDAR.map((entry, i) => {
+                const isPast = entry.status === "past"
+                const isBooked = entry.status === "booked"
+                const isLimited = entry.status === "limited"
+                return (
+                  <button
+                    key={i}
+                    disabled={isPast || isBooked}
+                    onClick={() => !isPast && !isBooked && setBookingProgram(makeOutdoorProgram("del-mar-cottages", "Del Mar Beach Cottages", `Check-in: ${entry.date.toLocaleDateString("en-US", { month: "short", day: "numeric" })}`))}
+                    className={`rounded text-center py-1.5 text-xs font-medium transition-all ${
+                      isPast ? "text-zinc-300 cursor-default" :
+                      isBooked ? "bg-red-100 text-red-400 cursor-not-allowed" :
+                      isLimited ? "bg-amber-100 text-amber-700 hover:bg-amber-200" :
+                      "bg-emerald-50 text-emerald-700 hover:bg-emerald-100"
+                    }`}
+                  >
+                    {entry.date.getDate()}
+                  </button>
+                )
+              })}
+            </div>
+            {/* Legend */}
+            <div className="flex items-center gap-4 mt-3 justify-center">
+              {[
+                { color: "bg-emerald-100", label: "Available" },
+                { color: "bg-amber-100", label: "Limited" },
+                { color: "bg-red-100", label: "Booked" },
+              ].map(({ color, label }) => (
+                <div key={label} className="flex items-center gap-1.5">
+                  <div className={`h-3 w-3 rounded ${color}`} />
+                  <span className="text-[10px] text-zinc-500">{label}</span>
+                </div>
+              ))}
+            </div>
+          </div>
+        </section>
+
         {/* Equipment Rental */}
         <section>
-          <div className="rounded-2xl border border-dashed border-zinc-300 bg-white p-5 text-center">
-            <Bike className="mx-auto mb-2 h-8 w-8 text-zinc-300" />
-            <h3 className="font-semibold text-zinc-700">Recreation Equipment Rental</h3>
-            <p className="mt-1 text-sm text-zinc-400">
-              Rent camping gear, kayaks, bikes, surfboards and more
-            </p>
-            <button
-              className="mt-4 inline-flex items-center gap-1.5 rounded-xl px-4 py-2 text-sm font-semibold text-white"
-              style={{ backgroundColor: "#003087" }}
-            >
-              Browse Equipment
-              <ChevronRight className="h-4 w-4" />
-            </button>
+          <div className="flex items-center gap-2 mb-3">
+            <Bike className="h-4 w-4 text-orange-600" />
+            <h2 className="text-base font-bold text-zinc-900">Equipment Rental</h2>
+          </div>
+          <div className="space-y-3">
+            {EQUIPMENT_CATEGORIES.map((cat) => (
+              <div key={cat.name} className="rounded-2xl bg-white shadow-sm p-4">
+                <div className="flex items-center justify-between mb-2">
+                  <div className="flex items-center gap-2">
+                    <span className="text-xl">{cat.icon}</span>
+                    <span className="font-semibold text-zinc-900 text-sm">{cat.name}</span>
+                  </div>
+                  <span className="text-xs text-zinc-400">from ${cat.pricePerDay}/day</span>
+                </div>
+                <div className="flex flex-wrap gap-1.5 mb-3">
+                  {cat.items.map((item) => (
+                    <span key={item} className="rounded-full bg-zinc-100 px-2.5 py-0.5 text-xs text-zinc-600">
+                      {item}
+                    </span>
+                  ))}
+                </div>
+                <button
+                  onClick={() => setBookingProgram(makeOutdoorProgram("outdoor-adventures", "Outdoor Adventures Equipment Rental", cat.name))}
+                  className="inline-flex items-center gap-1.5 rounded-xl px-3 py-1.5 text-xs font-semibold text-white"
+                  style={{ backgroundColor: "#003087" }}
+                >
+                  Reserve Equipment
+                  <ChevronRight className="h-3.5 w-3.5" />
+                </button>
+              </div>
+            ))}
           </div>
         </section>
       </div>

@@ -151,6 +151,66 @@ export default function FitnessPage() {
           </button>
         </div>
 
+        {/* WARR Callout */}
+        <div className="rounded-2xl border border-blue-200 bg-blue-50 p-4">
+          <div className="flex items-start gap-3">
+            <div className="rounded-full bg-[#003087] p-2 shrink-0">
+              <Zap className="h-4 w-4 text-yellow-300" />
+            </div>
+            <div>
+              <p className="font-bold text-[#003087] text-sm">Semper Fit — WARR Program</p>
+              <p className="text-xs text-zinc-600 mt-0.5 leading-relaxed">
+                Evidence-based performance training for warfighters at Paige Field House. Strength, conditioning, and resilience coaching — by appointment.
+              </p>
+              <button
+                onClick={() => {
+                  const warr = programs.find((p) => p.id === "warr-program")
+                  if (warr) setBookingProgram(warr)
+                }}
+                className="mt-2 text-xs font-bold underline"
+                style={{ color: "#003087" }}
+              >
+                Book a WARR session →
+              </button>
+            </div>
+          </div>
+        </div>
+
+        {/* Weekly class schedule preview */}
+        <div className="rounded-2xl bg-white shadow-sm overflow-hidden">
+          <div className="px-4 py-3 border-b border-zinc-100 flex items-center justify-between">
+            <h3 className="text-sm font-bold text-zinc-900">This Week's Group Classes</h3>
+            <span className="text-xs text-zinc-400">Paige Field House</span>
+          </div>
+          {[
+            { day: "Mon", time: "6:00 AM", name: "Boot Camp", instructor: "SGT Morris", spots: 4 },
+            { day: "Tue", time: "12:00 PM", name: "Yoga Flow", instructor: "Cpl Reyes", spots: 8 },
+            { day: "Wed", time: "5:30 PM", name: "HIIT Circuit", instructor: "SSgt Alvarez", spots: 2 },
+            { day: "Thu", time: "6:30 AM", name: "Spin Class", instructor: "GySgt Chen", spots: 0 },
+            { day: "Fri", time: "12:00 PM", name: "Zumba", instructor: "Cpl Torres", spots: 12 },
+            { day: "Sat", time: "9:00 AM", name: "CrossFit WOD", instructor: "Capt Walsh", spots: 5 },
+          ].map((cls, i) => (
+            <div key={i} className={`flex items-center justify-between px-4 py-3 ${i % 2 === 0 ? "bg-zinc-50/50" : "bg-white"} border-b border-zinc-50 last:border-0`}>
+              <div className="flex items-center gap-3">
+                <span className="text-xs font-bold text-zinc-400 w-8">{cls.day}</span>
+                <div>
+                  <p className="text-sm font-semibold text-zinc-900">{cls.name}</p>
+                  <p className="text-xs text-zinc-400">{cls.time} · {cls.instructor}</p>
+                </div>
+              </div>
+              {cls.spots === 0 ? (
+                <span className="rounded-full bg-red-100 px-2 py-0.5 text-[10px] font-bold text-red-600">FULL</span>
+              ) : (
+                <div className="text-right">
+                  <span className="rounded-full bg-emerald-100 px-2 py-0.5 text-[10px] font-semibold text-emerald-700">
+                    {cls.spots} spots left
+                  </span>
+                </div>
+              )}
+            </div>
+          ))}
+        </div>
+
         {/* Program grid */}
         {loading ? (
           Array.from({ length: 4 }).map((_, i) => (

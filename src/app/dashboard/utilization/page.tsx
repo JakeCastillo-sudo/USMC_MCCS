@@ -3,6 +3,7 @@
 import { useEffect, useState } from "react"
 import { AlertTriangle, Activity, Building2 } from "lucide-react"
 import UtilizationGrid from "@/components/dashboard/UtilizationGrid"
+import ChildcareRebalancer from "@/components/dashboard/ChildcareRebalancer"
 import { Skeleton } from "@/components/ui/skeleton"
 
 interface UtilMeta {
@@ -87,22 +88,8 @@ export default function UtilizationPage() {
       {/* Full grid */}
       <UtilizationGrid />
 
-      {/* Heatmap placeholder */}
-      <div className="rounded-xl border border-dashed border-zinc-300 bg-white p-8 text-center">
-        <Activity className="mx-auto mb-3 h-10 w-10 text-zinc-300" />
-        <h3 className="text-base font-semibold text-zinc-500">
-          Day-of-Week Utilization Heatmap
-        </h3>
-        <p className="mt-1 text-sm text-zinc-400">
-          Facility × day heatmap showing peak usage patterns — Coming in Phase 2
-        </p>
-        <span
-          className="mt-3 inline-flex items-center rounded-full px-3 py-1 text-xs font-medium text-white"
-          style={{ backgroundColor: "#003087" }}
-        >
-          Phase 2 Feature
-        </span>
-      </div>
+      {/* Childcare Rebalancer */}
+      <ChildcareRebalancer />
     </div>
   )
 }

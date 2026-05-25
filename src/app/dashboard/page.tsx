@@ -7,6 +7,7 @@ import UtilizationGrid from "@/components/dashboard/UtilizationGrid"
 import InstallationTable from "@/components/dashboard/InstallationTable"
 import StormBreakerBadge from "@/components/shared/StormBreakerBadge"
 import Link from "next/link"
+import { TrendingUp, Sparkles, AlertCircle } from "lucide-react"
 
 export default function DashboardPage() {
   return (
@@ -64,6 +65,45 @@ export default function DashboardPage() {
             </Link>
           </div>
           <UtilizationGrid limit={6} />
+        </div>
+      </div>
+
+      {/* 4b. Forecast Preview */}
+      <div className="rounded-xl border border-blue-200 bg-gradient-to-r from-blue-50 to-indigo-50 p-5">
+        <div className="flex items-start justify-between gap-4 flex-wrap">
+          <div className="flex items-start gap-3">
+            <div className="rounded-xl bg-blue-100 p-2.5 shrink-0">
+              <TrendingUp className="h-5 w-5 text-blue-700" />
+            </div>
+            <div>
+              <div className="flex items-center gap-2 mb-1">
+                <h3 className="text-sm font-bold text-blue-900">Forecast Alert</h3>
+                <span className="rounded-full bg-red-100 px-2 py-0.5 text-[10px] font-bold text-red-700">Action Required</span>
+              </div>
+              <p className="text-sm text-blue-800 leading-relaxed">
+                <span className="font-semibold">Del Mar Beach Cottages</span> predicted at{" "}
+                <span className="font-bold text-red-600">100% capacity Jun 15 through Aug 31.</span>{" "}
+                Summer surge confirmed — expand reservations or add overflow capacity now.
+              </p>
+              <div className="flex items-center gap-3 mt-2">
+                <div className="flex items-center gap-1.5">
+                  <Sparkles className="h-3.5 w-3.5 text-blue-500" />
+                  <span className="text-[10px] text-blue-500">Kaizen Predict · 93% confidence</span>
+                </div>
+                <div className="flex items-center gap-1">
+                  <AlertCircle className="h-3.5 w-3.5 text-amber-500" />
+                  <span className="text-[10px] text-amber-600">21 days until summer peak</span>
+                </div>
+              </div>
+            </div>
+          </div>
+          <Link
+            href="/dashboard/forecast"
+            className="shrink-0 rounded-xl px-4 py-2 text-sm font-bold text-white hover:opacity-90 transition-opacity"
+            style={{ backgroundColor: "#003087" }}
+          >
+            View Full Forecast →
+          </Link>
         </div>
       </div>
 

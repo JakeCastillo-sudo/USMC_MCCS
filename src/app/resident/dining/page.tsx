@@ -1,7 +1,7 @@
 "use client"
 
 import { useEffect, useState } from "react"
-import { UtensilsCrossed, Star, Clock } from "lucide-react"
+import { UtensilsCrossed, Star, Clock, ChefHat, CalendarCheck } from "lucide-react"
 import BookingModal from "@/components/resident/BookingModal"
 import type { Program } from "@/types"
 
@@ -49,6 +49,22 @@ const PRIVATE_VENUES = [
   { name: "La Casa Del Mar",            cap: "Up to 150 guests", type: "Beachside Venue" },
   { name: "The Vineyard",               cap: "Up to 80 guests",  type: "Intimate Events" },
   { name: "San Onofre Beach Club",      cap: "Up to 120 guests", type: "Outdoor Events" },
+]
+
+const TODAYS_SPECIALS = [
+  { venue: "Iron Mike's",      special: "Ribeye & Fries",          price: "$16.99", badge: "Popular" },
+  { venue: "Pub 1795",         special: "BBQ Pulled Pork Sliders",  price: "$12.99", badge: "Chef Pick" },
+  { venue: "Windmill Canyon",  special: "Pan-Seared Sea Bass",      price: "$24.99", badge: "Weekend" },
+]
+
+const RESERVATION_SLOTS = [
+  { time: "5:00 PM", venue: "Iron Mike's",     available: true  },
+  { time: "5:30 PM", venue: "Iron Mike's",     available: false },
+  { time: "6:00 PM", venue: "Iron Mike's",     available: true  },
+  { time: "6:30 PM", venue: "Windmill Canyon", available: true  },
+  { time: "7:00 PM", venue: "Iron Mike's",     available: true  },
+  { time: "7:30 PM", venue: "Windmill Canyon", available: true  },
+  { time: "8:00 PM", venue: "Pub 1795",        available: true  },
 ]
 
 const FAST_FOOD = [
@@ -122,6 +138,58 @@ export default function DiningPage() {
       </div>
 
       <div className="px-4 py-4 space-y-6">
+        {/* Today's Specials */}
+        <section>
+          <div className="flex items-center gap-2 mb-3">
+            <ChefHat className="h-4 w-4 text-amber-600" />
+            <h2 className="text-base font-bold text-zinc-900">Today&apos;s Specials</h2>
+          </div>
+          <div className="grid grid-cols-1 gap-3">
+            {TODAYS_SPECIALS.map((s) => (
+              <div key={s.venue} className="rounded-2xl bg-white shadow-sm p-4 flex items-center justify-between">
+                <div>
+                  <p className="text-xs font-medium text-zinc-400">{s.venue}</p>
+                  <p className="text-sm font-bold text-zinc-900 mt-0.5">{s.special}</p>
+                  <span className="rounded-full bg-amber-100 px-2 py-0.5 text-[10px] font-bold text-amber-700 mt-1 inline-block">
+                    {s.badge}
+                  </span>
+                </div>
+                <span className="text-xl font-bold" style={{ color: "#C8102E" }}>{s.price}</span>
+              </div>
+            ))}
+          </div>
+        </section>
+
+        {/* Reservation Slots */}
+        <section>
+          <div className="flex items-center gap-2 mb-3">
+            <CalendarCheck className="h-4 w-4 text-[#003087]" />
+            <h2 className="text-base font-bold text-zinc-900">Tonight&apos;s Available Tables</h2>
+          </div>
+          <div className="rounded-2xl bg-white shadow-sm overflow-hidden">
+            <div className="grid grid-cols-2 divide-x divide-zinc-50">
+              {RESERVATION_SLOTS.map((slot, i) => (
+                <button
+                  key={i}
+                  disabled={!slot.available}
+                  onClick={() => {}}
+                  className={`flex flex-col items-center justify-center p-3 border-b border-zinc-50 transition-colors ${
+                    slot.available
+                      ? "hover:bg-blue-50 cursor-pointer"
+                      : "opacity-40 cursor-not-allowed bg-zinc-50"
+                  }`}
+                >
+                  <span className="text-sm font-bold text-zinc-900">{slot.time}</span>
+                  <span className="text-[10px] text-zinc-400 mt-0.5">{slot.venue}</span>
+                  {!slot.available && (
+                    <span className="text-[10px] font-semibold text-red-400 mt-0.5">Booked</span>
+                  )}
+                </button>
+              ))}
+            </div>
+          </div>
+        </section>
+
         {/* Restaurants */}
         <section>
           <h2 className="text-base font-bold text-zinc-900 mb-3">Restaurants</h2>
