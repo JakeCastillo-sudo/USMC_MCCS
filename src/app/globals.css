@@ -2,6 +2,32 @@
 @import "tw-animate-css";
 @import "shadcn/tailwind.css";
 
+/* ── MCCS Brand tokens ─────────────────────────────────────────── */
+:root {
+  --mccs-red: #C8102E;
+  --mccs-navy: #003087;
+  --mccs-gold: #FFD700;
+}
+
+/* Smooth scrolling */
+html { scroll-behavior: smooth; }
+
+/* Remove mobile tap highlight */
+* { -webkit-tap-highlight-color: transparent; }
+
+/* Tabular numerics for metric values */
+.font-metric {
+  font-variant-numeric: tabular-nums;
+  font-feature-settings: "tnum";
+}
+
+/* Hide scrollbar on horizontal scroll rows */
+.scrollbar-hide {
+  -ms-overflow-style: none;
+  scrollbar-width: none;
+}
+.scrollbar-hide::-webkit-scrollbar { display: none; }
+
 @custom-variant dark (&:is(.dark *));
 
 @theme inline {
