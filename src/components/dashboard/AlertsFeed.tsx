@@ -92,7 +92,7 @@ export default function AlertsFeed({
         <div className="py-8 text-center text-zinc-400 text-sm">No alerts at this time.</div>
       ) : (
         <div className="space-y-3">
-          {displayed.map((alert) => {
+          {displayed.map((alert, index) => {
             const Icon = ICONS[alert.level]
             const borderCls = BORDER_COLOR[alert.level]
             const iconCls = ICON_COLOR[alert.level]
@@ -102,10 +102,11 @@ export default function AlertsFeed({
               <div
                 key={alert.id}
                 className={cn(
-                  "rounded-lg border border-l-4 p-3",
+                  "rounded-lg border border-l-4 p-3 animate-fadeIn",
                   borderCls,
                   colorCls
                 )}
+                style={{ animationDelay: `${index * 80}ms` }}
               >
                 <div className="flex items-start gap-2.5">
                   <Icon className={cn("mt-0.5 h-4 w-4 shrink-0", iconCls)} />

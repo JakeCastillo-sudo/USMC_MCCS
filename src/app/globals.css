@@ -28,6 +28,36 @@ html { scroll-behavior: smooth; }
 }
 .scrollbar-hide::-webkit-scrollbar { display: none; }
 
+/* ── Page entrance animation ───────────────────────────────────── */
+@keyframes fadeSlideIn {
+  from { opacity: 0; transform: translateY(8px); }
+  to   { opacity: 1; transform: translateY(0); }
+}
+.page-enter {
+  animation: fadeSlideIn 0.22s ease-out;
+}
+
+/* ── Alert card fade-in ─────────────────────────────────────────── */
+@keyframes fadeIn {
+  from { opacity: 0; transform: translateY(6px); }
+  to   { opacity: 1; transform: translateY(0); }
+}
+.animate-fadeIn {
+  animation: fadeIn 0.3s ease-out both;
+}
+
+/* ── Booking modal step slide transitions ───────────────────────── */
+@keyframes slideInRight {
+  from { opacity: 0; transform: translateX(24px); }
+  to   { opacity: 1; transform: translateX(0); }
+}
+@keyframes slideInLeft {
+  from { opacity: 0; transform: translateX(-24px); }
+  to   { opacity: 1; transform: translateX(0); }
+}
+.slide-in-right { animation: slideInRight 0.2s ease-out both; }
+.slide-in-left  { animation: slideInLeft  0.2s ease-out both; }
+
 @custom-variant dark (&:is(.dark *));
 
 @theme inline {

@@ -78,7 +78,7 @@ export default function BookingModal({ program, open, onClose }: BookingModalPro
       <DialogContent onClose={handleClose}>
         {/* ── Step 1 — Select Time ── */}
         {step === 1 && (
-          <>
+          <div className="slide-in-right">
             <DialogHeader>
               <div className="flex items-center gap-2 mb-1">
                 <span className="text-xs font-semibold uppercase tracking-wide text-zinc-400">
@@ -158,12 +158,12 @@ export default function BookingModal({ program, open, onClose }: BookingModalPro
                 Continue →
               </button>
             </DialogFooter>
-          </>
+          </div>
         )}
 
         {/* ── Step 2 — Confirm Details ── */}
         {step === 2 && (
-          <>
+          <div className="slide-in-right">
             <DialogHeader>
               <div className="flex items-center gap-2 mb-1">
                 <button onClick={() => setStep(1)} className="text-zinc-400 hover:text-zinc-600">
@@ -251,12 +251,12 @@ export default function BookingModal({ program, open, onClose }: BookingModalPro
                 Back
               </button>
             </DialogFooter>
-          </>
+          </div>
         )}
 
         {/* ── Step 3 — Confirmation ── */}
         {step === 3 && (
-          <>
+          <div className="slide-in-right">
             <div className="px-5 pt-8 pb-4 flex flex-col items-center text-center gap-4">
               <div className="rounded-full bg-emerald-50 p-4">
                 <CheckCircle2 className="h-16 w-16 text-emerald-500" />
@@ -310,7 +310,7 @@ export default function BookingModal({ program, open, onClose }: BookingModalPro
                 </button>
               </div>
             </DialogFooter>
-          </>
+          </div>
         )}
       </DialogContent>
     </Dialog>

@@ -1,5 +1,6 @@
 import Link from "next/link"
-import { Home, LayoutDashboard, Zap, ShieldCheck } from "lucide-react"
+import { Home, LayoutDashboard } from "lucide-react"
+import StormBreakerBadge from "@/components/shared/StormBreakerBadge"
 
 export default function LandingPage() {
   return (
@@ -66,27 +67,12 @@ export default function LandingPage() {
         </Link>
       </div>
 
-      {/* Footer compliance strip */}
-      <div className="mt-12 flex flex-col items-center gap-3">
-        <div className="flex items-center gap-2 rounded-full border border-white/10 bg-white/5 px-4 py-2">
-          <Zap className="h-3.5 w-3.5 text-blue-300" />
-          <span className="text-xs text-blue-200 font-medium">
-            Deployed on Operation StormBreaker · MCCS AWS Landing Zone
-          </span>
-        </div>
-        <p className="text-xs text-blue-300/50 font-medium">Platform by Kaizen Labs</p>
-        <div className="flex items-center gap-2 flex-wrap justify-center">
-          {["ATO Compliant", "Zero Trust", "FedRAMP Ready"].map((chip) => (
-            <div
-              key={chip}
-              className="flex items-center gap-1 rounded-full border border-white/10 bg-white/5 px-2.5 py-1"
-            >
-              <ShieldCheck className="h-3 w-3 text-emerald-400" />
-              <span className="text-[10px] text-blue-200/60 font-medium">{chip}</span>
-            </div>
-          ))}
-        </div>
+      {/* StormBreaker badge — large dark */}
+      <div className="mt-10 w-full max-w-md">
+        <StormBreakerBadge size="lg" variant="dark" />
       </div>
+
+      <p className="mt-4 text-xs text-blue-300/50 font-medium">Platform by Kaizen Labs</p>
     </div>
   )
 }

@@ -1,5 +1,6 @@
 "use client"
 
+import { useEffect, useState } from "react"
 import { TrendingUp, TrendingDown } from "lucide-react"
 import {
   AreaChart,
@@ -16,8 +17,27 @@ interface KPICardProps {
   className?: string
 }
 
+/** Animates a number from 0 → target over `duration` ms */
+function useCountUp(target: number, duration = 900) {
+  const [display, setDisplay] = useState(0)
+  useEffect(() => {
+    const start = Date.now()
+    const timer = setInterval(() => {
+      const elapsed = Date.now() - start
+      const progress = Math.min(elapsed / duration, 1)
+      // Ease-out cubic
+      const eased = 1 - Math.pow(1 - progress, 3)
+      setDisplay(Math.floor(eased * target))
+      if (progress >= 1) clearInterval(timer)
+    }, 16)
+    return () => clearInterval(timer)
+  }, [target, duration])
+  return display
+}
+
 export default function KPICard({ metric, className }: KPICardProps) {
   const { label, value, unit, trend, trendDirection, trendSentiment, sparkline } = metric
+  const animatedValue = useCountUp(value)
 
   const trendCls = trendColor(trendDirection, trendSentiment)
   const isPositive =
@@ -39,9 +59,9 @@ export default function KPICard({ metric, className }: KPICardProps) {
         {label}
       </p>
 
-      {/* Value */}
-      <p className="mt-2 font-mono text-2xl font-bold leading-none text-zinc-900">
-        {formatMetricValue(value, unit, true)}
+      {/* Value — animates from 0 on mount */}
+      <p className="mt-2 font-mono text-2xl font-bold leading-none text-zinc-900 font-metric">
+        {formatMetricValue(animatedValue, unit, true)}
       </p>
 
       {/* Trend badge */}

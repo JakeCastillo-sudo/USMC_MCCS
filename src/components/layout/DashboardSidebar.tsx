@@ -8,9 +8,9 @@ import {
   Activity,
   Star,
   Users,
-  Zap,
 } from "lucide-react"
 import { cn } from "@/lib/utils"
+import StormBreakerBadge from "@/components/shared/StormBreakerBadge"
 
 const navLinks = [
   { label: "Overview",    href: "/dashboard",              icon: LayoutDashboard },
@@ -70,18 +70,7 @@ export default function DashboardSidebar() {
 
       {/* Footer */}
       <div className="border-t border-zinc-200 p-3 space-y-2">
-        {/* StormBreaker badge */}
-        <div className="rounded-lg p-3 text-white" style={{ backgroundColor: "#003087" }}>
-          <div className="flex items-center gap-1.5 mb-1">
-            <Zap className="h-3.5 w-3.5 text-yellow-300 shrink-0" />
-            <span className="text-xs font-semibold leading-tight">
-              Operation StormBreaker
-            </span>
-          </div>
-          <p className="text-xs text-blue-200 leading-tight">
-            MCCS AWS · Zero Trust · FedRAMP Ready
-          </p>
-        </div>
+        <StormBreakerBadge size="md" variant="dark" />
         <p className="text-center text-xs text-zinc-400">Kaizen Labs Demo v1.0</p>
       </div>
     </aside>

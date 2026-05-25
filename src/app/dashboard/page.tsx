@@ -5,6 +5,7 @@ import ReinvestmentTracker from "@/components/dashboard/ReinvestmentTracker"
 import SatisfactionTable from "@/components/dashboard/SatisfactionTable"
 import UtilizationGrid from "@/components/dashboard/UtilizationGrid"
 import InstallationTable from "@/components/dashboard/InstallationTable"
+import StormBreakerBadge from "@/components/shared/StormBreakerBadge"
 import Link from "next/link"
 
 export default function DashboardPage() {
@@ -66,8 +67,20 @@ export default function DashboardPage() {
         </div>
       </div>
 
-      {/* 5. Enterprise installation table */}
-      <InstallationTable />
+      {/* 5. Platform info + Enterprise installation table */}
+      <div className="grid grid-cols-1 gap-6 lg:grid-cols-3">
+        <div className="lg:col-span-2">
+          <InstallationTable />
+        </div>
+        <div className="space-y-4">
+          <StormBreakerBadge size="md" variant="light" />
+          <div className="rounded-xl border border-zinc-200 bg-white p-4 text-xs text-zinc-500 space-y-1 leading-relaxed">
+            <p className="font-semibold text-zinc-700 text-sm">About this Demo</p>
+            <p>Data is synthetic but internally consistent, built from real Camp Pendleton MCCS programs sourced from pendleton.usmc-mccs.org.</p>
+            <p className="pt-1">Prepared for Kaizen Labs · Head of Federal interview · May 2026</p>
+          </div>
+        </div>
+      </div>
     </div>
   )
 }
