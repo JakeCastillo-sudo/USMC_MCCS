@@ -1,0 +1,315 @@
+[
+  {
+    "facilityId": "fac-paige-field-house",
+    "facilityName": "Paige Field House",
+    "category": "fitness",
+    "capacityPct": 94,
+    "peakHour": "6:00am",
+    "avgDailyVisits": 380,
+    "trend": 4.2,
+    "flag": null
+  },
+  {
+    "facilityId": "fac-fc-21-area",
+    "facilityName": "Fitness Center – 21 Area",
+    "category": "fitness",
+    "capacityPct": 88,
+    "peakHour": "5:30am",
+    "avgDailyVisits": 158,
+    "trend": 2.8,
+    "flag": null
+  },
+  {
+    "facilityId": "fac-fc-41-area",
+    "facilityName": "Fitness Center – 41 Area",
+    "category": "fitness",
+    "capacityPct": 82,
+    "peakHour": "6:00am",
+    "avgDailyVisits": 131,
+    "trend": 1.9,
+    "flag": null
+  },
+  {
+    "facilityId": "fac-fc-31-area",
+    "facilityName": "Fitness Center – 31 Area",
+    "category": "fitness",
+    "capacityPct": 79,
+    "peakHour": "5:30am",
+    "avgDailyVisits": 119,
+    "trend": 2.1,
+    "flag": null
+  },
+  {
+    "facilityId": "fac-fc-22-area",
+    "facilityName": "Fitness Center – 22 Area",
+    "category": "fitness",
+    "capacityPct": 77,
+    "peakHour": "6:00am",
+    "avgDailyVisits": 116,
+    "trend": 1.4,
+    "flag": null
+  },
+  {
+    "facilityId": "fac-fc-43-area",
+    "facilityName": "Fitness Center – 43 Area",
+    "category": "fitness",
+    "capacityPct": 75,
+    "peakHour": "6:00am",
+    "avgDailyVisits": 105,
+    "trend": 1.2,
+    "flag": null
+  },
+  {
+    "facilityId": "fac-fc-33-area",
+    "facilityName": "Fitness Center – 33 Area",
+    "category": "fitness",
+    "capacityPct": 72,
+    "peakHour": "6:00am",
+    "avgDailyVisits": 101,
+    "trend": 0.8,
+    "flag": null
+  },
+  {
+    "facilityId": "fac-fc-62-area",
+    "facilityName": "Fitness Center – 62 Area",
+    "category": "fitness",
+    "capacityPct": 68,
+    "peakHour": "5:30am",
+    "avgDailyVisits": 88,
+    "trend": 0.5,
+    "flag": null
+  },
+  {
+    "facilityId": "fac-fc-52-area",
+    "facilityName": "Fitness Center – 52 Area",
+    "category": "fitness",
+    "capacityPct": 65,
+    "peakHour": "6:00am",
+    "avgDailyVisits": 85,
+    "trend": 0.3,
+    "flag": null
+  },
+  {
+    "facilityId": "fac-fc-14-area",
+    "facilityName": "Fitness Center – 14 Area",
+    "category": "fitness",
+    "capacityPct": 58,
+    "peakHour": "6:30am",
+    "avgDailyVisits": 70,
+    "trend": -0.6,
+    "flag": null
+  },
+  {
+    "facilityId": "fac-fc-53-area",
+    "facilityName": "Fitness Center – 53 Area",
+    "category": "fitness",
+    "capacityPct": 44,
+    "peakHour": "7:00am",
+    "avgDailyVisits": 57,
+    "trend": -3.1,
+    "flag": "underperforming"
+  },
+  {
+    "facilityId": "fac-fc-mcas",
+    "facilityName": "Fitness Center – MCAS",
+    "category": "fitness",
+    "capacityPct": 39,
+    "peakHour": "7:00am",
+    "avgDailyVisits": 47,
+    "trend": -4.5,
+    "flag": "underperforming"
+  },
+  {
+    "facilityId": "fac-cdc-1-mainside",
+    "facilityName": "CDC-1 Mainside",
+    "category": "childcare",
+    "capacityPct": 99,
+    "peakHour": "8:00am",
+    "avgDailyVisits": 185,
+    "trend": 0.2,
+    "flag": "waitlist",
+    "waitlistFamilies": 187
+  },
+  {
+    "facilityId": "fac-cdc-2-las-pulgas",
+    "facilityName": "CDC-2 Las Pulgas",
+    "category": "childcare",
+    "capacityPct": 97,
+    "peakHour": "8:00am",
+    "avgDailyVisits": 152,
+    "trend": 0.1,
+    "flag": "waitlist",
+    "waitlistFamilies": 43
+  },
+  {
+    "facilityId": "fac-cdc-3-san-onofre",
+    "facilityName": "CDC-3 San Onofre",
+    "category": "childcare",
+    "capacityPct": 91,
+    "peakHour": "7:30am",
+    "avgDailyVisits": 109,
+    "trend": 1.3,
+    "flag": null
+  },
+  {
+    "facilityId": "fac-school-age-care",
+    "facilityName": "School Age Care Center",
+    "category": "childcare",
+    "capacityPct": 86,
+    "peakHour": "7:00am",
+    "avgDailyVisits": 172,
+    "trend": 2.1,
+    "flag": null
+  },
+  {
+    "facilityId": "fac-iron-mikes",
+    "facilityName": "Iron Mike's",
+    "category": "dining",
+    "capacityPct": 76,
+    "peakHour": "12:00pm",
+    "avgDailyVisits": 137,
+    "trend": 1.5,
+    "flag": null
+  },
+  {
+    "facilityId": "fac-pub-1795",
+    "facilityName": "Pub 1795",
+    "category": "dining",
+    "capacityPct": 69,
+    "peakHour": "6:00pm",
+    "avgDailyVisits": 83,
+    "trend": 3.2,
+    "flag": null
+  },
+  {
+    "facilityId": "fac-windmill-canyon",
+    "facilityName": "Windmill Canyon",
+    "category": "dining",
+    "capacityPct": 62,
+    "peakHour": "7:00pm",
+    "avgDailyVisits": 62,
+    "trend": 0.9,
+    "flag": null
+  },
+  {
+    "facilityId": "fac-pacific-views-event",
+    "facilityName": "Pacific Views Event Center",
+    "category": "dining",
+    "capacityPct": 55,
+    "peakHour": "6:00pm",
+    "avgDailyVisits": 275,
+    "trend": 2.8,
+    "flag": null
+  },
+  {
+    "facilityId": "fac-leatherneck-lanes",
+    "facilityName": "Leatherneck Lanes",
+    "category": "recreation",
+    "capacityPct": 71,
+    "peakHour": "7:00pm",
+    "avgDailyVisits": 170,
+    "trend": 1.1,
+    "flag": null
+  },
+  {
+    "facilityId": "fac-golf-course",
+    "facilityName": "Marine Memorial Golf Course",
+    "category": "recreation",
+    "capacityPct": 68,
+    "peakHour": "9:00am",
+    "avgDailyVisits": 98,
+    "trend": -0.4,
+    "flag": null
+  },
+  {
+    "facilityId": "fac-del-mar-beach",
+    "facilityName": "Del Mar Beach Cottages",
+    "category": "recreation",
+    "capacityPct": 89,
+    "peakHour": "3:00pm",
+    "avgDailyVisits": 71,
+    "trend": 5.2,
+    "flag": null,
+    "note": "Summer avg 89%; winter avg 52%"
+  },
+  {
+    "facilityId": "fac-san-onofre-beach",
+    "facilityName": "San Onofre Beach Cottages",
+    "category": "recreation",
+    "capacityPct": 82,
+    "peakHour": "3:00pm",
+    "avgDailyVisits": 49,
+    "trend": 4.1,
+    "flag": null
+  },
+  {
+    "facilityId": "fac-lake-oneill",
+    "facilityName": "Lake O'Neill Recreation Area",
+    "category": "recreation",
+    "capacityPct": 58,
+    "peakHour": "10:00am",
+    "avgDailyVisits": 290,
+    "trend": 1.7,
+    "flag": null
+  },
+  {
+    "facilityId": "fac-stepp-stables",
+    "facilityName": "Stepp Stables",
+    "category": "recreation",
+    "capacityPct": 63,
+    "peakHour": "9:00am",
+    "avgDailyVisits": 25,
+    "trend": 0.8,
+    "flag": null
+  },
+  {
+    "facilityId": "fac-outdoor-adventures",
+    "facilityName": "Outdoor Adventures Center",
+    "category": "recreation",
+    "capacityPct": 74,
+    "peakHour": "9:00am",
+    "avgDailyVisits": 37,
+    "trend": 3.6,
+    "flag": null
+  },
+  {
+    "facilityId": "fac-pool-13-area",
+    "facilityName": "13 Area Pool",
+    "category": "recreation",
+    "capacityPct": 61,
+    "peakHour": "10:00am",
+    "avgDailyVisits": 214,
+    "trend": -2.3,
+    "flag": null
+  },
+  {
+    "facilityId": "fac-pool-21-area",
+    "facilityName": "21 Area Pool",
+    "category": "recreation",
+    "capacityPct": 61,
+    "peakHour": "11:00am",
+    "avgDailyVisits": 183,
+    "trend": -5.8,
+    "flag": "declining"
+  },
+  {
+    "facilityId": "fac-mcx-main",
+    "facilityName": "MCX Main Store",
+    "category": "retail",
+    "capacityPct": 72,
+    "peakHour": "12:00pm",
+    "avgDailyVisits": 720,
+    "trend": 1.2,
+    "flag": null
+  },
+  {
+    "facilityId": "fac-marine-mart",
+    "facilityName": "Marine Mart (Multiple Locations)",
+    "category": "retail",
+    "capacityPct": 68,
+    "peakHour": "7:00am",
+    "avgDailyVisits": 1240,
+    "trend": 0.6,
+    "flag": null
+  }
+]
