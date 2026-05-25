@@ -20,6 +20,9 @@
 # production
 /build
 
+# Electron build output (binaries are large; build locally with npm run electron:build)
+/dist
+
 # misc
 .DS_Store
 *.pem

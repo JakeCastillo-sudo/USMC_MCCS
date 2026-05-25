@@ -1,12 +1,16 @@
 {
   "name": "mccs-demo",
-  "version": "0.1.0",
+  "version": "1.0.0",
   "private": true,
+  "main": "electron/main.js",
   "scripts": {
     "dev": "next dev",
     "build": "next build",
     "start": "next start",
-    "lint": "eslint"
+    "lint": "eslint",
+    "electron": "electron electron/main.js",
+    "electron:build": "npm run build && node electron/copy-assets.js && electron-builder",
+    "electron:pack": "npm run build && node electron/copy-assets.js && electron-builder --dir"
   },
   "dependencies": {
     "class-variance-authority": "^0.7.1",
@@ -26,9 +30,51 @@
     "@types/node": "^20",
     "@types/react": "^19",
     "@types/react-dom": "^19",
+    "electron": "^35.0.0",
+    "electron-builder": "^26.0.0",
     "eslint": "^9",
     "eslint-config-next": "16.2.6",
     "tailwindcss": "^4",
     "typescript": "^5"
+  },
+  "build": {
+    "appId": "com.kaizenlabs.mccs-pendleton",
+    "productName": "MCCS Camp Pendleton",
+    "copyright": "Copyright © 2026 Kaizen Labs",
+    "asar": true,
+    "files": [
+      "electron/**/*",
+      "!electron/copy-assets.js"
+    ],
+    "extraResources": [
+      {
+        "from": ".next/standalone",
+        "to": "server",
+        "filter": ["**/*"]
+      }
+    ],
+    "mac": {
+      "category": "public.app-category.productivity",
+      "target": [
+        { "target": "dmg", "arch": ["arm64", "x64"] }
+      ],
+      "darkModeSupport": true
+    },
+    "win": {
+      "target": [
+        { "target": "nsis", "arch": ["x64"] }
+      ]
+    },
+    "nsis": {
+      "oneClick": true,
+      "perMachine": false
+    },
+    "dmg": {
+      "title": "MCCS Camp Pendleton",
+      "contents": [
+        { "x": 130, "y": 220 },
+        { "x": 410, "y": 220, "type": "link", "path": "/Applications" }
+      ]
+    }
   }
 }
