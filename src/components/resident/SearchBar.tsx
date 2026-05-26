@@ -44,16 +44,12 @@ export default function SearchBar({
   // Debounced query — only search when query is >= 2 chars or empty (clears results)
   useEffect(() => {
     if (timerRef.current) clearTimeout(timerRef.current)
-    if (query.length === 0) {
-      onResults([])
-      return
-    }
     if (query.length < 2) return
     timerRef.current = setTimeout(() => {
       runSearch(query, activeCategory)
     }, 300)
     return () => { if (timerRef.current) clearTimeout(timerRef.current) }
-  }, [query, activeCategory, runSearch, onResults])
+  }, [query, activeCategory, runSearch])
 
   function handleCategoryClick(cat: string) {
     setActiveCategory(cat)
