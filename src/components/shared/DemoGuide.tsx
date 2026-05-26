@@ -15,7 +15,7 @@ const STEPS = [
   },
   {
     num: 2,
-    title: "Resident Portal Home",
+    title: "Patron Portal Home",
     description:
       "A Marine's spouse needs childcare and wants to book a gym class. One app, not five websites.",
     href: "/resident",

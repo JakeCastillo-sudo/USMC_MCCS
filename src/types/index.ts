@@ -182,6 +182,132 @@ export interface ApiResponse<T> {
   meta?: Record<string, unknown>
 }
 
+// ─── Staff Portal / Reservation types (Prompt 07) ───────────────────────────
+
+export type ReservationStatus =
+  | "pending" | "confirmed" | "waitlisted"
+  | "rescheduled" | "cancelled" | "completed" | "no-show"
+
+export type PaymentStatus = "unpaid" | "paid" | "refunded" | "partial" | "waived"
+
+export interface Reservation {
+  id: string
+  patronId: string
+  patronName: string
+  patronRank: string
+  patronPhone: string
+  patronEmail: string
+  programId: string
+  programName: string
+  facilityName: string
+  category: ProgramCategory
+  date: string
+  time: string
+  duration: number
+  partySize: number
+  status: ReservationStatus
+  paymentStatus: PaymentStatus
+  paymentAmount: number
+  paymentMethod: "MCCS Pay" | "Credit Card" | "Cash" | "Pending"
+  notes: string
+  createdAt: string
+  updatedAt: string
+  staffNotes: string
+  confirmationSentAt: string | null
+  reminderSentAt: string | null
+}
+
+export interface Dependent {
+  id: string
+  firstName: string
+  lastName: string
+  relationship: "Spouse" | "Child" | "Parent" | "Other"
+  dateOfBirth: string
+  age: number
+  eligibilityGroups: string[]
+  specialNeeds?: string
+}
+
+export interface PaymentMethod {
+  id: string
+  type: "MCCS Pay" | "Visa" | "Mastercard" | "Discover" | "AMEX"
+  last4: string
+  expiryMonth: number
+  expiryYear: number
+  isDefault: boolean
+  nickname?: string
+}
+
+export interface PatronPreferences {
+  favoriteCategories: ProgramCategory[]
+  preferredNotifications: ("email" | "sms" | "push")[]
+  dietaryRestrictions: string[]
+  accessibilityNeeds: string[]
+  preferredLanguage: string
+  marketingOptIn: boolean
+}
+
+export interface BookingHistoryEntry {
+  reservationId: string
+  programName: string
+  category: ProgramCategory
+  date: string
+  amount: number
+  status: ReservationStatus
+  csatScore?: number
+  review?: string
+}
+
+export type LoyaltyTier = "Standard" | "Active" | "Elite"
+
+export interface Patron {
+  id: string
+  firstName: string
+  lastName: string
+  rank: string
+  branch: "USMC" | "USN" | "USA" | "USAF" | "USSF" | "Retired" | "DoD Civilian"
+  unit: string
+  edipi: string
+  dodId: string
+  email: string
+  phone: string
+  address: string
+  dependents: Dependent[]
+  paymentMethods: PaymentMethod[]
+  preferredPaymentId: string
+  preferences: PatronPreferences
+  bookingHistory: BookingHistoryEntry[]
+  totalBookings: number
+  totalSpend: number
+  memberSince: string
+  lastActivity: string
+  loyaltyTier: LoyaltyTier
+  csatAvg: number
+  eligibilityGroups: string[]
+  eligibilityVerified: boolean
+  eligibilityExpiry: string
+}
+
+export interface PaymentTransaction {
+  id: string
+  reservationId: string
+  patronId: string
+  patronName: string
+  amount: number
+  currency: "USD"
+  status: "pending" | "completed" | "refunded" | "failed" | "partial"
+  method: string
+  last4?: string
+  processedAt: string | null
+  refundedAt: string | null
+  refundAmount?: number
+  refundReason?: string
+  staffId: string
+  notes: string
+  category: ProgramCategory
+  programName: string
+}
+
 // ─── Action / Recommendation types (Layer 2) ────────────────────────────────
 
 export type ActionStatus = "pending" | "in_progress" | "completed" | "dismissed"

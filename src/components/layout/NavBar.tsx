@@ -44,7 +44,7 @@ export default function NavBar({ activeRole }: NavBarProps) {
               )}
               style={activeRole === "resident" ? { backgroundColor: "#C8102E" } : {}}
             >
-              Resident Portal
+              Patron Portal
             </button>
             <button
               onClick={() => router.push("/dashboard")}

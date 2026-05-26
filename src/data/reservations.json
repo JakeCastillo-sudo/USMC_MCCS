@@ -1,0 +1,362 @@
+[
+  {
+    "id": "RES-PND-001", "patronId": "patron-001", "patronName": "SSgt Jacob Martinez",
+    "patronRank": "SSgt", "patronPhone": "(760) 555-0182", "patronEmail": "jacob.martinez@marines.mil",
+    "programId": "group-exercise", "programName": "Group Exercise Classes", "facilityName": "Paige Field House",
+    "category": "fitness", "date": "2026-05-26", "time": "06:00 AM", "duration": 60, "partySize": 1,
+    "status": "confirmed", "paymentStatus": "waived", "paymentAmount": 0, "paymentMethod": "MCCS Pay",
+    "notes": "Prefer front-row spot", "createdAt": "2026-05-24T09:00:00Z", "updatedAt": "2026-05-24T10:15:00Z",
+    "staffNotes": "Regular patron, no issues", "confirmationSentAt": "2026-05-24T10:15:00Z", "reminderSentAt": null
+  },
+  {
+    "id": "RES-PND-002", "patronId": "patron-001", "patronName": "SSgt Jacob Martinez",
+    "patronRank": "SSgt", "patronPhone": "(760) 555-0182", "patronEmail": "jacob.martinez@marines.mil",
+    "programId": "cdc-1-mainside", "programName": "CDC-1 Mainside Waitlist", "facilityName": "CDC-1 Mainside",
+    "category": "childcare", "date": "2026-06-01", "time": "05:45 AM", "duration": 480, "partySize": 1,
+    "status": "waitlisted", "paymentStatus": "unpaid", "paymentAmount": 215, "paymentMethod": "Pending",
+    "notes": "Child: Sofia, DOB 03/14/2022. EFMP: No.", "createdAt": "2026-04-10T08:00:00Z", "updatedAt": "2026-04-10T08:00:00Z",
+    "staffNotes": "Waitlist position #188", "confirmationSentAt": "2026-04-10T08:05:00Z", "reminderSentAt": null
+  },
+  {
+    "id": "RES-PND-003", "patronId": "patron-002", "patronName": "Maj Sarah Chen",
+    "patronRank": "Maj", "patronPhone": "(760) 555-0341", "patronEmail": "sarah.chen@marines.mil",
+    "programId": "marine-memorial-golf", "programName": "Marine Memorial Golf Course", "facilityName": "Marine Memorial Golf Course",
+    "category": "recreation", "date": "2026-05-31", "time": "07:30 AM", "duration": 240, "partySize": 2,
+    "status": "confirmed", "paymentStatus": "paid", "paymentAmount": 50, "paymentMethod": "Credit Card",
+    "notes": "Cart rental needed for both players", "createdAt": "2026-05-22T14:00:00Z", "updatedAt": "2026-05-23T09:00:00Z",
+    "staffNotes": "", "confirmationSentAt": "2026-05-22T14:05:00Z", "reminderSentAt": "2026-05-30T08:00:00Z"
+  },
+  {
+    "id": "RES-PND-004", "patronId": "patron-003", "patronName": "GySgt Robert Okafor",
+    "patronRank": "GySgt", "patronPhone": "(760) 555-0274", "patronEmail": "robert.okafor@marines.mil",
+    "programId": "cdc-1-mainside", "programName": "CDC-1 Mainside", "facilityName": "CDC-1 Mainside",
+    "category": "childcare", "date": "2026-05-27", "time": "05:45 AM", "duration": 480, "partySize": 1,
+    "status": "pending", "paymentStatus": "unpaid", "paymentAmount": 215, "paymentMethod": "Pending",
+    "notes": "EFMP child - requires aide. Amara, DOB 07/22/2020.", "createdAt": "2026-05-25T07:45:00Z", "updatedAt": "2026-05-25T07:45:00Z",
+    "staffNotes": "", "confirmationSentAt": null, "reminderSentAt": null
+  },
+  {
+    "id": "RES-PND-005", "patronId": "patron-004", "patronName": "Cpl Darius Webb",
+    "patronRank": "Cpl", "patronPhone": "(760) 555-0193", "patronEmail": "darius.webb@marines.mil",
+    "programId": "iron-mikes", "programName": "Iron Mike's Restaurant", "facilityName": "Iron Mike's",
+    "category": "dining", "date": "2026-05-27", "time": "07:00 PM", "duration": 90, "partySize": 4,
+    "status": "pending", "paymentStatus": "unpaid", "paymentAmount": 72, "paymentMethod": "Pending",
+    "notes": "Anniversary dinner. Vegetarian option for one guest.", "createdAt": "2026-05-25T08:00:00Z", "updatedAt": "2026-05-25T08:00:00Z",
+    "staffNotes": "", "confirmationSentAt": null, "reminderSentAt": null
+  },
+  {
+    "id": "RES-PND-006", "patronId": "patron-005", "patronName": "LtCol Maria Vargas",
+    "patronRank": "LtCol", "patronPhone": "(760) 555-0417", "patronEmail": "maria.vargas@marines.mil",
+    "programId": "pacific-views-event-center", "programName": "Pacific Views Event Center", "facilityName": "Pacific Views Event Center",
+    "category": "dining", "date": "2026-06-14", "time": "05:00 PM", "duration": 300, "partySize": 85,
+    "status": "pending", "paymentStatus": "partial", "paymentAmount": 2500, "paymentMethod": "Credit Card",
+    "notes": "Promotion ceremony. Full catering package. AV equipment required.", "createdAt": "2026-05-20T10:00:00Z", "updatedAt": "2026-05-24T14:00:00Z",
+    "staffNotes": "Deposit $500 received on 5/24. Balance due 6/7.", "confirmationSentAt": "2026-05-20T10:30:00Z", "reminderSentAt": null
+  },
+  {
+    "id": "RES-PND-007", "patronId": "patron-006", "patronName": "Sgt Tanya Brooks",
+    "patronRank": "Sgt", "patronPhone": "(760) 555-0528", "patronEmail": "tanya.brooks@marines.mil",
+    "programId": "del-mar-cottages", "programName": "Del Mar Beach Cottages", "facilityName": "Del Mar Beach",
+    "category": "recreation", "date": "2026-06-20", "time": "03:00 PM", "duration": 1440, "partySize": 6,
+    "status": "confirmed", "paymentStatus": "paid", "paymentAmount": 297, "paymentMethod": "MCCS Pay",
+    "notes": "3-night stay. Bringing pet dog (approved breed).", "createdAt": "2026-05-10T11:00:00Z", "updatedAt": "2026-05-10T11:30:00Z",
+    "staffNotes": "Pet approval verified", "confirmationSentAt": "2026-05-10T11:30:00Z", "reminderSentAt": null
+  },
+  {
+    "id": "RES-PND-008", "patronId": "patron-007", "patronName": "Capt James Thornton",
+    "patronRank": "Capt", "patronPhone": "(760) 555-0639", "patronEmail": "james.thornton@marines.mil",
+    "programId": "windmill-canyon", "programName": "Windmill Canyon", "facilityName": "Windmill Canyon Restaurant",
+    "category": "dining", "date": "2026-05-30", "time": "06:30 PM", "duration": 120, "partySize": 2,
+    "status": "confirmed", "paymentStatus": "unpaid", "paymentAmount": 64, "paymentMethod": "Credit Card",
+    "notes": "Window table requested if available.", "createdAt": "2026-05-23T16:00:00Z", "updatedAt": "2026-05-23T16:30:00Z",
+    "staffNotes": "", "confirmationSentAt": "2026-05-23T16:30:00Z", "reminderSentAt": "2026-05-29T08:00:00Z"
+  },
+  {
+    "id": "RES-PND-009", "patronId": "patron-008", "patronName": "LCpl Kevin Park",
+    "patronRank": "LCpl", "patronPhone": "(760) 555-0712", "patronEmail": "kevin.park@marines.mil",
+    "programId": "leatherneck-lanes", "programName": "Leatherneck Lanes", "facilityName": "Leatherneck Lanes",
+    "category": "recreation", "date": "2026-05-28", "time": "08:00 PM", "duration": 120, "partySize": 5,
+    "status": "pending", "paymentStatus": "unpaid", "paymentAmount": 20, "paymentMethod": "Pending",
+    "notes": "Birthday party. Need bumper rails for 2 kids.", "createdAt": "2026-05-25T09:00:00Z", "updatedAt": "2026-05-25T09:00:00Z",
+    "staffNotes": "", "confirmationSentAt": null, "reminderSentAt": null
+  },
+  {
+    "id": "RES-PND-010", "patronId": "patron-009", "patronName": "MSgt Angela Foster",
+    "patronRank": "MSgt", "patronPhone": "(760) 555-0834", "patronEmail": "angela.foster@marines.mil",
+    "programId": "massage-services", "programName": "Massage Services", "facilityName": "Paige Field House",
+    "category": "fitness", "date": "2026-05-27", "time": "10:00 AM", "duration": 60, "partySize": 1,
+    "status": "pending", "paymentStatus": "unpaid", "paymentAmount": 65, "paymentMethod": "Pending",
+    "notes": "Deep tissue preferred. Shoulder injury — please note.", "createdAt": "2026-05-25T08:30:00Z", "updatedAt": "2026-05-25T08:30:00Z",
+    "staffNotes": "", "confirmationSentAt": null, "reminderSentAt": null
+  },
+  {
+    "id": "RES-PND-011", "patronId": "patron-010", "patronName": "Cpl Marcus Rivera",
+    "patronRank": "Cpl", "patronPhone": "(760) 555-0915", "patronEmail": "marcus.rivera@marines.mil",
+    "programId": "stepp-stables", "programName": "Stepp Stables Trail Rides", "facilityName": "Stepp Stables",
+    "category": "recreation", "date": "2026-05-31", "time": "09:00 AM", "duration": 90, "partySize": 3,
+    "status": "pending", "paymentStatus": "unpaid", "paymentAmount": 75, "paymentMethod": "Pending",
+    "notes": "Two beginners in party. Need introductory briefing.", "createdAt": "2026-05-25T10:00:00Z", "updatedAt": "2026-05-25T10:00:00Z",
+    "staffNotes": "", "confirmationSentAt": null, "reminderSentAt": null
+  },
+  {
+    "id": "RES-PND-012", "patronId": "patron-002", "patronName": "Maj Sarah Chen",
+    "patronRank": "Maj", "patronPhone": "(760) 555-0341", "patronEmail": "sarah.chen@marines.mil",
+    "programId": "iron-mikes", "programName": "Iron Mike's Restaurant", "facilityName": "Iron Mike's",
+    "category": "dining", "date": "2026-06-02", "time": "12:00 PM", "duration": 60, "partySize": 1,
+    "status": "pending", "paymentStatus": "unpaid", "paymentAmount": 18, "paymentMethod": "Pending",
+    "notes": "Lunch solo. Quick turnaround needed — back-to-back meetings.", "createdAt": "2026-05-25T11:00:00Z", "updatedAt": "2026-05-25T11:00:00Z",
+    "staffNotes": "", "confirmationSentAt": null, "reminderSentAt": null
+  },
+  {
+    "id": "RES-PND-013", "patronId": "patron-011", "patronName": "1stSgt David Kim",
+    "patronRank": "1stSgt", "patronPhone": "(760) 555-1027", "patronEmail": "david.kim@marines.mil",
+    "programId": "paige-field-house", "programName": "Paige Field House", "facilityName": "Paige Field House",
+    "category": "fitness", "date": "2026-05-26", "time": "05:00 AM", "duration": 90, "partySize": 1,
+    "status": "pending", "paymentStatus": "waived", "paymentAmount": 0, "paymentMethod": "MCCS Pay",
+    "notes": "Command PT session — 12 additional Marines expected.", "createdAt": "2026-05-25T12:00:00Z", "updatedAt": "2026-05-25T12:00:00Z",
+    "staffNotes": "", "confirmationSentAt": null, "reminderSentAt": null
+  },
+  {
+    "id": "RES-PND-014", "patronId": "patron-012", "patronName": "PFC Brittany Osei",
+    "patronRank": "PFC", "patronPhone": "(760) 555-1138", "patronEmail": "brittany.osei@marines.mil",
+    "programId": "school-age-care", "programName": "School Age Care", "facilityName": "School Age Care Center",
+    "category": "childcare", "date": "2026-05-27", "time": "06:00 AM", "duration": 480, "partySize": 1,
+    "status": "pending", "paymentStatus": "unpaid", "paymentAmount": 120, "paymentMethod": "Pending",
+    "notes": "First day — child has nut allergy. EpiPen on file.", "createdAt": "2026-05-25T13:00:00Z", "updatedAt": "2026-05-25T13:00:00Z",
+    "staffNotes": "", "confirmationSentAt": null, "reminderSentAt": null
+  },
+  {
+    "id": "RES-PND-015", "patronId": "patron-013", "patronName": "Col Patricia Walsh",
+    "patronRank": "Col", "patronPhone": "(760) 555-1249", "patronEmail": "patricia.walsh@marines.mil",
+    "programId": "windmill-canyon", "programName": "Windmill Canyon", "facilityName": "Windmill Canyon Restaurant",
+    "category": "dining", "date": "2026-06-01", "time": "07:00 PM", "duration": 150, "partySize": 8,
+    "status": "pending", "paymentStatus": "unpaid", "paymentAmount": 256, "paymentMethod": "Pending",
+    "notes": "Retirement dinner. Private room requested.", "createdAt": "2026-05-25T14:00:00Z", "updatedAt": "2026-05-25T14:00:00Z",
+    "staffNotes": "", "confirmationSentAt": null, "reminderSentAt": null
+  },
+  {
+    "id": "RES-PND-016", "patronId": "patron-014", "patronName": "Sgt Elijah Turner",
+    "patronRank": "Sgt", "patronPhone": "(760) 555-1351", "patronEmail": "elijah.turner@marines.mil",
+    "programId": "lake-oneill-daypass", "programName": "Lake O'Neill Day Pass", "facilityName": "Lake O'Neill",
+    "category": "recreation", "date": "2026-05-30", "time": "06:00 AM", "duration": 720, "partySize": 4,
+    "status": "confirmed", "paymentStatus": "paid", "paymentAmount": 20, "paymentMethod": "MCCS Pay",
+    "notes": "Fishing trip. Need boat rental.", "createdAt": "2026-05-21T08:00:00Z", "updatedAt": "2026-05-21T08:30:00Z",
+    "staffNotes": "Boat #3 reserved", "confirmationSentAt": "2026-05-21T08:30:00Z", "reminderSentAt": null
+  },
+  {
+    "id": "RES-PND-017", "patronId": "patron-015", "patronName": "Cpl Jasmine Nguyen",
+    "patronRank": "Cpl", "patronPhone": "(760) 555-1462", "patronEmail": "jasmine.nguyen@marines.mil",
+    "programId": "pub-1795", "programName": "Pub 1795", "facilityName": "Pub 1795",
+    "category": "dining", "date": "2026-05-30", "time": "08:00 PM", "duration": 120, "partySize": 6,
+    "status": "confirmed", "paymentStatus": "unpaid", "paymentAmount": 84, "paymentMethod": "Cash",
+    "notes": "Farewell party. Reserve the back section if possible.", "createdAt": "2026-05-22T17:00:00Z", "updatedAt": "2026-05-22T17:30:00Z",
+    "staffNotes": "Back section reserved", "confirmationSentAt": "2026-05-22T17:30:00Z", "reminderSentAt": null
+  },
+  {
+    "id": "RES-PND-018", "patronId": "patron-004", "patronName": "Cpl Darius Webb",
+    "patronRank": "Cpl", "patronPhone": "(760) 555-0193", "patronEmail": "darius.webb@marines.mil",
+    "programId": "warr-program", "programName": "WARR Program", "facilityName": "Paige Field House",
+    "category": "fitness", "date": "2026-06-03", "time": "08:00 AM", "duration": 90, "partySize": 1,
+    "status": "waitlisted", "paymentStatus": "waived", "paymentAmount": 0, "paymentMethod": "MCCS Pay",
+    "notes": "Returning from deployment. WARR intake evaluation.", "createdAt": "2026-05-18T10:00:00Z", "updatedAt": "2026-05-18T10:00:00Z",
+    "staffNotes": "Waitlist position #6", "confirmationSentAt": "2026-05-18T10:05:00Z", "reminderSentAt": null
+  },
+  {
+    "id": "RES-PND-019", "patronId": "patron-006", "patronName": "Sgt Tanya Brooks",
+    "patronRank": "Sgt", "patronPhone": "(760) 555-0528", "patronEmail": "tanya.brooks@marines.mil",
+    "programId": "group-exercise", "programName": "HIIT Circuit Class", "facilityName": "Paige Field House",
+    "category": "fitness", "date": "2026-05-28", "time": "05:30 PM", "duration": 60, "partySize": 1,
+    "status": "confirmed", "paymentStatus": "waived", "paymentAmount": 0, "paymentMethod": "MCCS Pay",
+    "notes": "", "createdAt": "2026-05-23T11:00:00Z", "updatedAt": "2026-05-23T11:15:00Z",
+    "staffNotes": "", "confirmationSentAt": "2026-05-23T11:15:00Z", "reminderSentAt": null
+  },
+  {
+    "id": "RES-PND-020", "patronId": "patron-007", "patronName": "Capt James Thornton",
+    "patronRank": "Capt", "patronPhone": "(760) 555-0639", "patronEmail": "james.thornton@marines.mil",
+    "programId": "marine-memorial-golf", "programName": "Marine Memorial Golf Course", "facilityName": "Marine Memorial Golf Course",
+    "category": "recreation", "date": "2026-06-06", "time": "07:00 AM", "duration": 240, "partySize": 4,
+    "status": "rescheduled", "paymentStatus": "paid", "paymentAmount": 100, "paymentMethod": "Credit Card",
+    "notes": "Rescheduled from 5/30 due to weather.", "createdAt": "2026-05-15T09:00:00Z", "updatedAt": "2026-05-25T08:00:00Z",
+    "staffNotes": "Moved from May 30 — patron request (weather)", "confirmationSentAt": "2026-05-25T08:05:00Z", "reminderSentAt": null
+  },
+  {
+    "id": "RES-PND-021", "patronId": "patron-008", "patronName": "LCpl Kevin Park",
+    "patronRank": "LCpl", "patronPhone": "(760) 555-0712", "patronEmail": "kevin.park@marines.mil",
+    "programId": "iron-mikes", "programName": "Iron Mike's Restaurant", "facilityName": "Iron Mike's",
+    "category": "dining", "date": "2026-05-26", "time": "06:00 PM", "duration": 90, "partySize": 2,
+    "status": "waitlisted", "paymentStatus": "unpaid", "paymentAmount": 36, "paymentMethod": "Pending",
+    "notes": "Memorial Day weekend dinner.", "createdAt": "2026-05-24T15:00:00Z", "updatedAt": "2026-05-24T15:00:00Z",
+    "staffNotes": "Waitlist position #3", "confirmationSentAt": null, "reminderSentAt": null
+  },
+  {
+    "id": "RES-PND-022", "patronId": "patron-009", "patronName": "MSgt Angela Foster",
+    "patronRank": "MSgt", "patronPhone": "(760) 555-0834", "patronEmail": "angela.foster@marines.mil",
+    "programId": "del-mar-cottages", "programName": "Del Mar Beach Cottages", "facilityName": "Del Mar Beach",
+    "category": "recreation", "date": "2026-07-04", "time": "03:00 PM", "duration": 2880, "partySize": 5,
+    "status": "waitlisted", "paymentStatus": "unpaid", "paymentAmount": 198, "paymentMethod": "Pending",
+    "notes": "July 4th weekend — high priority request.", "createdAt": "2026-05-01T09:00:00Z", "updatedAt": "2026-05-01T09:00:00Z",
+    "staffNotes": "Waitlist #2 for July 4 weekend", "confirmationSentAt": "2026-05-01T09:05:00Z", "reminderSentAt": null
+  },
+  {
+    "id": "RES-PND-023", "patronId": "patron-010", "patronName": "Cpl Marcus Rivera",
+    "patronRank": "Cpl", "patronPhone": "(760) 555-0915", "patronEmail": "marcus.rivera@marines.mil",
+    "programId": "youth-teen-program", "programName": "Youth & Teen Program", "facilityName": "Youth & Teen Centers",
+    "category": "childcare", "date": "2026-05-27", "time": "02:00 PM", "duration": 240, "partySize": 2,
+    "status": "confirmed", "paymentStatus": "waived", "paymentAmount": 0, "paymentMethod": "MCCS Pay",
+    "notes": "Two teens, ages 14 and 16. After-school program.", "createdAt": "2026-05-20T14:00:00Z", "updatedAt": "2026-05-20T14:30:00Z",
+    "staffNotes": "", "confirmationSentAt": "2026-05-20T14:30:00Z", "reminderSentAt": null
+  },
+  {
+    "id": "RES-PND-024", "patronId": "patron-011", "patronName": "1stSgt David Kim",
+    "patronRank": "1stSgt", "patronPhone": "(760) 555-1027", "patronEmail": "david.kim@marines.mil",
+    "programId": "pub-1795", "programName": "Pub 1795", "facilityName": "Pub 1795",
+    "category": "dining", "date": "2026-06-05", "time": "07:00 PM", "duration": 180, "partySize": 20,
+    "status": "rescheduled", "paymentStatus": "partial", "paymentAmount": 280, "paymentMethod": "Credit Card",
+    "notes": "Unit party. Open bar tab with $200 cap.", "createdAt": "2026-05-12T10:00:00Z", "updatedAt": "2026-05-24T09:00:00Z",
+    "staffNotes": "Rescheduled from 5/28 per patron. Partial deposit on file.", "confirmationSentAt": "2026-05-24T09:05:00Z", "reminderSentAt": null
+  },
+  {
+    "id": "RES-PND-025", "patronId": "patron-012", "patronName": "PFC Brittany Osei",
+    "patronRank": "PFC", "patronPhone": "(760) 555-1138", "patronEmail": "brittany.osei@marines.mil",
+    "programId": "cdc-3-san-onofre", "programName": "CDC-3 San Onofre", "facilityName": "CDC-3 San Onofre",
+    "category": "childcare", "date": "2026-06-02", "time": "05:45 AM", "duration": 480, "partySize": 1,
+    "status": "pending", "paymentStatus": "unpaid", "paymentAmount": 190, "paymentMethod": "Pending",
+    "notes": "Infant, 6 weeks old. Formula feeding. First time at CDC.", "createdAt": "2026-05-25T14:30:00Z", "updatedAt": "2026-05-25T14:30:00Z",
+    "staffNotes": "", "confirmationSentAt": null, "reminderSentAt": null
+  },
+  {
+    "id": "RES-PND-026", "patronId": "patron-003", "patronName": "GySgt Robert Okafor",
+    "patronRank": "GySgt", "patronPhone": "(760) 555-0274", "patronEmail": "robert.okafor@marines.mil",
+    "programId": "group-exercise", "programName": "Yoga Flow Class", "facilityName": "Paige Field House",
+    "category": "fitness", "date": "2026-05-20", "time": "12:00 PM", "duration": 60, "partySize": 1,
+    "status": "completed", "paymentStatus": "waived", "paymentAmount": 0, "paymentMethod": "MCCS Pay",
+    "notes": "", "createdAt": "2026-05-18T09:00:00Z", "updatedAt": "2026-05-20T13:05:00Z",
+    "staffNotes": "Attended, checked out at 1:02pm", "confirmationSentAt": "2026-05-18T09:05:00Z", "reminderSentAt": "2026-05-19T08:00:00Z"
+  },
+  {
+    "id": "RES-PND-027", "patronId": "patron-013", "patronName": "Col Patricia Walsh",
+    "patronRank": "Col", "patronPhone": "(760) 555-1249", "patronEmail": "patricia.walsh@marines.mil",
+    "programId": "marine-memorial-golf", "programName": "Marine Memorial Golf Course", "facilityName": "Marine Memorial Golf Course",
+    "category": "recreation", "date": "2026-05-18", "time": "08:00 AM", "duration": 240, "partySize": 3,
+    "status": "completed", "paymentStatus": "paid", "paymentAmount": 75, "paymentMethod": "Credit Card",
+    "notes": "", "createdAt": "2026-05-15T10:00:00Z", "updatedAt": "2026-05-18T12:10:00Z",
+    "staffNotes": "", "confirmationSentAt": "2026-05-15T10:05:00Z", "reminderSentAt": "2026-05-17T08:00:00Z"
+  },
+  {
+    "id": "RES-PND-028", "patronId": "patron-014", "patronName": "Sgt Elijah Turner",
+    "patronRank": "Sgt", "patronPhone": "(760) 555-1351", "patronEmail": "elijah.turner@marines.mil",
+    "programId": "leatherneck-lanes", "programName": "Leatherneck Lanes", "facilityName": "Leatherneck Lanes",
+    "category": "recreation", "date": "2026-05-16", "time": "08:00 PM", "duration": 120, "partySize": 4,
+    "status": "completed", "paymentStatus": "paid", "paymentAmount": 16, "paymentMethod": "Cash",
+    "notes": "", "createdAt": "2026-05-14T12:00:00Z", "updatedAt": "2026-05-16T22:15:00Z",
+    "staffNotes": "Paid cash at desk", "confirmationSentAt": "2026-05-14T12:05:00Z", "reminderSentAt": null
+  },
+  {
+    "id": "RES-PND-029", "patronId": "patron-015", "patronName": "Cpl Jasmine Nguyen",
+    "patronRank": "Cpl", "patronPhone": "(760) 555-1462", "patronEmail": "jasmine.nguyen@marines.mil",
+    "programId": "iron-mikes", "programName": "Iron Mike's Restaurant", "facilityName": "Iron Mike's",
+    "category": "dining", "date": "2026-05-14", "time": "06:00 PM", "duration": 90, "partySize": 2,
+    "status": "no-show", "paymentStatus": "unpaid", "paymentAmount": 36, "paymentMethod": "Pending",
+    "notes": "", "createdAt": "2026-05-12T08:00:00Z", "updatedAt": "2026-05-14T18:45:00Z",
+    "staffNotes": "No-show. Table held 30 min. No call/no contact.", "confirmationSentAt": "2026-05-12T08:05:00Z", "reminderSentAt": "2026-05-13T08:00:00Z"
+  },
+  {
+    "id": "RES-PND-030", "patronId": "patron-005", "patronName": "LtCol Maria Vargas",
+    "patronRank": "LtCol", "patronPhone": "(760) 555-0417", "patronEmail": "maria.vargas@marines.mil",
+    "programId": "massage-services", "programName": "Massage Services", "facilityName": "Paige Field House",
+    "category": "fitness", "date": "2026-05-13", "time": "11:00 AM", "duration": 60, "partySize": 1,
+    "status": "cancelled", "paymentStatus": "waived", "paymentAmount": 65, "paymentMethod": "Credit Card",
+    "notes": "Cancelled 48 hours prior — TDY orders", "createdAt": "2026-05-10T09:00:00Z", "updatedAt": "2026-05-11T14:00:00Z",
+    "staffNotes": "Patron gave 48hr notice. No charge per policy.", "confirmationSentAt": "2026-05-10T09:05:00Z", "reminderSentAt": null
+  },
+  {
+    "id": "RES-PND-031", "patronId": "patron-001", "patronName": "SSgt Jacob Martinez",
+    "patronRank": "SSgt", "patronPhone": "(760) 555-0182", "patronEmail": "jacob.martinez@marines.mil",
+    "programId": "paige-field-house", "programName": "Paige Field House", "facilityName": "Paige Field House",
+    "category": "fitness", "date": "2026-06-04", "time": "06:00 AM", "duration": 90, "partySize": 1,
+    "status": "pending", "paymentStatus": "waived", "paymentAmount": 0, "paymentMethod": "MCCS Pay",
+    "notes": "Personal training session follow-up", "createdAt": "2026-05-25T15:00:00Z", "updatedAt": "2026-05-25T15:00:00Z",
+    "staffNotes": "", "confirmationSentAt": null, "reminderSentAt": null
+  },
+  {
+    "id": "RES-PND-032", "patronId": "patron-009", "patronName": "MSgt Angela Foster",
+    "patronRank": "MSgt", "patronPhone": "(760) 555-0834", "patronEmail": "angela.foster@marines.mil",
+    "programId": "windmill-canyon", "programName": "Windmill Canyon", "facilityName": "Windmill Canyon Restaurant",
+    "category": "dining", "date": "2026-06-07", "time": "11:00 AM", "duration": 120, "partySize": 10,
+    "status": "pending", "paymentStatus": "unpaid", "paymentAmount": 320, "paymentMethod": "Pending",
+    "notes": "Mother's Day brunch. Need high chairs for 2 toddlers.", "createdAt": "2026-05-25T15:30:00Z", "updatedAt": "2026-05-25T15:30:00Z",
+    "staffNotes": "", "confirmationSentAt": null, "reminderSentAt": null
+  },
+  {
+    "id": "RES-PND-033", "patronId": "patron-011", "patronName": "1stSgt David Kim",
+    "patronRank": "1stSgt", "patronPhone": "(760) 555-1027", "patronEmail": "david.kim@marines.mil",
+    "programId": "warr-program", "programName": "WARR Program", "facilityName": "Paige Field House",
+    "category": "fitness", "date": "2026-06-10", "time": "07:00 AM", "duration": 90, "partySize": 1,
+    "status": "confirmed", "paymentStatus": "waived", "paymentAmount": 0, "paymentMethod": "MCCS Pay",
+    "notes": "3rd session in 8-week program.", "createdAt": "2026-05-20T10:00:00Z", "updatedAt": "2026-05-20T10:30:00Z",
+    "staffNotes": "On track with program goals", "confirmationSentAt": "2026-05-20T10:30:00Z", "reminderSentAt": null
+  },
+  {
+    "id": "RES-PND-034", "patronId": "patron-012", "patronName": "PFC Brittany Osei",
+    "patronRank": "PFC", "patronPhone": "(760) 555-1138", "patronEmail": "brittany.osei@marines.mil",
+    "programId": "itt-travel", "programName": "ITT Disneyland Tickets", "facilityName": "ITT Office",
+    "category": "recreation", "date": "2026-06-15", "time": "09:00 AM", "duration": 30, "partySize": 4,
+    "status": "pending", "paymentStatus": "unpaid", "paymentAmount": 284, "paymentMethod": "Pending",
+    "notes": "4 tickets (2 adult, 2 child). Military discount applied.", "createdAt": "2026-05-25T16:00:00Z", "updatedAt": "2026-05-25T16:00:00Z",
+    "staffNotes": "", "confirmationSentAt": null, "reminderSentAt": null
+  },
+  {
+    "id": "RES-PND-035", "patronId": "patron-013", "patronName": "Col Patricia Walsh",
+    "patronRank": "Col", "patronPhone": "(760) 555-1249", "patronEmail": "patricia.walsh@marines.mil",
+    "programId": "pacific-views-event-center", "programName": "Pacific Views Event Center", "facilityName": "Pacific Views Event Center",
+    "category": "dining", "date": "2026-06-28", "time": "06:00 PM", "duration": 360, "partySize": 150,
+    "status": "rescheduled", "paymentStatus": "partial", "paymentAmount": 5000, "paymentMethod": "Credit Card",
+    "notes": "Marine Corps Ball planning committee. Rescheduled from June 21.", "createdAt": "2026-04-20T09:00:00Z", "updatedAt": "2026-05-18T11:00:00Z",
+    "staffNotes": "Rescheduled per COC guidance. $1500 deposit on file.", "confirmationSentAt": "2026-05-18T11:05:00Z", "reminderSentAt": null
+  },
+  {
+    "id": "RES-PND-036", "patronId": "patron-014", "patronName": "Sgt Elijah Turner",
+    "patronRank": "Sgt", "patronPhone": "(760) 555-1351", "patronEmail": "elijah.turner@marines.mil",
+    "programId": "group-exercise", "programName": "Boot Camp Class", "facilityName": "Paige Field House",
+    "category": "fitness", "date": "2026-05-19", "time": "06:00 AM", "duration": 60, "partySize": 1,
+    "status": "no-show", "paymentStatus": "waived", "paymentAmount": 0, "paymentMethod": "MCCS Pay",
+    "notes": "", "createdAt": "2026-05-17T10:00:00Z", "updatedAt": "2026-05-19T07:00:00Z",
+    "staffNotes": "Did not check in. Class started without patron.", "confirmationSentAt": "2026-05-17T10:05:00Z", "reminderSentAt": "2026-05-18T08:00:00Z"
+  },
+  {
+    "id": "RES-PND-037", "patronId": "patron-015", "patronName": "Cpl Jasmine Nguyen",
+    "patronRank": "Cpl", "patronPhone": "(760) 555-1462", "patronEmail": "jasmine.nguyen@marines.mil",
+    "programId": "cdc-2-las-pulgas", "programName": "CDC-2 Las Pulgas", "facilityName": "CDC-2 Las Pulgas",
+    "category": "childcare", "date": "2026-06-09", "time": "05:45 AM", "duration": 480, "partySize": 1,
+    "status": "waitlisted", "paymentStatus": "unpaid", "paymentAmount": 200, "paymentMethod": "Pending",
+    "notes": "Toddler, 18 months. Language: English/Vietnamese.", "createdAt": "2026-05-24T11:00:00Z", "updatedAt": "2026-05-24T11:00:00Z",
+    "staffNotes": "Waitlist position #12", "confirmationSentAt": "2026-05-24T11:05:00Z", "reminderSentAt": null
+  },
+  {
+    "id": "RES-PND-038", "patronId": "patron-005", "patronName": "LtCol Maria Vargas",
+    "patronRank": "LtCol", "patronPhone": "(760) 555-0417", "patronEmail": "maria.vargas@marines.mil",
+    "programId": "del-mar-cottages", "programName": "Del Mar Beach Cottages", "facilityName": "Del Mar Beach",
+    "category": "recreation", "date": "2026-07-11", "time": "03:00 PM", "duration": 2880, "partySize": 4,
+    "status": "cancelled", "paymentStatus": "refunded", "paymentAmount": 0, "paymentMethod": "Credit Card",
+    "notes": "Cancelled — deployment orders received.", "createdAt": "2026-04-15T09:00:00Z", "updatedAt": "2026-05-10T14:00:00Z",
+    "staffNotes": "Full refund processed 5/10. Slot reopened.", "confirmationSentAt": "2026-04-15T09:05:00Z", "reminderSentAt": null
+  },
+  {
+    "id": "RES-PND-039", "patronId": "patron-003", "patronName": "GySgt Robert Okafor",
+    "patronRank": "GySgt", "patronPhone": "(760) 555-0274", "patronEmail": "robert.okafor@marines.mil",
+    "programId": "iron-mikes", "programName": "Iron Mike's Restaurant", "facilityName": "Iron Mike's",
+    "category": "dining", "date": "2026-06-01", "time": "01:00 PM", "duration": 60, "partySize": 3,
+    "status": "pending", "paymentStatus": "unpaid", "paymentAmount": 54, "paymentMethod": "Pending",
+    "notes": "Kids' meals for 2 children.", "createdAt": "2026-05-25T16:30:00Z", "updatedAt": "2026-05-25T16:30:00Z",
+    "staffNotes": "", "confirmationSentAt": null, "reminderSentAt": null
+  },
+  {
+    "id": "RES-PND-040", "patronId": "patron-002", "patronName": "Maj Sarah Chen",
+    "patronRank": "Maj", "patronPhone": "(760) 555-0341", "patronEmail": "sarah.chen@marines.mil",
+    "programId": "marine-memorial-golf", "programName": "Marine Memorial Golf Lesson", "facilityName": "Marine Memorial Golf Course",
+    "category": "recreation", "date": "2026-06-08", "time": "08:00 AM", "duration": 60, "partySize": 1,
+    "status": "confirmed", "paymentStatus": "paid", "paymentAmount": 45, "paymentMethod": "Credit Card",
+    "notes": "PGA instruction session. Intermediate level.", "createdAt": "2026-05-22T12:00:00Z", "updatedAt": "2026-05-22T12:30:00Z",
+    "staffNotes": "Assigned to PGA Pro Rodriguez", "confirmationSentAt": "2026-05-22T12:30:00Z", "reminderSentAt": null
+  }
+]

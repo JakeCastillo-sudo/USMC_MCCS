@@ -1,5 +1,5 @@
 import Link from "next/link"
-import { Home, LayoutDashboard } from "lucide-react"
+import { Home, LayoutDashboard, ClipboardList } from "lucide-react"
 import StormBreakerBadge from "@/components/shared/StormBreakerBadge"
 
 export default function LandingPage() {
@@ -17,7 +17,7 @@ export default function LandingPage() {
       </div>
 
       {/* Role cards */}
-      <div className="w-full max-w-2xl grid grid-cols-1 gap-4 sm:grid-cols-2">
+      <div className="w-full max-w-4xl grid grid-cols-1 gap-4 sm:grid-cols-3">
         {/* Resident card */}
         <Link
           href="/resident"
@@ -35,7 +35,7 @@ export default function LandingPage() {
             Find and book MCCS programs, dining, childcare, and recreation at Camp Pendleton
           </p>
           <span className="inline-block rounded-xl bg-white px-5 py-2.5 text-sm font-bold text-zinc-900 group-hover:bg-zinc-100 transition-colors">
-            Enter Resident Portal →
+            Enter Patron Portal →
           </span>
         </Link>
 
@@ -63,6 +63,33 @@ export default function LandingPage() {
             style={{ backgroundColor: "#C8102E" }}
           >
             Enter Command Dashboard →
+          </span>
+        </Link>
+
+        {/* Staff card */}
+        <Link
+          href="/dashboard/staff/reservations"
+          className="group relative flex flex-col items-center text-center rounded-2xl border border-white/10 bg-white/5 p-8 backdrop-blur-sm
+            hover:bg-white/10 hover:scale-[1.02] active:scale-[0.98]
+            transition-all duration-200 hover:shadow-[0_0_40px_rgba(16,185,129,0.25)]"
+        >
+          <div
+            className="flex h-16 w-16 items-center justify-center rounded-2xl mb-5 group-hover:opacity-90 transition-opacity"
+            style={{ backgroundColor: "#059669" }}
+          >
+            <ClipboardList className="h-8 w-8 text-white" strokeWidth={1.75} />
+          </div>
+          <h2 className="text-lg font-bold text-white mb-2">
+            I&apos;m MCCS Staff
+          </h2>
+          <p className="text-sm text-blue-200/80 leading-relaxed mb-6">
+            Manage reservations, process payments, and look up patron profiles
+          </p>
+          <span
+            className="inline-block rounded-xl px-5 py-2.5 text-sm font-bold text-white transition-opacity group-hover:opacity-90"
+            style={{ backgroundColor: "#059669" }}
+          >
+            Enter Staff Portal →
           </span>
         </Link>
       </div>

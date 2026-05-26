@@ -1,15 +1,16 @@
 "use client"
 
 import { useEffect, useState } from "react"
-import { Baby, AlertTriangle, Calculator, Clock } from "lucide-react"
+import { Baby, AlertTriangle, Calculator, Clock, Heart, Phone, MapPin, BookOpen } from "lucide-react"
 import ProgramCard from "@/components/resident/ProgramCard"
 import BookingModal from "@/components/resident/BookingModal"
+import ChildcareWaitlistForm from "@/components/resident/ChildcareWaitlistForm"
 import { Skeleton } from "@/components/ui/skeleton"
 import type { Program } from "@/types"
 
-// DoD fee tiers — based on total family income (TFI)
+// ── DoD Fee Tiers ─────────────────────────────────────────────────────────────
 const FEE_TIERS = [
-  { tier: 1, income: "< $25,800",      weekly: 72,  monthly: 288  },
+  { tier: 1, income: "< $25,800",       weekly: 72,  monthly: 288  },
   { tier: 2, income: "$25,800–$36,700", weekly: 107, monthly: 428  },
   { tier: 3, income: "$36,701–$47,600", weekly: 144, monthly: 576  },
   { tier: 4, income: "$47,601–$60,600", weekly: 175, monthly: 700  },
@@ -17,7 +18,7 @@ const FEE_TIERS = [
   { tier: 6, income: "> $76,800",       weekly: 243, monthly: 972  },
 ]
 
-// Waitlist position history for chart (weeks 1–8)
+// ── Waitlist trend ────────────────────────────────────────────────────────────
 const WAITLIST_HISTORY = [
   { week: "Mar W1", cdc1: 203, cdc2: 51 },
   { week: "Mar W3", cdc1: 199, cdc2: 49 },
@@ -28,36 +29,42 @@ const WAITLIST_HISTORY = [
   { week: "May W3", cdc1: 187, cdc2: 43 },
 ]
 
+// ── CDC Centers ───────────────────────────────────────────────────────────────
 const CDC_CENTERS = [
+  { id: "cdc-1", name: "CDC-1 Mainside",    area: "Mainside",    capacityPct: 100, waitlist: 187, status: "waitlist" as const, rate: "$180–$250/week based on income" },
+  { id: "cdc-2", name: "CDC-2 Las Pulgas",  area: "Las Pulgas",  capacityPct: 100, waitlist: 43,  status: "waitlist" as const, rate: "$180–$250/week based on income" },
+  { id: "cdc-3", name: "CDC-3 San Onofre",  area: "San Onofre",  capacityPct: 82,  waitlist: null,status: "limited"  as const, rate: "$180–$250/week based on income" },
+]
+
+// ── EFMP Resources ────────────────────────────────────────────────────────────
+const EFMP_RESOURCES = [
   {
-    id: "cdc-1-mainside",
-    name: "CDC-1 Mainside",
-    area: "Mainside",
-    capacityPct: 100,
-    waitlist: 187,
-    status: "waitlist" as const,
-    rate: "$180–$250/week based on income",
+    icon: Heart,
+    title: "EFMP Enrollment & Coordination",
+    description: "Families with special needs dependents receive priority consideration for CDC placement. Contact the EFMP coordinator before applying.",
+    contact: "EFMP: (760) 725-5819 · BLDG 13150 Mainside · Mon–Fri 8:00 AM–4:30 PM",
   },
   {
-    id: "cdc-2-las-pulgas",
-    name: "CDC-2 Las Pulgas",
-    area: "Las Pulgas",
-    capacityPct: 100,
-    waitlist: 43,
-    status: "waitlist" as const,
-    rate: "$180–$250/week based on income",
+    icon: BookOpen,
+    title: "Exceptional Family Member Services",
+    description: "EFMS provides support planning, respite care referrals, and IEP advocacy for families with enrolled dependents.",
+    contact: "EFMS: (760) 725-5816 · Building 13150",
   },
   {
-    id: "cdc-3-san-onofre",
-    name: "CDC-3 San Onofre",
-    area: "San Onofre",
-    capacityPct: 82,
-    waitlist: null,
-    status: "limited" as const,
-    rate: "$180–$250/week based on income",
+    icon: Phone,
+    title: "Military OneSource — Special Needs",
+    description: "24/7 confidential counseling and special needs program navigation. Connect with a special needs consultant at no cost.",
+    contact: "1-800-342-9647 · militaryonesource.mil",
+  },
+  {
+    icon: MapPin,
+    title: "MCFTB Family Counseling",
+    description: "Marine Corps Family Team Building provides workshops, support groups, and one-on-one counseling for families navigating EFMP.",
+    contact: "MCFTB: (760) 725-9716 · Building 13150",
   },
 ]
 
+// ── Capacity Bar ──────────────────────────────────────────────────────────────
 function CapacityBar({ pct, status }: { pct: number; status: "waitlist" | "limited" | "open" }) {
   const color =
     status === "waitlist" ? "bg-red-500" : status === "limited" ? "bg-amber-500" : "bg-emerald-500"
@@ -76,11 +83,13 @@ function CapacityBar({ pct, status }: { pct: number; status: "waitlist" | "limit
   )
 }
 
+// ── Page ──────────────────────────────────────────────────────────────────────
 export default function ChildcarePage() {
-  const [programs, setPrograms] = useState<Program[]>([])
-  const [loading, setLoading] = useState(true)
+  const [programs, setPrograms]           = useState<Program[]>([])
+  const [loading, setLoading]             = useState(true)
   const [bookingProgram, setBookingProgram] = useState<Program | null>(null)
-  const [selectedTier, setSelectedTier] = useState<number | null>(null)
+  const [selectedTier, setSelectedTier]   = useState<number | null>(null)
+  const [waitlistCdc, setWaitlistCdc]     = useState<string | null>(null)
 
   useEffect(() => {
     fetch("/api/programs?category=childcare")
@@ -89,9 +98,8 @@ export default function ChildcarePage() {
       .finally(() => setLoading(false))
   }, [])
 
-  // Exclude CDC entries from "other programs" (they're shown separately above)
   const otherPrograms = programs.filter(
-    (p) => !p.id.startsWith("cdc-") && !p.id.startsWith("child-development")
+    (p) => !CDC_CENTERS.find(c => p.id.startsWith(c.id))
   )
 
   return (
@@ -108,7 +116,7 @@ export default function ChildcarePage() {
         <p className="text-sm text-blue-200">CDC, School Age Care & Youth Programs · Camp Pendleton</p>
       </div>
 
-      {/* Critical notice banner */}
+      {/* Critical notice */}
       <div className="mx-4 mt-4 rounded-2xl border border-amber-300 bg-amber-50 p-4">
         <div className="flex items-start gap-3">
           <AlertTriangle className="h-5 w-5 shrink-0 text-amber-600 mt-0.5" />
@@ -117,11 +125,7 @@ export default function ChildcarePage() {
             <p className="text-xs text-amber-700 mt-0.5 leading-relaxed">
               Childcare demand exceeds current capacity. Register early and join a waitlist to be notified of openings.
             </p>
-            <a
-              href="#cdc-section"
-              className="mt-1.5 inline-block text-xs font-semibold underline"
-              style={{ color: "#C8102E" }}
-            >
+            <a href="#cdc-section" className="mt-1.5 inline-block text-xs font-semibold underline" style={{ color: "#C8102E" }}>
               Check Availability →
             </a>
           </div>
@@ -129,6 +133,7 @@ export default function ChildcarePage() {
       </div>
 
       <div className="px-4 py-4 space-y-6">
+
         {/* CDC Section */}
         <section id="cdc-section">
           <h2 className="text-base font-bold text-zinc-900 mb-3">Child Development Centers</h2>
@@ -151,20 +156,17 @@ export default function ChildcarePage() {
                     </span>
                   )}
                 </div>
-
                 <p className="text-xs text-zinc-500 mt-2">
                   <span className="font-medium text-zinc-700">Rate:</span> {cdc.rate}
                 </p>
-
                 <CapacityBar pct={cdc.capacityPct} status={cdc.status} />
-
                 {cdc.waitlist && (
                   <p className="mt-1.5 text-xs font-medium text-red-600">
                     {cdc.waitlist} families currently on waitlist
                   </p>
                 )}
-
                 <button
+                  onClick={() => setWaitlistCdc(cdc.id)}
                   className="mt-4 w-full rounded-xl py-2.5 text-sm font-semibold text-white transition-opacity hover:opacity-90"
                   style={{ backgroundColor: cdc.status === "waitlist" ? "#C8102E" : "#003087" }}
                 >
@@ -172,6 +174,30 @@ export default function ChildcarePage() {
                 </button>
               </div>
             ))}
+          </div>
+        </section>
+
+        {/* EFMP Info Card */}
+        <section>
+          <div className="rounded-2xl border border-blue-200 bg-blue-50 p-4">
+            <div className="flex items-start gap-3">
+              <Heart className="h-5 w-5 shrink-0 text-blue-600 mt-0.5" />
+              <div>
+                <p className="font-semibold text-blue-900 text-sm">
+                  Exceptional Family Member Program (EFMP)
+                </p>
+                <p className="text-xs text-blue-700 mt-1 leading-relaxed">
+                  Families with special needs dependents enrolled in EFMP receive priority consideration
+                  for childcare placement. EFMP enrollment is required before applying for CDC care if
+                  your child has special medical or educational needs.
+                </p>
+                <div className="mt-2 space-y-0.5">
+                  <p className="text-xs text-blue-700">📞 EFMP Coordinator: (760) 725-5819</p>
+                  <p className="text-xs text-blue-700">📍 Building 13150, Mainside</p>
+                  <p className="text-xs text-blue-700">🕐 Mon–Fri 8:00 AM–4:30 PM</p>
+                </div>
+              </div>
+            </div>
           </div>
         </section>
 
@@ -202,12 +228,8 @@ export default function ChildcarePage() {
                         Tier {tier.tier} · {tier.income}
                       </span>
                       <div className="flex gap-4 text-xs">
-                        <span className="text-zinc-500">
-                          <span className="font-bold text-zinc-800">${tier.weekly}/wk</span>
-                        </span>
-                        <span className="font-bold" style={{ color: "#003087" }}>
-                          ${tier.monthly}/mo
-                        </span>
+                        <span className="font-bold text-zinc-800">${tier.weekly}/wk</span>
+                        <span className="font-bold" style={{ color: "#003087" }}>${tier.monthly}/mo</span>
                       </div>
                     </div>
                   </button>
@@ -245,7 +267,7 @@ export default function ChildcarePage() {
           </div>
         </section>
 
-        {/* Waitlist Transparency */}
+        {/* Waitlist Trend */}
         <section>
           <div className="rounded-2xl bg-white shadow-sm overflow-hidden">
             <div className="px-5 py-4 border-b border-zinc-100 flex items-center gap-2">
@@ -287,7 +309,9 @@ export default function ChildcarePage() {
                 })}
               </div>
               <p className="text-xs text-zinc-500 mt-4">
-                Estimated wait time: <span className="font-bold text-zinc-700">8–14 months</span> for CDC-1 · <span className="font-bold text-zinc-700">4–6 months</span> for CDC-2
+                Estimated wait:{" "}
+                <span className="font-bold text-zinc-700">8–14 months</span> for CDC-1 ·{" "}
+                <span className="font-bold text-zinc-700">4–6 months</span> for CDC-2
               </p>
             </div>
           </div>
@@ -307,23 +331,44 @@ export default function ChildcarePage() {
               {otherPrograms.map((p) => (
                 <ProgramCard key={p.id} program={p} onBook={() => setBookingProgram(p)} />
               ))}
-              {otherPrograms.length === 0 && programs.length > 0 && (
-                // Fallback: show all non-CDC programs from API
-                programs
-                  .filter((p) => !CDC_CENTERS.find((c) => c.id === p.id))
-                  .map((p) => (
-                    <ProgramCard key={p.id} program={p} onBook={() => setBookingProgram(p)} />
-                  ))
-              )}
             </div>
           )}
         </section>
+
+        {/* Special Needs & EFMP Resources */}
+        <section id="efmp">
+          <h2 className="text-base font-bold text-zinc-900 mb-3">Special Needs & EFMP Resources</h2>
+          <div className="space-y-3">
+            {EFMP_RESOURCES.map(resource => (
+              <div key={resource.title} className="rounded-2xl bg-white shadow-sm p-4">
+                <div className="flex items-start gap-3">
+                  <div className="h-9 w-9 rounded-xl bg-blue-50 flex items-center justify-center shrink-0">
+                    <resource.icon className="h-4 w-4 text-blue-600" />
+                  </div>
+                  <div className="flex-1 min-w-0">
+                    <p className="text-sm font-bold text-zinc-900">{resource.title}</p>
+                    <p className="text-xs text-zinc-500 mt-0.5 leading-relaxed">{resource.description}</p>
+                    <p className="text-xs text-blue-600 font-medium mt-1.5">{resource.contact}</p>
+                  </div>
+                </div>
+              </div>
+            ))}
+          </div>
+        </section>
+
       </div>
 
+      {/* Modals */}
       <BookingModal
         program={bookingProgram}
         open={bookingProgram !== null}
         onClose={() => setBookingProgram(null)}
+      />
+
+      <ChildcareWaitlistForm
+        open={waitlistCdc !== null}
+        onClose={() => setWaitlistCdc(null)}
+        preselectedCDC={waitlistCdc ?? undefined}
       />
     </div>
   )

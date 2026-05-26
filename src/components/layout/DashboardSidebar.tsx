@@ -9,6 +9,9 @@ import {
   Star,
   Users,
   TrendingUp,
+  CalendarCheck,
+  CreditCard,
+  BookUser,
 } from "lucide-react"
 import { cn } from "@/lib/utils"
 import StormBreakerBadge from "@/components/shared/StormBreakerBadge"
@@ -68,6 +71,43 @@ export default function DashboardSidebar() {
             )
           })}
         </nav>
+
+        {/* Staff Operations divider */}
+        <div className="mt-5 pt-4 border-t border-zinc-100">
+          <div className="flex items-center gap-1.5 px-3 mb-2">
+            <span className="text-[10px] font-bold uppercase tracking-widest text-zinc-400">
+              Staff Operations
+            </span>
+            <span className="rounded px-1.5 py-0.5 text-[9px] font-bold bg-amber-100 text-amber-700">
+              STAFF
+            </span>
+          </div>
+          <div className="space-y-0.5">
+            {[
+              { label: "Reservations", href: "/dashboard/staff/reservations", icon: CalendarCheck },
+              { label: "Payments",     href: "/dashboard/staff/payments",     icon: CreditCard    },
+              { label: "Patron Dir.",  href: "/dashboard/staff/patrons",      icon: BookUser      },
+            ].map(({ label, href, icon: Icon }) => {
+              const isActive = pathname.startsWith(href)
+              return (
+                <Link
+                  key={href}
+                  href={href}
+                  className={cn(
+                    "flex items-center gap-2.5 rounded-lg px-3 py-2.5 text-sm font-medium transition-colors",
+                    isActive
+                      ? "border-l-2 bg-amber-50 text-amber-700"
+                      : "border-l-2 border-transparent text-zinc-600 hover:bg-zinc-100 hover:text-zinc-900"
+                  )}
+                  style={isActive ? { borderLeftColor: "#D97706" } : {}}
+                >
+                  <Icon className="h-4 w-4 shrink-0" />
+                  {label}
+                </Link>
+              )
+            })}
+          </div>
+        </div>
       </div>
 
       {/* Footer */}

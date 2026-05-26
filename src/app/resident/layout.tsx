@@ -2,7 +2,7 @@ import NavBar from "@/components/layout/NavBar"
 import ResidentNavBar from "@/components/resident/ResidentNavBar"
 
 export const metadata = {
-  title: "MCCS Resident Portal — Camp Pendleton",
+  title: "MCCS Camp Pendleton — Patron Portal",
   description: "Find and book MCCS programs, dining, childcare, and recreation at Camp Pendleton.",
 }
 

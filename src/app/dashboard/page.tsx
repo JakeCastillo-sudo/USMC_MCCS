@@ -6,6 +6,7 @@ import SatisfactionTable from "@/components/dashboard/SatisfactionTable"
 import UtilizationGrid from "@/components/dashboard/UtilizationGrid"
 import InstallationTable from "@/components/dashboard/InstallationTable"
 import StormBreakerBadge from "@/components/shared/StormBreakerBadge"
+import StaffOperationsCard from "@/components/dashboard/StaffOperationsCard"
 import Link from "next/link"
 import { TrendingUp, Sparkles, AlertCircle } from "lucide-react"
 
@@ -106,6 +107,9 @@ export default function DashboardPage() {
           </Link>
         </div>
       </div>
+
+      {/* 4c. Staff Operations Summary */}
+      <StaffOperationsCard />
 
       {/* 5. Platform info + Enterprise installation table */}
       <div className="grid grid-cols-1 gap-6 lg:grid-cols-3">
