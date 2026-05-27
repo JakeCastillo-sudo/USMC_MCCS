@@ -1,7 +1,7 @@
 "use client"
 
 import { useEffect, useState } from "react"
-import { UtensilsCrossed, Star, Clock, ChefHat, CalendarCheck } from "lucide-react"
+import { Star, Clock, ChefHat, CalendarCheck } from "lucide-react"
 import BookingModal from "@/components/resident/BookingModal"
 import type { Program } from "@/types"
 
@@ -104,16 +104,25 @@ export default function DiningPage() {
 
   return (
     <div className="pb-4">
-      {/* Header */}
-      <div
-        className="px-4 pt-6 pb-4"
-        style={{ background: "linear-gradient(135deg, #d97706 0%, #92400e 100%)" }}
-      >
-        <div className="flex items-center gap-2 mb-1">
-          <UtensilsCrossed className="h-5 w-5 text-amber-200" />
-          <h1 className="text-xl font-bold text-white">Dining & Entertainment</h1>
+      {/* ── Hero banner ── */}
+      <div className="relative w-full overflow-hidden" style={{ height: "280px" }}>
+        {/* eslint-disable-next-line @next/next/no-img-element */}
+        <img
+          src="https://images.unsplash.com/photo-1414235077428-338989a2e8c0?w=1600&q=80"
+          alt="Dining & Entertainment"
+          className="absolute inset-0 w-full h-full object-cover"
+        />
+        <div
+          className="absolute inset-0"
+          style={{ background: "linear-gradient(to bottom, rgba(12,35,64,0.45) 0%, rgba(12,35,64,0.88) 100%)" }}
+        />
+        <div className="absolute inset-0 flex flex-col justify-end px-6 pb-8 md:px-10">
+          <p className="usmc-label mb-2">Dining &amp; Entertainment</p>
+          <h1 className="text-3xl md:text-4xl font-black text-white tracking-tight mb-1">
+            Restaurants, Events &amp; More
+          </h1>
+          <p className="text-sm text-white/65">Restaurants, events &amp; food on base · Camp Pendleton</p>
         </div>
-        <p className="text-sm text-amber-200">Restaurants, events & food on base · Camp Pendleton</p>
       </div>
 
       {/* Today's hours strip */}

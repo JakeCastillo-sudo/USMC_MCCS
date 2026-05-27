@@ -1,7 +1,7 @@
 "use client"
 
 import { useEffect, useState } from "react"
-import { Trees, Waves, Anchor, Fish, Mountain, Bike, ChevronRight, Flag, Home } from "lucide-react"
+import { Waves, Anchor, Fish, Mountain, Bike, ChevronRight, Flag, Home } from "lucide-react"
 import BookingModal from "@/components/resident/BookingModal"
 import ProgramCard from "@/components/resident/ProgramCard"
 import { Skeleton } from "@/components/ui/skeleton"
@@ -118,16 +118,41 @@ export default function RecreationPage() {
 
   return (
     <div className="pb-4">
-      {/* Header */}
-      <div
-        className="px-4 pt-6 pb-4"
-        style={{ background: "linear-gradient(135deg, #16a34a 0%, #14532d 100%)" }}
-      >
-        <div className="flex items-center gap-2 mb-1">
-          <Trees className="h-5 w-5 text-emerald-200" />
-          <h1 className="text-xl font-bold text-white">Recreation & Outdoor</h1>
+      {/* ── Hero banner (split — left beach / right golf) ── */}
+      <div className="relative w-full overflow-hidden" style={{ height: "280px" }}>
+        {/* Left half — beach */}
+        <div className="absolute inset-y-0 left-0 w-1/2 overflow-hidden">
+          {/* eslint-disable-next-line @next/next/no-img-element */}
+          <img
+            src="https://images.unsplash.com/photo-1507525428034-b723cf961d3e?w=800&q=80"
+            alt="Del Mar Beach"
+            className="absolute inset-0 w-full h-full object-cover"
+          />
         </div>
-        <p className="text-sm text-emerald-200">Beaches, golf, camping, pools & more · Camp Pendleton</p>
+        {/* Right half — golf */}
+        <div className="absolute inset-y-0 right-0 w-1/2 overflow-hidden">
+          {/* eslint-disable-next-line @next/next/no-img-element */}
+          <img
+            src="https://images.unsplash.com/photo-1587174486073-ae5e5cff23aa?w=800&q=80"
+            alt="Golf Course"
+            className="absolute inset-0 w-full h-full object-cover"
+          />
+        </div>
+        {/* Unified dark overlay */}
+        <div
+          className="absolute inset-0"
+          style={{ background: "linear-gradient(to bottom, rgba(12,35,64,0.4) 0%, rgba(12,35,64,0.88) 100%)" }}
+        />
+        {/* Center divider */}
+        <div className="absolute inset-y-0 left-1/2 w-px bg-white/20" />
+        {/* Text — centered */}
+        <div className="absolute inset-0 flex flex-col items-center justify-end pb-8 px-6">
+          <p className="usmc-label mb-2 text-center">Recreation &amp; Outdoor</p>
+          <h1 className="text-3xl md:text-4xl font-black text-white tracking-tight text-center mb-1">
+            Beaches, Golf &amp; Beyond
+          </h1>
+          <p className="text-sm text-white/65 text-center">Camping, pools, equipment rental · Camp Pendleton</p>
+        </div>
       </div>
 
       <div className="px-4 py-4 space-y-6">

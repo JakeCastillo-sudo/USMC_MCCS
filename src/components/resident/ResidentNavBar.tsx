@@ -24,80 +24,107 @@ export default function ResidentNavBar() {
   const isHome    = pathname === "/resident"
   const isExplore = !isHome && pathname.startsWith("/resident")
 
-  const tabCls     = "flex flex-col items-center gap-0.5 px-2 py-1 rounded-xl transition-colors"
-  const activeCls  = "text-[#C8102E]"
-  const inactiveCls = "text-zinc-400"
+  // USMC dark navy bar, active = red icon + gold label
+  const barBg    = "#0C2340"
+  const activeColor = "#C8102E"
+  const goldLabel   = "#C9A84C"
+  const dimLabel    = "rgba(255,255,255,0.45)"
 
   return (
     <>
       <nav
-        className="fixed bottom-0 inset-x-0 z-50 border-t border-zinc-200 bg-white/95 backdrop-blur-sm safe-area-bottom md:hidden"
+        className="fixed bottom-0 inset-x-0 z-50 md:hidden"
+        style={{ backgroundColor: barBg, borderTop: "2px solid rgba(200,16,46,0.55)" }}
         aria-label="Bottom navigation"
       >
-        <div className="flex items-center justify-around h-16 max-w-2xl mx-auto px-1">
-
+        <div
+          className="flex items-center justify-around h-16 max-w-2xl mx-auto px-1"
+          style={{ paddingBottom: "env(safe-area-inset-bottom)" }}
+        >
           {/* Home */}
           <Link
             href="/resident"
-            className={cn(tabCls, isHome ? activeCls : inactiveCls)}
+            className="flex flex-col items-center gap-0.5 px-2 py-1 rounded-xl"
             aria-label="Home"
           >
-            <Home className="h-5 w-5" strokeWidth={isHome ? 2.5 : 1.75} />
-            <span className={cn("text-[10px] font-medium", isHome && "font-bold")}>Home</span>
+            <Home
+              className="h-5 w-5"
+              strokeWidth={isHome ? 2.5 : 1.75}
+              style={{ color: isHome ? activeColor : "rgba(255,255,255,0.45)" }}
+            />
+            <span
+              className="text-[10px] font-bold uppercase tracking-wide"
+              style={{ color: isHome ? goldLabel : dimLabel }}
+            >
+              Home
+            </span>
           </Link>
 
           {/* Explore */}
           <Link
             href="/resident#categories"
-            className={cn(tabCls, isExplore ? activeCls : inactiveCls)}
+            className="flex flex-col items-center gap-0.5 px-2 py-1 rounded-xl"
             aria-label="Explore all services"
           >
-            <LayoutGrid className="h-5 w-5" strokeWidth={isExplore ? 2.5 : 1.75} />
-            <span className={cn("text-[10px] font-medium", isExplore && "font-bold")}>Explore</span>
+            <LayoutGrid
+              className="h-5 w-5"
+              strokeWidth={isExplore ? 2.5 : 1.75}
+              style={{ color: isExplore ? activeColor : "rgba(255,255,255,0.45)" }}
+            />
+            <span
+              className="text-[10px] font-bold uppercase tracking-wide"
+              style={{ color: isExplore ? goldLabel : dimLabel }}
+            >
+              Explore
+            </span>
           </Link>
 
-          {/* Events — opens modal */}
+          {/* Events */}
           <button
             onClick={() => setEventsOpen(true)}
-            className={cn(tabCls, inactiveCls)}
+            className="flex flex-col items-center gap-0.5 px-2 py-1 rounded-xl"
             aria-label="View events"
           >
-            <Calendar className="h-5 w-5" strokeWidth={1.75} />
-            <span className="text-[10px] font-medium">Events</span>
+            <Calendar className="h-5 w-5" strokeWidth={1.75} style={{ color: "rgba(255,255,255,0.45)" }} />
+            <span className="text-[10px] font-bold uppercase tracking-wide" style={{ color: dimLabel }}>
+              Events
+            </span>
           </button>
 
-          {/* Map — opens modal */}
+          {/* Map */}
           <button
             onClick={() => setMapOpen(true)}
-            className={cn(tabCls, inactiveCls)}
+            className="flex flex-col items-center gap-0.5 px-2 py-1 rounded-xl"
             aria-label="View base map"
           >
-            <Map className="h-5 w-5" strokeWidth={1.75} />
-            <span className="text-[10px] font-medium">Map</span>
+            <Map className="h-5 w-5" strokeWidth={1.75} style={{ color: "rgba(255,255,255,0.45)" }} />
+            <span className="text-[10px] font-bold uppercase tracking-wide" style={{ color: dimLabel }}>
+              Map
+            </span>
           </button>
 
           {/* Profile avatar */}
           <button
             onClick={() => setProfileOpen(true)}
-            className={cn(tabCls)}
+            className="flex flex-col items-center gap-0.5 px-2 py-1 rounded-xl"
             aria-label="View profile"
           >
             <div
               className={cn(
                 "h-7 w-7 rounded-full flex items-center justify-center text-white text-[10px] font-bold",
-                isElite ? "ring-2 ring-amber-400" : "ring-2 ring-zinc-300"
+                isElite ? "ring-2 ring-[#C9A84C]" : "ring-2 ring-white/30"
               )}
-              style={{ backgroundColor: "#003087" }}
+              style={{ backgroundColor: "#C8102E" }}
             >
               {initials}
             </div>
-            <span className="text-[10px] font-medium text-zinc-400">Profile</span>
+            <span className="text-[10px] font-bold uppercase tracking-wide" style={{ color: dimLabel }}>
+              Profile
+            </span>
           </button>
-
         </div>
       </nav>
 
-      {/* Modals */}
       <EventsModal  open={eventsOpen}  onClose={() => setEventsOpen(false)} />
       <BaseMapModal open={mapOpen}     onClose={() => setMapOpen(false)} />
       <ProfileModal

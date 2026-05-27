@@ -1,7 +1,7 @@
 "use client"
 
 import { useEffect, useState } from "react"
-import { Dumbbell, MapPin, Clock, Zap } from "lucide-react"
+import { MapPin, Clock, Zap } from "lucide-react"
 import ProgramCard from "@/components/resident/ProgramCard"
 import BookingModal from "@/components/resident/BookingModal"
 import { Skeleton } from "@/components/ui/skeleton"
@@ -56,16 +56,25 @@ export default function FitnessPage() {
 
   return (
     <div className="pb-4">
-      {/* Header */}
-      <div
-        className="px-4 pt-6 pb-4"
-        style={{ background: "linear-gradient(135deg, #C8102E 0%, #8b0a1f 100%)" }}
-      >
-        <div className="flex items-center gap-2 mb-1">
-          <Dumbbell className="h-5 w-5 text-red-200" />
-          <h1 className="text-xl font-bold text-white">Fitness & Recreation</h1>
+      {/* ── Hero banner ── */}
+      <div className="relative w-full overflow-hidden" style={{ height: "280px" }}>
+        {/* eslint-disable-next-line @next/next/no-img-element */}
+        <img
+          src="https://images.unsplash.com/photo-1534438327276-14e5300c3a48?w=1600&q=80"
+          alt="Fitness Center"
+          className="absolute inset-0 w-full h-full object-cover"
+        />
+        <div
+          className="absolute inset-0"
+          style={{ background: "linear-gradient(to bottom, rgba(12,35,64,0.45) 0%, rgba(12,35,64,0.88) 100%)" }}
+        />
+        <div className="absolute inset-0 flex flex-col justify-end px-6 pb-8 md:px-10">
+          <p className="usmc-label mb-2">Semper Fit</p>
+          <h1 className="text-3xl md:text-4xl font-black text-white tracking-tight mb-1">
+            Fitness &amp; Recreation
+          </h1>
+          <p className="text-sm text-white/65">12 centers across Camp Pendleton</p>
         </div>
-        <p className="text-sm text-red-200">15 centers and programs · Camp Pendleton</p>
       </div>
 
       {/* Sub-nav tabs */}

@@ -3,11 +3,17 @@
 @import "shadcn/tailwind.css";
 @import 'leaflet/dist/leaflet.css';
 
-/* ── MCCS Brand tokens ─────────────────────────────────────────── */
+/* ── USMC / MCCS Brand tokens ─────────────────────────────────── */
 :root {
-  --mccs-red: #C8102E;
-  --mccs-navy: #003087;
-  --mccs-gold: #FFD700;
+  --usmc-red:    #C8102E;
+  --usmc-navy:   #003087;
+  --usmc-gold:   #C9A84C;
+  --usmc-dark:   #0C2340;
+  --usmc-scarlet:#B22234;
+  /* legacy aliases */
+  --mccs-red:    #C8102E;
+  --mccs-navy:   #003087;
+  --mccs-gold:   #C9A84C;
 }
 
 /* Smooth scrolling */
@@ -180,8 +186,112 @@ html { scroll-behavior: smooth; }
   }
   body {
     @apply bg-background text-foreground;
+    font-family: 'Open Sans', system-ui, -apple-system, sans-serif;
   }
   html {
     @apply font-sans;
   }
 }
+
+/* ── USMC Typography ────────────────────────────────────────────── */
+.usmc-label {
+  font-size: 0.68rem;
+  font-weight: 700;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  color: var(--usmc-gold);
+}
+
+/* ── Section headers — marines.mil style ─────────────────────── */
+.section-header {
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+  padding-bottom: 0.625rem;
+  border-bottom: 3px solid var(--usmc-red);
+  margin-bottom: 1.25rem;
+}
+.section-header h2 {
+  font-size: 1rem;
+  font-weight: 800;
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+  color: var(--usmc-dark);
+}
+
+/* ── Tile hover ─────────────────────────────────────────────────── */
+.tile-hover {
+  transition: transform 0.15s ease, box-shadow 0.15s ease;
+}
+.tile-hover:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 10px 28px rgba(0,0,0,0.22);
+}
+
+/* ── USMC Buttons ───────────────────────────────────────────────── */
+.btn-usmc-primary {
+  background: var(--usmc-red);
+  color: white;
+  font-weight: 700;
+  font-size: 0.78rem;
+  letter-spacing: 0.07em;
+  text-transform: uppercase;
+  padding: 0.6rem 1.4rem;
+  border-radius: 2px;
+  border: none;
+  cursor: pointer;
+  transition: background 0.15s;
+  display: inline-block;
+  text-align: center;
+}
+.btn-usmc-primary:hover { background: var(--usmc-scarlet); }
+
+.btn-usmc-ghost {
+  background: transparent;
+  color: white;
+  font-weight: 700;
+  font-size: 0.78rem;
+  letter-spacing: 0.07em;
+  text-transform: uppercase;
+  padding: 0.6rem 1.4rem;
+  border-radius: 2px;
+  border: 2px solid rgba(255,255,255,0.65);
+  cursor: pointer;
+  transition: all 0.15s;
+  display: inline-block;
+  text-align: center;
+}
+.btn-usmc-ghost:hover { border-color: white; background: rgba(255,255,255,0.1); }
+
+/* ── Card accent border (marines.mil) ──────────────────────────── */
+.card-accent { border-left: 4px solid var(--usmc-red); }
+
+/* ── News card ─────────────────────────────────────────────────── */
+.news-card {
+  background: white;
+  border-bottom: 1px solid #E5E7EB;
+  padding: 0.875rem 1rem;
+  cursor: pointer;
+  transition: background 0.1s;
+}
+.news-card:hover { background: #F9FAFB; }
+.news-card-category {
+  font-size: 0.63rem;
+  font-weight: 700;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  color: var(--usmc-red);
+  margin-bottom: 0.2rem;
+}
+
+/* ── Announcement ticker ───────────────────────────────────────── */
+@keyframes ticker {
+  0%   { transform: translateX(0); }
+  100% { transform: translateX(-50%); }
+}
+.ticker-scroll {
+  animation: ticker 38s linear infinite;
+  display: flex;
+  white-space: nowrap;
+}
+.ticker-scroll:hover { animation-play-state: paused; }
