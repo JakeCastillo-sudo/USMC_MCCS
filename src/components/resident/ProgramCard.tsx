@@ -123,7 +123,7 @@ export default function ProgramCard({ program, onBook, compact = false, featured
   return (
     <>
       <div
-        className="relative rounded-2xl bg-white shadow-sm p-5 flex flex-col gap-3 cursor-pointer hover:shadow-md transition-shadow"
+        className="relative rounded-2xl bg-white shadow-sm p-3 md:p-5 flex flex-col gap-2 md:gap-3 cursor-pointer hover:shadow-md transition-shadow"
         onClick={() => setDetailOpen(true)}
       >
         {featured && (
@@ -138,7 +138,7 @@ export default function ProgramCard({ program, onBook, compact = false, featured
         {/* Top row */}
         <div className="flex items-start justify-between gap-2 pr-16">
           <div className="min-w-0">
-            <h3 className="font-semibold text-zinc-900 text-base leading-snug">{program.name}</h3>
+            <h3 className="font-semibold text-zinc-900 text-sm md:text-base leading-snug">{program.name}</h3>
             {program.highlights?.[0] && (
               <p className="text-xs text-zinc-500 mt-0.5 truncate">{program.highlights[0]}</p>
             )}
@@ -161,7 +161,7 @@ export default function ProgramCard({ program, onBook, compact = false, featured
         </div>
 
         {/* Hours */}
-        <div className="flex items-center gap-1.5 text-sm text-zinc-500">
+        <div className="flex items-center gap-1.5 text-xs md:text-sm text-zinc-500">
           <Clock className="h-3.5 w-3.5 shrink-0" />
           <span className="line-clamp-1">{program.hours}</span>
         </div>
@@ -182,7 +182,7 @@ export default function ProgramCard({ program, onBook, compact = false, featured
         )}
 
         {/* Description */}
-        <p className="text-sm text-zinc-600 line-clamp-2 leading-relaxed">{program.description}</p>
+        <p className="hidden md:block text-sm text-zinc-600 line-clamp-2 leading-relaxed">{program.description}</p>
 
         {/* Amenity pills */}
         {program.amenities && program.amenities.length > 0 && (
@@ -210,7 +210,7 @@ export default function ProgramCard({ program, onBook, compact = false, featured
           ) : program.bookable && onBook ? (
             <button
               onClick={(e) => { e.stopPropagation(); onBook(program) }}
-              className="rounded-xl px-4 py-2 text-sm font-semibold text-white transition-opacity hover:opacity-90"
+              className="w-full md:w-auto rounded-xl px-4 py-2 text-xs md:text-sm font-semibold text-white transition-opacity hover:opacity-90"
               style={{ backgroundColor: "#C8102E" }}
             >
               Book Now →

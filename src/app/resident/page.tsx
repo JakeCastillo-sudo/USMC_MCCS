@@ -50,21 +50,21 @@ interface TileProps extends TileData {
 
 function Tile({ label, sub, badge, href, action, imageUrl, onAction }: TileProps) {
   const content = (
-    <div className="tile-hover relative overflow-hidden h-40 sm:h-44 lg:h-48">
+    <div className="tile-hover relative overflow-hidden" style={{ height: "clamp(100px, 22vw, 160px)" }}>
       {/* eslint-disable-next-line @next/next/no-img-element */}
       <img src={imageUrl} alt={label} className="absolute inset-0 w-full h-full object-cover" />
       <div className="absolute inset-0 bg-gradient-to-t from-[#0C2340] via-[#0C2340]/45 to-transparent" />
       {badge && (
         <span
-          className="absolute top-2 right-2 z-10 text-[8px] font-black uppercase tracking-wider rounded-sm px-1.5 py-0.5 text-white"
+          className="absolute top-1.5 right-1.5 z-10 text-[7px] md:text-[8px] font-black uppercase tracking-wider rounded-sm px-1 md:px-1.5 py-0.5 text-white"
           style={{ backgroundColor: badge.bg }}
         >
           {badge.text}
         </span>
       )}
-      <div className="absolute bottom-0 left-0 right-0 p-2.5 z-10">
-        <p className="text-white font-black text-xs leading-tight">{label}</p>
-        <p className="text-white/55 text-[9px] mt-0.5 leading-tight">{sub}</p>
+      <div className="absolute bottom-0 left-0 right-0 p-1.5 md:p-2.5 z-10">
+        <p className="text-white font-black text-[10px] md:text-xs leading-tight">{label}</p>
+        <p className="hidden sm:block text-white/55 text-[9px] mt-0.5 leading-tight">{sub}</p>
       </div>
     </div>
   )
@@ -275,7 +275,7 @@ export default function ResidentHomePage() {
       )}
 
       {/* ── Full-bleed Hero ── */}
-      <div className="relative h-[380px] md:h-[520px] overflow-hidden">
+      <div className="relative overflow-hidden" style={{ height: "clamp(240px, 45vh, 520px)" }}>
         {/* eslint-disable-next-line @next/next/no-img-element */}
         <img
           src="https://images.unsplash.com/photo-1541516160071-4bb0c5af65ba?w=1600&q=80"
@@ -288,33 +288,33 @@ export default function ResidentHomePage() {
         />
 
         {/* Content — left aligned */}
-        <div className="relative z-10 h-full flex flex-col justify-center px-6 md:px-10 lg:px-16">
+        <div className="relative z-10 h-full flex flex-col justify-center px-5 md:px-10 lg:px-16">
           <div className="max-w-2xl">
             <span
-              className="inline-block rounded-sm px-2.5 py-1 text-[10px] font-black uppercase tracking-[0.15em] mb-4"
+              className="inline-block rounded-sm px-2.5 py-0.5 md:py-1 text-[9px] md:text-[10px] font-black uppercase tracking-[0.12em] md:tracking-[0.15em] mb-2 md:mb-4"
               style={{ backgroundColor: "rgba(201,168,76,0.2)", color: "#C9A84C", border: "1px solid rgba(201,168,76,0.4)" }}
             >
               Marine Corps Community Services
             </span>
-            <h1 className="text-4xl md:text-5xl font-black text-white leading-tight mb-2 tracking-tight">
+            <h1 className="text-2xl md:text-5xl font-black text-white leading-tight mb-1 md:mb-2 tracking-tight">
               Camp Pendleton
             </h1>
-            <p className="text-lg md:text-xl text-white/70 mb-2 font-medium">
+            <p className="text-sm md:text-xl text-white/70 mb-1 md:mb-2 font-medium">
               {getGreeting()}
             </p>
-            <p className="text-sm text-white/50 mb-6 leading-relaxed max-w-lg">
+            <p className="hidden md:block text-sm text-white/50 mb-6 leading-relaxed max-w-lg">
               Serving Marines, families, retirees, and DoD civilians with recreation,
               dining, childcare, and support programs.
             </p>
 
             {/* CTAs */}
-            <div className="flex flex-wrap gap-3 mb-6">
+            <div className="flex gap-2 md:gap-3 mt-2 md:mt-0 mb-3 md:mb-6">
               <a href="#categories" className="btn-usmc-primary">Explore Programs</a>
-              <button onClick={() => setMapOpen(true)} className="btn-usmc-ghost">View Base Map</button>
+              <button onClick={() => setMapOpen(true)} className="btn-usmc-ghost">Base Map</button>
             </div>
 
-            {/* Stats pills */}
-            <div className="flex flex-wrap gap-2">
+            {/* Stats pills — desktop only */}
+            <div className="hidden md:flex flex-wrap gap-2">
               {["50+ Programs", "Open 7 Days", "Free for Active Duty"].map(s => (
                 <span key={s} className="rounded-sm px-3 py-1 text-[11px] font-bold text-white/80 uppercase tracking-wide" style={{ backgroundColor: "rgba(255,255,255,0.12)", border: "1px solid rgba(255,255,255,0.15)" }}>
                   {s}
@@ -323,8 +323,8 @@ export default function ResidentHomePage() {
             </div>
           </div>
 
-          {/* Floating stat cards — desktop only */}
-          <div className="hidden md:flex absolute right-16 top-1/2 -translate-y-1/2 flex-col gap-3">
+          {/* Floating stat cards — large desktop only */}
+          <div className="hidden lg:flex absolute right-16 top-1/2 -translate-y-1/2 flex-col gap-3">
             <div className="rounded-sm bg-white/10 backdrop-blur-md border border-white/20 px-5 py-3 text-white">
               <p className="usmc-label text-[9px] mb-1">Today&apos;s Weather</p>
               <p className="text-2xl font-black">72°F ☀️</p>
@@ -365,7 +365,7 @@ export default function ResidentHomePage() {
       </div>
 
       {/* ── Search bar ── */}
-      <div className="px-4 md:px-10 lg:px-16 py-4 bg-zinc-100">
+      <div className="px-3 md:px-10 lg:px-16 py-2 md:py-4 bg-zinc-100">
         <div className="rounded-sm bg-white shadow-md p-3 border-l-4" style={{ borderColor: "#C8102E" }}>
           <SearchBar
             onResults={(programs) => setSearchResults(programs)}
@@ -399,19 +399,20 @@ export default function ResidentHomePage() {
         {!showResults && (
           <>
             {/* ── Featured This Weekend ── */}
-            <section className="px-6 md:px-10 lg:px-16 py-8">
+            <section className="px-3 md:px-10 lg:px-16 py-4 md:py-8">
               <div className="section-header">
                 <h2>Featured This Weekend</h2>
                 <button onClick={() => setEventsOpen(true)} className="ml-auto text-xs font-bold uppercase tracking-wide" style={{ color: "#C8102E" }}>
                   All Events →
                 </button>
               </div>
-              <div className="flex gap-4 overflow-x-auto pb-2 -mx-2 px-2 scrollbar-hide">
+              <div className="flex gap-2 md:gap-4 overflow-x-auto pb-2 -mx-2 px-2 scrollbar-hide">
                 {FEATURED_WEEKEND.map(card => (
                   <button
                     key={card.id}
                     onClick={() => setEventsOpen(true)}
-                    className="tile-hover relative flex-none w-56 h-40 overflow-hidden rounded-sm"
+                    className="tile-hover relative flex-none overflow-hidden rounded-sm"
+                    style={{ width: "clamp(140px, 55vw, 224px)", height: "clamp(100px, 28vw, 160px)" }}
                   >
                     {/* eslint-disable-next-line @next/next/no-img-element */}
                     <img src={card.image} alt={card.title} className="absolute inset-0 w-full h-full object-cover" />
@@ -428,7 +429,7 @@ export default function ResidentHomePage() {
             </section>
 
             {/* ── Today on Base ── */}
-            <section className="px-6 md:px-10 lg:px-16 pb-6">
+            <section className="px-3 md:px-10 lg:px-16 pb-3 md:pb-6">
               <p className="usmc-label mb-2" style={{ color: "#52525B" }}>Today on Base</p>
               <div className="flex gap-2 overflow-x-auto pb-1 -mx-2 px-2 scrollbar-hide">
                 {TODAY_FACILITIES.map(fac => {
@@ -448,14 +449,14 @@ export default function ResidentHomePage() {
             </section>
 
             {/* ── Category Tile Groups ── */}
-            <div id="categories" className="space-y-10 pb-10">
+            <div id="categories" className="space-y-4 md:space-y-8 pb-4 md:pb-10">
               {TILE_GROUPS.map(group => (
-                <section key={group.id} className="px-6 md:px-10 lg:px-16">
+                <section key={group.id} className="px-3 md:px-10 lg:px-16">
                   <div className="section-header">
-                    <div className="h-5 w-1.5 rounded-sm shrink-0" style={{ backgroundColor: group.color }} />
+                    <div className="h-4 w-1 md:h-5 md:w-1.5 rounded-sm shrink-0" style={{ backgroundColor: group.color }} />
                     <h2>{group.title}</h2>
                   </div>
-                  <div className="grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-4 xl:grid-cols-5 2xl:grid-cols-6 gap-1.5">
+                  <div className="grid grid-cols-3 sm:grid-cols-4 lg:grid-cols-5 xl:grid-cols-6 gap-1 md:gap-1.5">
                     {group.tiles.map(tile => (
                       <Tile key={tile.label} {...tile} onAction={handleTileAction} />
                     ))}
@@ -465,15 +466,15 @@ export default function ResidentHomePage() {
             </div>
 
             {/* ── News & Stories ── */}
-            <section className="px-6 md:px-10 lg:px-16 py-10 bg-white">
+            <section className="px-3 md:px-10 lg:px-16 py-4 md:py-10 bg-white">
               <div className="section-header">
                 <h2>News &amp; Stories</h2>
                 <span className="ml-auto text-[10px] font-bold uppercase tracking-wide text-zinc-400">via MCCS</span>
               </div>
-              <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
+              <div className="grid grid-cols-1 md:grid-cols-2 gap-4 md:gap-6">
                 {/* Featured story */}
                 <div className="tile-hover rounded-sm overflow-hidden border border-zinc-100">
-                  <div className="relative h-52">
+                  <div className="relative" style={{ height: "clamp(140px, 40vw, 208px)" }}>
                     {/* eslint-disable-next-line @next/next/no-img-element */}
                     <img
                       src={`${U}1569336415962-a4bd9f69cd83?w=800`}
@@ -485,11 +486,11 @@ export default function ResidentHomePage() {
                       Family Readiness
                     </span>
                   </div>
-                  <div className="p-4">
-                    <h3 className="font-black text-zinc-900 text-sm leading-snug mb-2">
+                  <div className="p-3 md:p-4">
+                    <h3 className="font-black text-zinc-900 text-sm leading-snug mb-1 md:mb-2">
                       Navigating Paternal Postpartum Depression: Support for Marine Dads
                     </h3>
-                    <p className="text-xs text-zinc-500 leading-relaxed mb-3">
+                    <p className="hidden md:block text-xs text-zinc-500 leading-relaxed mb-3">
                       Recognizing the emotional challenges new fathers face after childbirth — and the MCCS resources available right here on base.
                     </p>
                     <button className="text-xs font-black uppercase tracking-wide" style={{ color: "#C8102E" }}>
@@ -498,12 +499,12 @@ export default function ResidentHomePage() {
                   </div>
                 </div>
 
-                {/* News list */}
+                {/* News list — top 3 always visible, rest hidden on mobile */}
                 <div className="rounded-sm overflow-hidden border border-zinc-100">
                   {NEWS_ITEMS.map((item, i) => (
                     <div
                       key={item.num}
-                      className="news-card card-accent flex items-start gap-3"
+                      className={`news-card card-accent flex items-start gap-3${i >= 3 ? " hidden md:flex" : ""}`}
                       style={{ borderLeftColor: "#C8102E" }}
                     >
                       <span className="text-[10px] font-black text-zinc-300 w-5 shrink-0 mt-0.5">{String(item.num).padStart(2, "0")}</span>
@@ -516,12 +517,17 @@ export default function ResidentHomePage() {
                       </div>
                     </div>
                   ))}
+                  <div className="md:hidden px-3 py-2 border-t border-zinc-100">
+                    <button className="text-[10px] font-black uppercase tracking-wide" style={{ color: "#C8102E" }}>
+                      View All Stories →
+                    </button>
+                  </div>
                 </div>
               </div>
             </section>
 
             {/* ── Upcoming Events Strip ── */}
-            <section className="px-6 md:px-10 lg:px-16 py-8 bg-zinc-50">
+            <section className="px-3 md:px-10 lg:px-16 py-4 md:py-8 bg-zinc-50">
               <div className="section-header">
                 <h2>Upcoming Events</h2>
                 <button onClick={() => setEventsOpen(true)} className="ml-auto text-xs font-bold uppercase tracking-wide" style={{ color: "#C8102E" }}>
@@ -545,7 +551,7 @@ export default function ResidentHomePage() {
             </section>
 
             {/* ── Map CTA ── */}
-            <section className="px-6 md:px-10 lg:px-16 py-8">
+            <section className="px-3 md:px-10 lg:px-16 py-4 md:py-8">
               <button
                 onClick={() => setMapOpen(true)}
                 className="tile-hover w-full rounded-sm p-6 text-left"
@@ -569,55 +575,61 @@ export default function ResidentHomePage() {
 
             {/* ── Crisis & Resource Banner ── */}
             <section className="w-full" style={{ backgroundColor: "#0C2340" }}>
-              <div className="px-6 md:px-10 lg:px-16 py-10">
+              <div className="px-3 md:px-10 lg:px-16 py-4 md:py-10">
                 <div className="grid grid-cols-1 md:grid-cols-3 gap-px" style={{ backgroundColor: "rgba(255,255,255,0.08)" }}>
                   {/* Military OneSource */}
-                  <div className="p-6 space-y-2" style={{ backgroundColor: "#0C2340" }}>
-                    <Phone className="h-6 w-6 mb-3" style={{ color: "#C9A84C" }} />
-                    <p className="text-sm font-black text-white uppercase tracking-wide">Military OneSource</p>
-                    <p className="text-xs text-white/55 leading-relaxed">
-                      Free counseling, financial advice, and family support — available 24/7 for all Service Members.
-                    </p>
-                    <p className="text-xs font-bold text-white/80">1-800-342-9647 · militaryonesource.mil</p>
-                    <button className="btn-usmc-primary mt-2 text-xs py-1.5 px-4">Get Help Now</button>
+                  <div className="p-4 md:p-6 flex md:block items-center gap-4 md:gap-0 space-y-0 md:space-y-2" style={{ backgroundColor: "#0C2340" }}>
+                    <Phone className="h-5 w-5 md:h-6 md:w-6 md:mb-3 shrink-0" style={{ color: "#C9A84C" }} />
+                    <div className="flex-1">
+                      <p className="text-xs md:text-sm font-black text-white uppercase tracking-wide">Military OneSource</p>
+                      <p className="hidden md:block text-xs text-white/55 leading-relaxed mt-1">
+                        Free counseling, financial advice, and family support — available 24/7 for all Service Members.
+                      </p>
+                      <p className="text-[11px] md:text-xs font-bold text-white/70 mt-0.5 md:mt-0">1-800-342-9647</p>
+                    </div>
+                    <button className="btn-usmc-primary shrink-0 mt-0 md:mt-2">Get Help</button>
                   </div>
 
                   {/* Veterans Crisis Line */}
-                  <div className="p-6 space-y-2" style={{ backgroundColor: "#1a0505" }}>
-                    <Heart className="h-6 w-6 mb-3" style={{ color: "#ef4444" }} />
-                    <p className="text-sm font-black text-white uppercase tracking-wide">Veterans Crisis Line</p>
-                    <p className="text-xs text-white/55 leading-relaxed">
-                      If you or someone you know is in crisis — connect now. Confidential support, free of charge.
-                    </p>
-                    <p className="text-sm font-black text-white">DIAL 988 then Press 1</p>
-                    <button className="btn-usmc-primary mt-2 text-xs py-1.5 px-4">Get Help Now</button>
+                  <div className="p-4 md:p-6 flex md:block items-center gap-4 md:gap-0 space-y-0 md:space-y-2" style={{ backgroundColor: "#1a0505" }}>
+                    <Heart className="h-5 w-5 md:h-6 md:w-6 md:mb-3 shrink-0" style={{ color: "#ef4444" }} />
+                    <div className="flex-1">
+                      <p className="text-xs md:text-sm font-black text-white uppercase tracking-wide">Veterans Crisis Line</p>
+                      <p className="hidden md:block text-xs text-white/55 leading-relaxed mt-1">
+                        If you or someone you know is in crisis — connect now. Confidential support, free of charge.
+                      </p>
+                      <p className="text-[11px] md:text-sm font-black text-white mt-0.5 md:mt-0">DIAL 988 · Press 1</p>
+                    </div>
+                    <button className="btn-usmc-primary shrink-0 mt-0 md:mt-2">Get Help</button>
                   </div>
 
                   {/* SAPR */}
-                  <div className="p-6 space-y-2" style={{ backgroundColor: "#0C2340" }}>
-                    <ShieldIcon className="h-6 w-6 mb-3" style={{ color: "#C9A84C" }} />
-                    <p className="text-sm font-black text-white uppercase tracking-wide">Sexual Assault Prevention &amp; Response</p>
-                    <p className="text-xs text-white/55 leading-relaxed">
-                      Confidential support available 24/7 for survivors and those affected. You are not alone.
-                    </p>
-                    <p className="text-xs font-bold text-white/80">Safe Helpline: 1-877-995-5247</p>
-                    <button className="btn-usmc-ghost mt-2 text-xs py-1.5 px-4">Learn More</button>
+                  <div className="p-4 md:p-6 flex md:block items-center gap-4 md:gap-0 space-y-0 md:space-y-2" style={{ backgroundColor: "#0C2340" }}>
+                    <ShieldIcon className="h-5 w-5 md:h-6 md:w-6 md:mb-3 shrink-0" style={{ color: "#C9A84C" }} />
+                    <div className="flex-1">
+                      <p className="text-xs md:text-sm font-black text-white uppercase tracking-wide">SAPR</p>
+                      <p className="hidden md:block text-xs text-white/55 leading-relaxed mt-1">
+                        Confidential support available 24/7 for survivors and those affected. You are not alone.
+                      </p>
+                      <p className="text-[11px] md:text-xs font-bold text-white/70 mt-0.5 md:mt-0">1-877-995-5247</p>
+                    </div>
+                    <button className="btn-usmc-ghost shrink-0 mt-0 md:mt-2">Learn More</button>
                   </div>
                 </div>
               </div>
             </section>
 
             {/* ── Quick Links Footer ── */}
-            <footer className="w-full py-10 px-6 md:px-10 lg:px-16" style={{ backgroundColor: "#081929" }}>
-              <div className="grid grid-cols-2 lg:grid-cols-4 gap-8 mb-8">
+            <footer className="w-full py-5 md:py-10 px-4 md:px-10 lg:px-16" style={{ backgroundColor: "#081929" }}>
+              <div className="grid grid-cols-2 lg:grid-cols-4 gap-4 md:gap-8 mb-5 md:mb-8">
                 {QUICK_LINKS.map(col => (
                   <div key={col.title}>
-                    <p className="text-[10px] font-black uppercase tracking-[0.15em] mb-3" style={{ color: "#C9A84C" }}>
+                    <p className="text-[10px] font-black uppercase tracking-[0.15em] mb-2 md:mb-3" style={{ color: "#C9A84C" }}>
                       {col.title}
                     </p>
-                    <ul className="space-y-2">
-                      {col.links.map(link => (
-                        <li key={link}>
+                    <ul className="space-y-1.5 md:space-y-2">
+                      {col.links.map((link, i) => (
+                        <li key={link} className={i >= 3 ? "hidden md:list-item" : ""}>
                           <button
                             className="text-[11px] text-white/45 hover:text-white/90 transition-colors text-left leading-snug"
                             onClick={() => {}}

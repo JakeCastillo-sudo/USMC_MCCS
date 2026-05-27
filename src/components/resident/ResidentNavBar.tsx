@@ -38,7 +38,7 @@ export default function ResidentNavBar() {
         aria-label="Bottom navigation"
       >
         <div
-          className="flex items-center justify-around h-16 max-w-2xl mx-auto px-1"
+          className="flex items-center justify-around h-14 max-w-2xl mx-auto px-1"
           style={{ paddingBottom: "env(safe-area-inset-bottom)" }}
         >
           {/* Home */}

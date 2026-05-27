@@ -14,7 +14,7 @@ export default function NavBar({ activeRole }: NavBarProps) {
 
   return (
     <header className="fixed inset-x-0 top-0 z-50" style={{ backgroundColor: "#0C2340" }}>
-      <div className="flex h-16 items-center justify-between px-4 lg:px-8">
+      <div className="flex h-12 md:h-16 items-center justify-between px-4 lg:px-8">
 
         {/* ── Left: Brand ── */}
         <Link href="/" className="flex items-center gap-3 shrink-0">

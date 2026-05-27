@@ -119,7 +119,7 @@ export default function RecreationPage() {
   return (
     <div className="pb-4">
       {/* ── Hero banner (split — left beach / right golf) ── */}
-      <div className="relative w-full overflow-hidden" style={{ height: "280px" }}>
+      <div className="relative w-full overflow-hidden" style={{ height: "clamp(140px, 35vw, 280px)" }}>
         {/* Left half — beach */}
         <div className="absolute inset-y-0 left-0 w-1/2 overflow-hidden">
           {/* eslint-disable-next-line @next/next/no-img-element */}
@@ -146,12 +146,12 @@ export default function RecreationPage() {
         {/* Center divider */}
         <div className="absolute inset-y-0 left-1/2 w-px bg-white/20" />
         {/* Text — centered */}
-        <div className="absolute inset-0 flex flex-col items-center justify-end pb-8 px-6">
-          <p className="usmc-label mb-2 text-center">Recreation &amp; Outdoor</p>
-          <h1 className="text-3xl md:text-4xl font-black text-white tracking-tight text-center mb-1">
+        <div className="absolute inset-0 flex flex-col items-center justify-end pb-4 md:pb-8 px-6">
+          <p className="usmc-label text-[10px] md:text-xs mb-1 md:mb-2 text-center">Recreation &amp; Outdoor</p>
+          <h1 className="text-xl md:text-4xl font-black text-white tracking-tight text-center mb-0.5 md:mb-1">
             Beaches, Golf &amp; Beyond
           </h1>
-          <p className="text-sm text-white/65 text-center">Camping, pools, equipment rental · Camp Pendleton</p>
+          <p className="hidden md:block text-sm text-white/65 text-center">Camping, pools, equipment rental · Camp Pendleton</p>
         </div>
       </div>
 

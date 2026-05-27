@@ -295,3 +295,22 @@ html { scroll-behavior: smooth; }
   white-space: nowrap;
 }
 .ticker-scroll:hover { animation-play-state: paused; }
+
+/* ── Mobile spacing tightener — below 768px ────────────────────────── */
+@media (max-width: 767px) {
+  .section-header {
+    margin-bottom: 0.6rem !important;
+    padding-bottom: 0.4rem !important;
+  }
+  .section-header h2 {
+    font-size: 0.8rem;
+  }
+  .news-card {
+    padding: 0.6rem 0.75rem;
+  }
+  .btn-usmc-primary,
+  .btn-usmc-ghost {
+    padding: 0.45rem 1rem;
+    font-size: 0.72rem;
+  }
+}

@@ -57,7 +57,7 @@ export default function FitnessPage() {
   return (
     <div className="pb-4">
       {/* ── Hero banner ── */}
-      <div className="relative w-full overflow-hidden" style={{ height: "280px" }}>
+      <div className="relative w-full overflow-hidden" style={{ height: "clamp(140px, 35vw, 280px)" }}>
         {/* eslint-disable-next-line @next/next/no-img-element */}
         <img
           src="https://images.unsplash.com/photo-1534438327276-14e5300c3a48?w=1600&q=80"
@@ -68,12 +68,12 @@ export default function FitnessPage() {
           className="absolute inset-0"
           style={{ background: "linear-gradient(to bottom, rgba(12,35,64,0.45) 0%, rgba(12,35,64,0.88) 100%)" }}
         />
-        <div className="absolute inset-0 flex flex-col justify-end px-6 pb-8 md:px-10">
-          <p className="usmc-label mb-2">Semper Fit</p>
-          <h1 className="text-3xl md:text-4xl font-black text-white tracking-tight mb-1">
+        <div className="absolute inset-0 flex flex-col justify-end px-4 pb-4 md:px-10 md:pb-8">
+          <p className="usmc-label text-[10px] md:text-xs mb-1 md:mb-2">Semper Fit</p>
+          <h1 className="text-xl md:text-4xl font-black text-white tracking-tight mb-0.5 md:mb-1">
             Fitness &amp; Recreation
           </h1>
-          <p className="text-sm text-white/65">12 centers across Camp Pendleton</p>
+          <p className="hidden md:block text-sm text-white/65">12 centers across Camp Pendleton</p>
         </div>
       </div>
 
