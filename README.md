@@ -436,5 +436,58 @@ All synthetic data was built against real Camp Pendleton MCCS programs from [pen
 
 ---
 
+## PWA — Install on iPhone or Android
+
+The Patron Portal is a Progressive Web App. After a production build it can be installed on any phone like a native app.
+
+### Build for production
+
+```bash
+npm run build   # webpack flag is built-in (required for next-pwa)
+npm start
+```
+
+> **Note:** Service workers only activate in production mode. `npm run dev` intentionally disables them to avoid stale-cache issues during development.
+
+### Option A — Local network (same Wi-Fi)
+
+```bash
+# Find your Mac's IP
+ipconfig getifaddr en0
+
+# On iPhone, open Safari:
+#   http://<YOUR-IP>:3000/resident
+# Tap Share → Add to Home Screen → "MCCS" → Add
+```
+
+### Option B — ngrok (recommended for demos — works anywhere, HTTPS included)
+
+```bash
+npm install -g ngrok
+ngrok http 3000
+# Share the https://xxxx.ngrok.io URL
+# Open on any phone → Safari/Chrome → Add to Home Screen
+```
+
+HTTPS is required for PWA install on iOS. ngrok provides this automatically.
+
+### Option C — Vercel (permanent, shareable link)
+
+```bash
+npm install -g vercel
+vercel
+# Free deployment → https://mccs-demo.vercel.app
+```
+
+### Verify in Chrome DevTools
+
+1. Open `http://localhost:3000/resident`
+2. DevTools → **Application → Manifest** — should show icons + metadata
+3. DevTools → **Application → Service Workers** — "Activated and running"
+4. DevTools → **Application → Cache Storage** — cached Unsplash images + static assets
+5. Click the install icon in Chrome's address bar — app opens as standalone window
+
+---
+
 *Demo prepared for Kaizen Labs · Head of Federal interview · May 2026*  
 *Installation: MCB Camp Pendleton, CA · Platform: Kaizen Labs · Infrastructure: Operation StormBreaker*

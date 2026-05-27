@@ -1,5 +1,6 @@
 import NavBar from "@/components/layout/NavBar"
 import ResidentNavBar from "@/components/resident/ResidentNavBar"
+import { InstallPrompt } from "@/components/resident/InstallPrompt"
 
 export const metadata = {
   title: "MCCS Camp Pendleton — Patron Portal",
@@ -14,6 +15,7 @@ export default function ResidentLayout({ children }: { children: React.ReactNode
         <div className="w-full">{children}</div>
       </main>
       <ResidentNavBar />
+      <InstallPrompt />
     </div>
   )
 }
