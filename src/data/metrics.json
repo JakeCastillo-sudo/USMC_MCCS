@@ -1,0 +1,62 @@
+[
+  {
+    "id": "monthly-revenue",
+    "label": "Monthly Revenue",
+    "value": 4200000,
+    "unit": "currency",
+    "trend": 8.3,
+    "trendDirection": "up",
+    "trendSentiment": "positive",
+    "sparkline": [3410000, 3490000, 3450000, 3080000, 3050000, 3010000, 2970000, 2940000, 2970000, 3050000, 3160000, 4200000]
+  },
+  {
+    "id": "ytd-revenue",
+    "label": "YTD Revenue",
+    "value": 38700000,
+    "unit": "currency",
+    "trend": 6.1,
+    "trendDirection": "up",
+    "trendSentiment": "positive",
+    "sparkline": [3410000, 6900000, 10350000, 13430000, 16480000, 19490000, 22460000, 25400000, 28370000, 31420000, 34580000, 38780000]
+  },
+  {
+    "id": "avg-csat",
+    "label": "Avg CSAT",
+    "value": 4.3,
+    "unit": "score",
+    "trend": 2.4,
+    "trendDirection": "up",
+    "trendSentiment": "positive",
+    "sparkline": [4.1, 4.1, 4.2, 4.2, 4.1, 4.2, 4.2, 4.3, 4.2, 4.3, 4.3, 4.3]
+  },
+  {
+    "id": "facility-utilization",
+    "label": "Facility Utilization",
+    "value": 78,
+    "unit": "percent",
+    "trend": 3.2,
+    "trendDirection": "up",
+    "trendSentiment": "positive",
+    "sparkline": [71, 72, 73, 72, 74, 74, 76, 75, 76, 77, 77, 78]
+  },
+  {
+    "id": "active-patrons",
+    "label": "Active Patrons",
+    "value": 22400,
+    "unit": "count",
+    "trend": 4.7,
+    "trendDirection": "up",
+    "trendSentiment": "positive",
+    "sparkline": [18000, 18400, 18900, 19100, 19600, 20100, 21200, 21000, 21400, 21800, 22100, 22400]
+  },
+  {
+    "id": "bookings-this-month",
+    "label": "Bookings This Month",
+    "value": 14850,
+    "unit": "count",
+    "trend": 21.7,
+    "trendDirection": "up",
+    "trendSentiment": "positive",
+    "sparkline": [9800, 10200, 10600, 10400, 11000, 11500, 13800, 13200, 13600, 13900, 12200, 14850]
+  }
+]

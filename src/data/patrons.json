@@ -1,0 +1,920 @@
+[
+  {
+    "id": "patron-001",
+    "firstName": "Jacob",
+    "lastName": "Martinez",
+    "rank": "SSgt",
+    "branch": "USMC",
+    "unit": "1st Marine Division, 7th Marines",
+    "edipi": "1234567890",
+    "dodId": "1234567890",
+    "email": "jacob.martinez@usmc.mil",
+    "phone": "(760) 555-0112",
+    "address": "1247 Basilone Rd, Camp Pendleton, CA 92055",
+    "dependents": [
+      {
+        "id": "dep-001-a",
+        "firstName": "Maria",
+        "lastName": "Martinez",
+        "relationship": "Spouse",
+        "dateOfBirth": "1996-08-22",
+        "age": 29,
+        "eligibilityGroups": ["Active Duty Dependent", "Spouse"],
+        "specialNeeds": null
+      },
+      {
+        "id": "dep-001-b",
+        "firstName": "Lucas",
+        "lastName": "Martinez",
+        "relationship": "Child",
+        "dateOfBirth": "2019-11-05",
+        "age": 6,
+        "eligibilityGroups": ["Active Duty Dependent", "Child"],
+        "specialNeeds": null
+      },
+      {
+        "id": "dep-001-c",
+        "firstName": "Sofia",
+        "lastName": "Martinez",
+        "relationship": "Child",
+        "dateOfBirth": "2022-03-14",
+        "age": 4,
+        "eligibilityGroups": ["Active Duty Dependent", "Child"],
+        "specialNeeds": null
+      }
+    ],
+    "paymentMethods": [
+      {
+        "id": "pm-001-a",
+        "type": "MCCS Pay",
+        "last4": "7842",
+        "expiryMonth": 12,
+        "expiryYear": 2027,
+        "isDefault": true,
+        "nickname": "MCCS Wallet"
+      },
+      {
+        "id": "pm-001-b",
+        "type": "Visa",
+        "last4": "4521",
+        "expiryMonth": 9,
+        "expiryYear": 2026,
+        "isDefault": false,
+        "nickname": "Personal Visa"
+      }
+    ],
+    "preferredPaymentId": "pm-001-a",
+    "preferences": {
+      "favoriteCategories": ["fitness", "childcare", "recreation"],
+      "preferredNotifications": ["email", "sms"],
+      "dietaryRestrictions": [],
+      "accessibilityNeeds": [],
+      "preferredLanguage": "en",
+      "marketingOptIn": true
+    },
+    "bookingHistory": [
+      {
+        "reservationId": "RES-PND-001",
+        "programName": "Paige Field House — CrossFit",
+        "category": "fitness",
+        "date": "2026-05-20",
+        "amount": 0,
+        "status": "completed",
+        "csatScore": 5,
+        "review": "Best gym on base. Equipment is always clean."
+      },
+      {
+        "reservationId": "RES-PND-002",
+        "programName": "CDC-1 — Full-Day Childcare",
+        "category": "childcare",
+        "date": "2026-05-19",
+        "amount": 320,
+        "status": "completed",
+        "csatScore": 4
+      },
+      {
+        "reservationId": "RES-PND-003",
+        "programName": "Marine Memorial Golf — Tee Time",
+        "category": "recreation",
+        "date": "2026-05-10",
+        "amount": 28,
+        "status": "completed",
+        "csatScore": 5
+      },
+      {
+        "reservationId": "RES-PND-010",
+        "programName": "Paige Field House — Yoga",
+        "category": "fitness",
+        "date": "2026-05-22",
+        "amount": 0,
+        "status": "confirmed"
+      }
+    ],
+    "totalBookings": 24,
+    "totalSpend": 1840,
+    "memberSince": "2023-02-15",
+    "lastActivity": "2026-05-22",
+    "loyaltyTier": "Elite",
+    "csatAvg": 4.7,
+    "eligibilityGroups": ["Active Duty", "E-1 through E-9"],
+    "eligibilityVerified": true,
+    "eligibilityExpiry": "2027-02-15"
+  },
+  {
+    "id": "patron-002",
+    "firstName": "Sarah",
+    "lastName": "Chen",
+    "rank": "Maj",
+    "branch": "USMC",
+    "unit": "I Marine Expeditionary Force, G-4",
+    "edipi": "2345678901",
+    "dodId": "2345678901",
+    "email": "sarah.chen@usmc.mil",
+    "phone": "(760) 555-0234",
+    "address": "300 Officers Row, Camp Pendleton, CA 92055",
+    "dependents": [],
+    "paymentMethods": [
+      {
+        "id": "pm-002-a",
+        "type": "MCCS Pay",
+        "last4": "3301",
+        "expiryMonth": 6,
+        "expiryYear": 2028,
+        "isDefault": true,
+        "nickname": "MCCS Wallet"
+      },
+      {
+        "id": "pm-002-b",
+        "type": "Mastercard",
+        "last4": "8820",
+        "expiryMonth": 3,
+        "expiryYear": 2027,
+        "isDefault": false,
+        "nickname": "MC Gold"
+      }
+    ],
+    "preferredPaymentId": "pm-002-a",
+    "preferences": {
+      "favoriteCategories": ["recreation", "dining", "fitness"],
+      "preferredNotifications": ["email"],
+      "dietaryRestrictions": ["Gluten-free"],
+      "accessibilityNeeds": [],
+      "preferredLanguage": "en",
+      "marketingOptIn": false
+    },
+    "bookingHistory": [
+      {
+        "reservationId": "RES-PND-005",
+        "programName": "Marine Memorial Golf — Tee Time",
+        "category": "recreation",
+        "date": "2026-05-18",
+        "amount": 28,
+        "status": "completed",
+        "csatScore": 5,
+        "review": "Great course, well-maintained greens."
+      },
+      {
+        "reservationId": "RES-PND-006",
+        "programName": "Iron Mike's — Dining",
+        "category": "dining",
+        "date": "2026-05-15",
+        "amount": 24,
+        "status": "completed",
+        "csatScore": 4
+      }
+    ],
+    "totalBookings": 18,
+    "totalSpend": 2190,
+    "memberSince": "2022-08-01",
+    "lastActivity": "2026-05-20",
+    "loyaltyTier": "Active",
+    "csatAvg": 4.5,
+    "eligibilityGroups": ["Active Duty", "Officer O-1 through O-10"],
+    "eligibilityVerified": true,
+    "eligibilityExpiry": "2027-08-01"
+  },
+  {
+    "id": "patron-003",
+    "firstName": "Robert",
+    "lastName": "Okafor",
+    "rank": "GySgt",
+    "branch": "USMC",
+    "unit": "3rd Battalion, 5th Marines",
+    "edipi": "3456789012",
+    "dodId": "3456789012",
+    "email": "robert.okafor@usmc.mil",
+    "phone": "(760) 555-0345",
+    "address": "88 Tarawa Terrace, Camp Pendleton, CA 92055",
+    "dependents": [
+      {
+        "id": "dep-003-a",
+        "firstName": "Ngozi",
+        "lastName": "Okafor",
+        "relationship": "Spouse",
+        "dateOfBirth": "1994-05-10",
+        "age": 32,
+        "eligibilityGroups": ["Active Duty Dependent", "Spouse"],
+        "specialNeeds": null
+      },
+      {
+        "id": "dep-003-b",
+        "firstName": "Emeka",
+        "lastName": "Okafor",
+        "relationship": "Child",
+        "dateOfBirth": "2018-02-28",
+        "age": 8,
+        "eligibilityGroups": ["Active Duty Dependent", "Child"],
+        "specialNeeds": null
+      },
+      {
+        "id": "dep-003-c",
+        "firstName": "Amara",
+        "lastName": "Okafor",
+        "relationship": "Child",
+        "dateOfBirth": "2020-07-22",
+        "age": 5,
+        "eligibilityGroups": ["Active Duty Dependent", "Child", "EFMP"],
+        "specialNeeds": "Autism Spectrum Disorder — requires structured environment and 1:1 aide support during transitions"
+      },
+      {
+        "id": "dep-003-d",
+        "firstName": "Chidi",
+        "lastName": "Okafor",
+        "relationship": "Child",
+        "dateOfBirth": "2023-11-03",
+        "age": 2,
+        "eligibilityGroups": ["Active Duty Dependent", "Child"],
+        "specialNeeds": null
+      }
+    ],
+    "paymentMethods": [
+      {
+        "id": "pm-003-a",
+        "type": "MCCS Pay",
+        "last4": "5519",
+        "expiryMonth": 11,
+        "expiryYear": 2026,
+        "isDefault": true,
+        "nickname": "MCCS Wallet"
+      }
+    ],
+    "preferredPaymentId": "pm-003-a",
+    "preferences": {
+      "favoriteCategories": ["childcare", "family-support", "recreation"],
+      "preferredNotifications": ["sms", "push"],
+      "dietaryRestrictions": [],
+      "accessibilityNeeds": ["Wheelchair accessible", "Sensory-friendly environments"],
+      "preferredLanguage": "en",
+      "marketingOptIn": true
+    },
+    "bookingHistory": [
+      {
+        "reservationId": "RES-PND-007",
+        "programName": "CDC-1 — Full-Day Childcare",
+        "category": "childcare",
+        "date": "2026-05-10",
+        "amount": 520,
+        "status": "waitlisted"
+      },
+      {
+        "reservationId": "RES-PND-008",
+        "programName": "School Age Care — After School Program",
+        "category": "childcare",
+        "date": "2026-05-12",
+        "amount": 180,
+        "status": "confirmed"
+      }
+    ],
+    "totalBookings": 12,
+    "totalSpend": 3240,
+    "memberSince": "2021-06-20",
+    "lastActivity": "2026-05-21",
+    "loyaltyTier": "Active",
+    "csatAvg": 4.1,
+    "eligibilityGroups": ["Active Duty", "E-1 through E-9", "EFMP Family"],
+    "eligibilityVerified": true,
+    "eligibilityExpiry": "2027-06-20"
+  },
+  {
+    "id": "patron-004",
+    "firstName": "Denise",
+    "lastName": "Kowalski",
+    "rank": "Cpl",
+    "branch": "USMC",
+    "unit": "Combat Logistics Battalion 5",
+    "edipi": "4567890123",
+    "dodId": "4567890123",
+    "email": "denise.kowalski@usmc.mil",
+    "phone": "(760) 555-0456",
+    "address": "221 Holcomb Ave, Camp Pendleton, CA 92055",
+    "dependents": [],
+    "paymentMethods": [
+      {
+        "id": "pm-004-a",
+        "type": "MCCS Pay",
+        "last4": "2244",
+        "expiryMonth": 4,
+        "expiryYear": 2027,
+        "isDefault": true
+      }
+    ],
+    "preferredPaymentId": "pm-004-a",
+    "preferences": {
+      "favoriteCategories": ["fitness", "dining"],
+      "preferredNotifications": ["push"],
+      "dietaryRestrictions": [],
+      "accessibilityNeeds": [],
+      "preferredLanguage": "en",
+      "marketingOptIn": true
+    },
+    "bookingHistory": [],
+    "totalBookings": 7,
+    "totalSpend": 215,
+    "memberSince": "2025-01-10",
+    "lastActivity": "2026-05-18",
+    "loyaltyTier": "Standard",
+    "csatAvg": 4.3,
+    "eligibilityGroups": ["Active Duty", "E-1 through E-9"],
+    "eligibilityVerified": true,
+    "eligibilityExpiry": "2027-01-10"
+  },
+  {
+    "id": "patron-005",
+    "firstName": "Thomas",
+    "lastName": "Hensley",
+    "rank": "LtCol",
+    "branch": "USMC",
+    "unit": "7th Marine Regiment",
+    "edipi": "5678901234",
+    "dodId": "5678901234",
+    "email": "thomas.hensley@usmc.mil",
+    "phone": "(760) 555-0567",
+    "address": "14 General's Loop, Camp Pendleton, CA 92055",
+    "dependents": [
+      {
+        "id": "dep-005-a",
+        "firstName": "Rebecca",
+        "lastName": "Hensley",
+        "relationship": "Spouse",
+        "dateOfBirth": "1984-09-14",
+        "age": 41,
+        "eligibilityGroups": ["Active Duty Dependent", "Spouse"],
+        "specialNeeds": null
+      }
+    ],
+    "paymentMethods": [
+      {
+        "id": "pm-005-a",
+        "type": "MCCS Pay",
+        "last4": "9900",
+        "expiryMonth": 8,
+        "expiryYear": 2027,
+        "isDefault": true
+      },
+      {
+        "id": "pm-005-b",
+        "type": "AMEX",
+        "last4": "1001",
+        "expiryMonth": 1,
+        "expiryYear": 2028,
+        "isDefault": false,
+        "nickname": "AMEX Platinum"
+      }
+    ],
+    "preferredPaymentId": "pm-005-a",
+    "preferences": {
+      "favoriteCategories": ["recreation", "dining", "lodging"],
+      "preferredNotifications": ["email"],
+      "dietaryRestrictions": [],
+      "accessibilityNeeds": [],
+      "preferredLanguage": "en",
+      "marketingOptIn": false
+    },
+    "bookingHistory": [],
+    "totalBookings": 31,
+    "totalSpend": 4820,
+    "memberSince": "2020-03-01",
+    "lastActivity": "2026-05-23",
+    "loyaltyTier": "Elite",
+    "csatAvg": 4.8,
+    "eligibilityGroups": ["Active Duty", "Officer O-1 through O-10"],
+    "eligibilityVerified": true,
+    "eligibilityExpiry": "2027-03-01"
+  },
+  {
+    "id": "patron-006",
+    "firstName": "Aisha",
+    "lastName": "Washington",
+    "rank": "Sgt",
+    "branch": "USN",
+    "unit": "Naval Hospital Camp Pendleton",
+    "edipi": "6789012345",
+    "dodId": "6789012345",
+    "email": "aisha.washington@med.navy.mil",
+    "phone": "(760) 555-0678",
+    "address": "300 Mercy Lane, Camp Pendleton, CA 92055",
+    "dependents": [
+      {
+        "id": "dep-006-a",
+        "firstName": "Jaylen",
+        "lastName": "Washington",
+        "relationship": "Child",
+        "dateOfBirth": "2021-04-11",
+        "age": 5,
+        "eligibilityGroups": ["Active Duty Dependent", "Child"],
+        "specialNeeds": null
+      }
+    ],
+    "paymentMethods": [
+      {
+        "id": "pm-006-a",
+        "type": "MCCS Pay",
+        "last4": "6631",
+        "expiryMonth": 7,
+        "expiryYear": 2027,
+        "isDefault": true
+      }
+    ],
+    "preferredPaymentId": "pm-006-a",
+    "preferences": {
+      "favoriteCategories": ["childcare", "fitness", "family-support"],
+      "preferredNotifications": ["email", "sms"],
+      "dietaryRestrictions": [],
+      "accessibilityNeeds": [],
+      "preferredLanguage": "en",
+      "marketingOptIn": true
+    },
+    "bookingHistory": [],
+    "totalBookings": 9,
+    "totalSpend": 870,
+    "memberSince": "2024-04-15",
+    "lastActivity": "2026-05-19",
+    "loyaltyTier": "Standard",
+    "csatAvg": 4.0,
+    "eligibilityGroups": ["Active Duty", "E-1 through E-9"],
+    "eligibilityVerified": true,
+    "eligibilityExpiry": "2027-04-15"
+  },
+  {
+    "id": "patron-007",
+    "firstName": "Carlos",
+    "lastName": "Ramirez",
+    "rank": "SgtMaj",
+    "branch": "USMC",
+    "unit": "I MEF HQ Group",
+    "edipi": "7890123456",
+    "dodId": "7890123456",
+    "email": "carlos.ramirez@usmc.mil",
+    "phone": "(760) 555-0789",
+    "address": "55 Lejeune Blvd, Camp Pendleton, CA 92055",
+    "dependents": [
+      {
+        "id": "dep-007-a",
+        "firstName": "Rosa",
+        "lastName": "Ramirez",
+        "relationship": "Spouse",
+        "dateOfBirth": "1981-12-30",
+        "age": 44,
+        "eligibilityGroups": ["Active Duty Dependent", "Spouse"],
+        "specialNeeds": null
+      }
+    ],
+    "paymentMethods": [
+      {
+        "id": "pm-007-a",
+        "type": "MCCS Pay",
+        "last4": "1177",
+        "expiryMonth": 5,
+        "expiryYear": 2028,
+        "isDefault": true
+      }
+    ],
+    "preferredPaymentId": "pm-007-a",
+    "preferences": {
+      "favoriteCategories": ["recreation", "dining"],
+      "preferredNotifications": ["email"],
+      "dietaryRestrictions": [],
+      "accessibilityNeeds": [],
+      "preferredLanguage": "en",
+      "marketingOptIn": false
+    },
+    "bookingHistory": [],
+    "totalBookings": 42,
+    "totalSpend": 5310,
+    "memberSince": "2018-01-08",
+    "lastActivity": "2026-05-24",
+    "loyaltyTier": "Elite",
+    "csatAvg": 4.9,
+    "eligibilityGroups": ["Active Duty", "E-1 through E-9"],
+    "eligibilityVerified": true,
+    "eligibilityExpiry": "2028-01-08"
+  },
+  {
+    "id": "patron-008",
+    "firstName": "Emily",
+    "lastName": "Thornton",
+    "rank": "Capt",
+    "branch": "USMC",
+    "unit": "Marine Aviation Logistics Squadron 39",
+    "edipi": "8901234567",
+    "dodId": "8901234567",
+    "email": "emily.thornton@usmc.mil",
+    "phone": "(760) 555-0890",
+    "address": "78 Aviator Drive, MCAS Camp Pendleton, CA 92055",
+    "dependents": [],
+    "paymentMethods": [
+      {
+        "id": "pm-008-a",
+        "type": "Discover",
+        "last4": "4498",
+        "expiryMonth": 2,
+        "expiryYear": 2027,
+        "isDefault": true
+      }
+    ],
+    "preferredPaymentId": "pm-008-a",
+    "preferences": {
+      "favoriteCategories": ["fitness", "recreation"],
+      "preferredNotifications": ["push"],
+      "dietaryRestrictions": ["Vegan"],
+      "accessibilityNeeds": [],
+      "preferredLanguage": "en",
+      "marketingOptIn": true
+    },
+    "bookingHistory": [],
+    "totalBookings": 14,
+    "totalSpend": 680,
+    "memberSince": "2023-07-20",
+    "lastActivity": "2026-05-21",
+    "loyaltyTier": "Active",
+    "csatAvg": 4.4,
+    "eligibilityGroups": ["Active Duty", "Officer O-1 through O-10"],
+    "eligibilityVerified": true,
+    "eligibilityExpiry": "2027-07-20"
+  },
+  {
+    "id": "patron-009",
+    "firstName": "Harold",
+    "lastName": "Simmons",
+    "rank": "MGySgt",
+    "branch": "USMC",
+    "unit": "Retired",
+    "edipi": "9012345678",
+    "dodId": "9012345678",
+    "email": "harold.simmons@gmail.com",
+    "phone": "(760) 555-0901",
+    "address": "4420 Oceanside Blvd, Oceanside, CA 92057",
+    "dependents": [
+      {
+        "id": "dep-009-a",
+        "firstName": "Dorothy",
+        "lastName": "Simmons",
+        "relationship": "Spouse",
+        "dateOfBirth": "1965-03-18",
+        "age": 61,
+        "eligibilityGroups": ["Retired Dependent", "Spouse"],
+        "specialNeeds": null
+      }
+    ],
+    "paymentMethods": [
+      {
+        "id": "pm-009-a",
+        "type": "MCCS Pay",
+        "last4": "3388",
+        "expiryMonth": 10,
+        "expiryYear": 2026,
+        "isDefault": true
+      }
+    ],
+    "preferredPaymentId": "pm-009-a",
+    "preferences": {
+      "favoriteCategories": ["recreation", "dining"],
+      "preferredNotifications": ["email"],
+      "dietaryRestrictions": [],
+      "accessibilityNeeds": [],
+      "preferredLanguage": "en",
+      "marketingOptIn": false
+    },
+    "bookingHistory": [],
+    "totalBookings": 58,
+    "totalSpend": 7420,
+    "memberSince": "2015-09-01",
+    "lastActivity": "2026-05-22",
+    "loyaltyTier": "Elite",
+    "csatAvg": 4.6,
+    "eligibilityGroups": ["Retired"],
+    "eligibilityVerified": true,
+    "eligibilityExpiry": "2028-09-01"
+  },
+  {
+    "id": "patron-010",
+    "firstName": "Priya",
+    "lastName": "Nair",
+    "rank": "1stLt",
+    "branch": "USMC",
+    "unit": "3rd Marine Air Wing",
+    "edipi": "0123456789",
+    "dodId": "0123456789",
+    "email": "priya.nair@usmc.mil",
+    "phone": "(760) 555-0102",
+    "address": "19 Pendleton Ave, Camp Pendleton, CA 92055",
+    "dependents": [],
+    "paymentMethods": [
+      {
+        "id": "pm-010-a",
+        "type": "MCCS Pay",
+        "last4": "7710",
+        "expiryMonth": 6,
+        "expiryYear": 2027,
+        "isDefault": true
+      }
+    ],
+    "preferredPaymentId": "pm-010-a",
+    "preferences": {
+      "favoriteCategories": ["fitness", "education"],
+      "preferredNotifications": ["email", "push"],
+      "dietaryRestrictions": ["Vegetarian"],
+      "accessibilityNeeds": [],
+      "preferredLanguage": "en",
+      "marketingOptIn": true
+    },
+    "bookingHistory": [],
+    "totalBookings": 5,
+    "totalSpend": 120,
+    "memberSince": "2025-06-15",
+    "lastActivity": "2026-05-17",
+    "loyaltyTier": "Standard",
+    "csatAvg": 4.2,
+    "eligibilityGroups": ["Active Duty", "Officer O-1 through O-10"],
+    "eligibilityVerified": true,
+    "eligibilityExpiry": "2027-06-15"
+  },
+  {
+    "id": "patron-011",
+    "firstName": "Marcus",
+    "lastName": "Bell",
+    "rank": "GySgt",
+    "branch": "USMC",
+    "unit": "Marine Barracks Camp Pendleton",
+    "edipi": "1122334455",
+    "dodId": "1122334455",
+    "email": "marcus.bell@usmc.mil",
+    "phone": "(760) 555-0113",
+    "address": "33 Barracks Road, Camp Pendleton, CA 92055",
+    "dependents": [
+      {
+        "id": "dep-011-a",
+        "firstName": "Tanya",
+        "lastName": "Bell",
+        "relationship": "Spouse",
+        "dateOfBirth": "1993-07-07",
+        "age": 32,
+        "eligibilityGroups": ["Active Duty Dependent", "Spouse"],
+        "specialNeeds": null
+      },
+      {
+        "id": "dep-011-b",
+        "firstName": "Zara",
+        "lastName": "Bell",
+        "relationship": "Child",
+        "dateOfBirth": "2020-01-15",
+        "age": 6,
+        "eligibilityGroups": ["Active Duty Dependent", "Child"],
+        "specialNeeds": null
+      }
+    ],
+    "paymentMethods": [
+      {
+        "id": "pm-011-a",
+        "type": "MCCS Pay",
+        "last4": "8844",
+        "expiryMonth": 3,
+        "expiryYear": 2027,
+        "isDefault": true
+      }
+    ],
+    "preferredPaymentId": "pm-011-a",
+    "preferences": {
+      "favoriteCategories": ["childcare", "fitness", "retail"],
+      "preferredNotifications": ["sms"],
+      "dietaryRestrictions": [],
+      "accessibilityNeeds": [],
+      "preferredLanguage": "en",
+      "marketingOptIn": true
+    },
+    "bookingHistory": [],
+    "totalBookings": 16,
+    "totalSpend": 1350,
+    "memberSince": "2022-11-30",
+    "lastActivity": "2026-05-20",
+    "loyaltyTier": "Active",
+    "csatAvg": 4.3,
+    "eligibilityGroups": ["Active Duty", "E-1 through E-9"],
+    "eligibilityVerified": true,
+    "eligibilityExpiry": "2027-11-30"
+  },
+  {
+    "id": "patron-012",
+    "firstName": "Jennifer",
+    "lastName": "Okonkwo",
+    "rank": "Maj",
+    "branch": "USA",
+    "unit": "Defense Language Institute (Attached)",
+    "edipi": "2233445566",
+    "dodId": "2233445566",
+    "email": "jennifer.okonkwo@army.mil",
+    "phone": "(760) 555-0224",
+    "address": "55 Guest Quarters, Camp Pendleton, CA 92055",
+    "dependents": [],
+    "paymentMethods": [
+      {
+        "id": "pm-012-a",
+        "type": "Credit Card",
+        "last4": "3377",
+        "expiryMonth": 9,
+        "expiryYear": 2027,
+        "isDefault": true
+      }
+    ],
+    "preferredPaymentId": "pm-012-a",
+    "preferences": {
+      "favoriteCategories": ["dining", "fitness", "lodging"],
+      "preferredNotifications": ["email"],
+      "dietaryRestrictions": [],
+      "accessibilityNeeds": [],
+      "preferredLanguage": "en",
+      "marketingOptIn": false
+    },
+    "bookingHistory": [],
+    "totalBookings": 3,
+    "totalSpend": 310,
+    "memberSince": "2026-02-01",
+    "lastActivity": "2026-05-16",
+    "loyaltyTier": "Standard",
+    "csatAvg": 4.5,
+    "eligibilityGroups": ["Active Duty", "Officer O-1 through O-10"],
+    "eligibilityVerified": true,
+    "eligibilityExpiry": "2027-02-01"
+  },
+  {
+    "id": "patron-013",
+    "firstName": "Brandon",
+    "lastName": "Fitzgerald",
+    "rank": "LCpl",
+    "branch": "USMC",
+    "unit": "1st Light Armored Reconnaissance Battalion",
+    "edipi": "3344556677",
+    "dodId": "3344556677",
+    "email": "brandon.fitzgerald@usmc.mil",
+    "phone": "(760) 555-0335",
+    "address": "Barracks Bldg 52222, Camp Pendleton, CA 92055",
+    "dependents": [],
+    "paymentMethods": [
+      {
+        "id": "pm-013-a",
+        "type": "MCCS Pay",
+        "last4": "0021",
+        "expiryMonth": 11,
+        "expiryYear": 2026,
+        "isDefault": true
+      }
+    ],
+    "preferredPaymentId": "pm-013-a",
+    "preferences": {
+      "favoriteCategories": ["fitness", "recreation", "dining"],
+      "preferredNotifications": ["push"],
+      "dietaryRestrictions": [],
+      "accessibilityNeeds": [],
+      "preferredLanguage": "en",
+      "marketingOptIn": true
+    },
+    "bookingHistory": [],
+    "totalBookings": 4,
+    "totalSpend": 95,
+    "memberSince": "2025-08-22",
+    "lastActivity": "2026-05-14",
+    "loyaltyTier": "Standard",
+    "csatAvg": 3.8,
+    "eligibilityGroups": ["Active Duty", "E-1 through E-9"],
+    "eligibilityVerified": true,
+    "eligibilityExpiry": "2027-08-22"
+  },
+  {
+    "id": "patron-014",
+    "firstName": "Linda",
+    "lastName": "Park",
+    "rank": "GS-12",
+    "branch": "DoD Civilian",
+    "unit": "MCCS Camp Pendleton — Programs Office",
+    "edipi": "4455667788",
+    "dodId": "4455667788",
+    "email": "linda.park@usmc-mccs.org",
+    "phone": "(760) 555-0446",
+    "address": "701 Pacific Blvd, Oceanside, CA 92054",
+    "dependents": [
+      {
+        "id": "dep-014-a",
+        "firstName": "Kevin",
+        "lastName": "Park",
+        "relationship": "Spouse",
+        "dateOfBirth": "1979-11-25",
+        "age": 46,
+        "eligibilityGroups": ["DoD Civilian Dependent", "Spouse"],
+        "specialNeeds": null
+      }
+    ],
+    "paymentMethods": [
+      {
+        "id": "pm-014-a",
+        "type": "MCCS Pay",
+        "last4": "5522",
+        "expiryMonth": 12,
+        "expiryYear": 2027,
+        "isDefault": true
+      }
+    ],
+    "preferredPaymentId": "pm-014-a",
+    "preferences": {
+      "favoriteCategories": ["dining", "education", "fitness"],
+      "preferredNotifications": ["email"],
+      "dietaryRestrictions": [],
+      "accessibilityNeeds": [],
+      "preferredLanguage": "en",
+      "marketingOptIn": true
+    },
+    "bookingHistory": [],
+    "totalBookings": 22,
+    "totalSpend": 1670,
+    "memberSince": "2021-03-10",
+    "lastActivity": "2026-05-23",
+    "loyaltyTier": "Active",
+    "csatAvg": 4.6,
+    "eligibilityGroups": ["DoD Civilian"],
+    "eligibilityVerified": true,
+    "eligibilityExpiry": "2027-03-10"
+  },
+  {
+    "id": "patron-015",
+    "firstName": "Miguel",
+    "lastName": "Torres",
+    "rank": "Sgt",
+    "branch": "USMC",
+    "unit": "Combat Engineer Battalion 1",
+    "edipi": "5566778899",
+    "dodId": "5566778899",
+    "email": "miguel.torres@usmc.mil",
+    "phone": "(760) 555-0557",
+    "address": "1100 Del Mar Ave, Camp Pendleton, CA 92055",
+    "dependents": [
+      {
+        "id": "dep-015-a",
+        "firstName": "Carmen",
+        "lastName": "Torres",
+        "relationship": "Spouse",
+        "dateOfBirth": "1999-06-04",
+        "age": 26,
+        "eligibilityGroups": ["Active Duty Dependent", "Spouse"],
+        "specialNeeds": null
+      },
+      {
+        "id": "dep-015-b",
+        "firstName": "Isabella",
+        "lastName": "Torres",
+        "relationship": "Child",
+        "dateOfBirth": "2024-02-19",
+        "age": 2,
+        "eligibilityGroups": ["Active Duty Dependent", "Child"],
+        "specialNeeds": null
+      }
+    ],
+    "paymentMethods": [
+      {
+        "id": "pm-015-a",
+        "type": "MCCS Pay",
+        "last4": "9955",
+        "expiryMonth": 7,
+        "expiryYear": 2027,
+        "isDefault": true
+      }
+    ],
+    "preferredPaymentId": "pm-015-a",
+    "preferences": {
+      "favoriteCategories": ["childcare", "recreation", "fitness"],
+      "preferredNotifications": ["sms", "push"],
+      "dietaryRestrictions": [],
+      "accessibilityNeeds": [],
+      "preferredLanguage": "es",
+      "marketingOptIn": true
+    },
+    "bookingHistory": [],
+    "totalBookings": 6,
+    "totalSpend": 490,
+    "memberSince": "2024-09-05",
+    "lastActivity": "2026-05-18",
+    "loyaltyTier": "Standard",
+    "csatAvg": 4.2,
+    "eligibilityGroups": ["Active Duty", "E-1 through E-9"],
+    "eligibilityVerified": true,
+    "eligibilityExpiry": "2027-09-05"
+  }
+]

@@ -1,0 +1,342 @@
+[
+  {
+    "id": "fac-paige-field-house",
+    "name": "Paige Field House",
+    "building": "13th Street",
+    "area": "Mainside",
+    "category": "fitness",
+    "coordinates": { "lat": 33.2208, "lng": -117.3886 },
+    "capacity": 600,
+    "programs": ["paige-field-house", "group-exercise", "warr-program", "massage-services"]
+  },
+  {
+    "id": "fac-fc-21-area",
+    "name": "Fitness Center – 21 Area",
+    "building": "BLDG 210750",
+    "area": "21 Area",
+    "category": "fitness",
+    "coordinates": { "lat": 33.2950, "lng": -117.3620 },
+    "capacity": 180,
+    "programs": ["fc-21-area"]
+  },
+  {
+    "id": "fac-fc-31-area",
+    "name": "Fitness Center – 31 Area",
+    "building": "BLDG 31A30",
+    "area": "31 Area",
+    "category": "fitness",
+    "coordinates": { "lat": 33.3410, "lng": -117.3950 },
+    "capacity": 150,
+    "programs": ["fc-31-area"]
+  },
+  {
+    "id": "fac-fc-33-area",
+    "name": "Fitness Center – 33 Area",
+    "building": "BLDG 330362",
+    "area": "33 Area",
+    "category": "fitness",
+    "coordinates": { "lat": 33.3540, "lng": -117.4100 },
+    "capacity": 140,
+    "programs": ["fc-33-area"]
+  },
+  {
+    "id": "fac-fc-41-area",
+    "name": "Fitness Center – 41 Area",
+    "building": "BLDG 4159",
+    "area": "41 Area",
+    "category": "fitness",
+    "coordinates": { "lat": 33.3780, "lng": -117.4350 },
+    "capacity": 160,
+    "programs": ["fc-41-area"]
+  },
+  {
+    "id": "fac-fc-43-area",
+    "name": "Fitness Center – 43 Area",
+    "building": "BLDG 430320",
+    "area": "43 Area",
+    "category": "fitness",
+    "coordinates": { "lat": 33.3820, "lng": -117.4520 },
+    "capacity": 140,
+    "programs": ["fc-43-area"]
+  },
+  {
+    "id": "fac-fc-52-area",
+    "name": "Fitness Center – 52 Area",
+    "building": "BLDG 520415",
+    "area": "52 Area",
+    "category": "fitness",
+    "coordinates": { "lat": 33.4050, "lng": -117.4700 },
+    "capacity": 130,
+    "programs": ["fc-52-area"]
+  },
+  {
+    "id": "fac-fc-53-area",
+    "name": "Fitness Center – 53 Area",
+    "building": "BLDG 530301",
+    "area": "53 Area",
+    "category": "fitness",
+    "coordinates": { "lat": 33.4120, "lng": -117.4780 },
+    "capacity": 130,
+    "programs": ["fc-53-area"]
+  },
+  {
+    "id": "fac-fc-mcas",
+    "name": "Fitness Center – MCAS",
+    "building": "BLDG 2369",
+    "area": "MCAS",
+    "category": "fitness",
+    "coordinates": { "lat": 33.3010, "lng": -117.3540 },
+    "capacity": 120,
+    "programs": ["fc-mcas"]
+  },
+  {
+    "id": "fac-fc-14-area",
+    "name": "Fitness Center – 14 Area",
+    "building": "BLDG 14013",
+    "area": "14 Area",
+    "category": "fitness",
+    "coordinates": { "lat": 33.2480, "lng": -117.3720 },
+    "capacity": 120,
+    "programs": ["fc-14-area"]
+  },
+  {
+    "id": "fac-fc-22-area",
+    "name": "Fitness Center – 22 Area",
+    "building": "BLDG 22160",
+    "area": "22 Area",
+    "category": "fitness",
+    "coordinates": { "lat": 33.3050, "lng": -117.3670 },
+    "capacity": 150,
+    "programs": ["fc-22-area"]
+  },
+  {
+    "id": "fac-fc-62-area",
+    "name": "Fitness Center – 62 Area",
+    "building": "BLDG 620411",
+    "area": "62 Area",
+    "category": "fitness",
+    "coordinates": { "lat": 33.4280, "lng": -117.4920 },
+    "capacity": 130,
+    "programs": ["fc-62-area"]
+  },
+  {
+    "id": "fac-leatherneck-lanes",
+    "name": "Leatherneck Lanes",
+    "building": "Leatherneck Lanes Bowling Center",
+    "area": "Mainside",
+    "category": "recreation",
+    "coordinates": { "lat": 33.2190, "lng": -117.3910 },
+    "capacity": 240,
+    "programs": ["leatherneck-lanes"]
+  },
+  {
+    "id": "fac-golf-course",
+    "name": "Marine Memorial Golf Course",
+    "building": "Marine Memorial Golf Course",
+    "area": "Mainside",
+    "category": "recreation",
+    "coordinates": { "lat": 33.2150, "lng": -117.3750 },
+    "capacity": 144,
+    "programs": ["marine-memorial-golf"]
+  },
+  {
+    "id": "fac-lake-oneill",
+    "name": "Lake O'Neill Recreation Area",
+    "building": "Lake O'Neill",
+    "area": "Inland",
+    "category": "recreation",
+    "coordinates": { "lat": 33.3620, "lng": -117.4410 },
+    "capacity": 500,
+    "programs": ["lake-oneill-daypass"]
+  },
+  {
+    "id": "fac-del-mar-beach",
+    "name": "Del Mar Beach & Marina",
+    "building": "Del Mar Beach",
+    "area": "Coastal",
+    "category": "recreation",
+    "coordinates": { "lat": 33.2050, "lng": -117.4200 },
+    "capacity": 80,
+    "programs": ["del-mar-cottages"]
+  },
+  {
+    "id": "fac-san-onofre-beach",
+    "name": "San Onofre Beach",
+    "building": "San Onofre Beach",
+    "area": "Coastal South",
+    "category": "recreation",
+    "coordinates": { "lat": 33.3780, "lng": -117.5620 },
+    "capacity": 60,
+    "programs": ["san-onofre-cottages"]
+  },
+  {
+    "id": "fac-pool-13-area",
+    "name": "13 Area Aquatic Center",
+    "building": "13 Area Pool",
+    "area": "13 Area",
+    "category": "recreation",
+    "coordinates": { "lat": 33.2380, "lng": -117.3840 },
+    "capacity": 350,
+    "programs": ["pool-13-area"]
+  },
+  {
+    "id": "fac-pool-21-area",
+    "name": "21 Area Aquatic Center",
+    "building": "21 Area Pool",
+    "area": "21 Area",
+    "category": "recreation",
+    "coordinates": { "lat": 33.2980, "lng": -117.3640 },
+    "capacity": 300,
+    "programs": ["pool-21-area"]
+  },
+  {
+    "id": "fac-outdoor-adventures",
+    "name": "Outdoor Adventures Center",
+    "building": "Outdoor Adventures",
+    "area": "Mainside",
+    "category": "recreation",
+    "coordinates": { "lat": 33.2220, "lng": -117.3870 },
+    "capacity": 50,
+    "programs": ["outdoor-adventures"]
+  },
+  {
+    "id": "fac-stepp-stables",
+    "name": "Stepp Stables",
+    "building": "Stepp Stables",
+    "area": "Inland",
+    "category": "recreation",
+    "coordinates": { "lat": 33.3310, "lng": -117.4680 },
+    "capacity": 40,
+    "programs": ["stepp-stables"]
+  },
+  {
+    "id": "fac-iron-mikes",
+    "name": "Iron Mike's Restaurant",
+    "building": "Iron Mike's",
+    "area": "Mainside",
+    "category": "dining",
+    "coordinates": { "lat": 33.2230, "lng": -117.3900 },
+    "capacity": 180,
+    "programs": ["iron-mikes"]
+  },
+  {
+    "id": "fac-pub-1795",
+    "name": "Pub 1795",
+    "building": "Pub 1795",
+    "area": "Mainside",
+    "category": "dining",
+    "coordinates": { "lat": 33.2215, "lng": -117.3915 },
+    "capacity": 120,
+    "programs": ["pub-1795"]
+  },
+  {
+    "id": "fac-windmill-canyon",
+    "name": "Windmill Canyon Restaurant",
+    "building": "Windmill Canyon",
+    "area": "Mainside",
+    "category": "dining",
+    "coordinates": { "lat": 33.2200, "lng": -117.3880 },
+    "capacity": 100,
+    "programs": ["windmill-canyon"]
+  },
+  {
+    "id": "fac-pacific-views-event",
+    "name": "Pacific Views Event Center",
+    "building": "Pacific Views Event Center",
+    "area": "Mainside",
+    "category": "dining",
+    "coordinates": { "lat": 33.2240, "lng": -117.3895 },
+    "capacity": 500,
+    "programs": ["pacific-views-event-center"]
+  },
+  {
+    "id": "fac-cdc-1-mainside",
+    "name": "CDC-1 Mainside",
+    "building": "CDC-1 Mainside",
+    "area": "Mainside",
+    "category": "childcare",
+    "coordinates": { "lat": 33.2260, "lng": -117.3920 },
+    "capacity": 187,
+    "programs": ["cdc-1-mainside"]
+  },
+  {
+    "id": "fac-cdc-2-las-pulgas",
+    "name": "CDC-2 Las Pulgas",
+    "building": "CDC-2 Las Pulgas",
+    "area": "Las Pulgas",
+    "category": "childcare",
+    "coordinates": { "lat": 33.3590, "lng": -117.4380 },
+    "capacity": 156,
+    "programs": ["cdc-2-las-pulgas"]
+  },
+  {
+    "id": "fac-cdc-3-san-onofre",
+    "name": "CDC-3 San Onofre",
+    "building": "CDC-3 San Onofre",
+    "area": "San Onofre",
+    "category": "childcare",
+    "coordinates": { "lat": 33.3760, "lng": -117.5580 },
+    "capacity": 120,
+    "programs": ["cdc-3-san-onofre"]
+  },
+  {
+    "id": "fac-school-age-care",
+    "name": "School Age Care Center",
+    "building": "School Age Care",
+    "area": "Mainside",
+    "category": "childcare",
+    "coordinates": { "lat": 33.2270, "lng": -117.3930 },
+    "capacity": 200,
+    "programs": ["school-age-care"]
+  },
+  {
+    "id": "fac-youth-teen",
+    "name": "Youth & Teen Centers",
+    "building": "Youth & Teen Center",
+    "area": "Mainside / Multiple",
+    "category": "childcare",
+    "coordinates": { "lat": 33.2255, "lng": -117.3905 },
+    "capacity": 150,
+    "programs": ["youth-teen-program"]
+  },
+  {
+    "id": "fac-mcx-main",
+    "name": "MCX Main Store",
+    "building": "Marine Corps Exchange",
+    "area": "Mainside",
+    "category": "retail",
+    "coordinates": { "lat": 33.2195, "lng": -117.3860 },
+    "capacity": 1000,
+    "programs": ["mcx-main"]
+  },
+  {
+    "id": "fac-marine-mart",
+    "name": "Marine Mart (Multiple Locations)",
+    "building": "Various",
+    "area": "Base-wide",
+    "category": "retail",
+    "coordinates": { "lat": 33.2800, "lng": -117.4100 },
+    "capacity": 60,
+    "programs": ["marine-mart"]
+  },
+  {
+    "id": "fac-itt",
+    "name": "ITT Office",
+    "building": "ITT / Latitudes Travel",
+    "area": "Mainside",
+    "category": "recreation",
+    "coordinates": { "lat": 33.2210, "lng": -117.3875 },
+    "capacity": 30,
+    "programs": ["itt-travel"]
+  },
+  {
+    "id": "fac-smp",
+    "name": "SMP Office",
+    "building": "Single Marine Program",
+    "area": "Mainside",
+    "category": "recreation",
+    "coordinates": { "lat": 33.2225, "lng": -117.3885 },
+    "capacity": 100,
+    "programs": ["smp-rec-events"]
+  }
+]

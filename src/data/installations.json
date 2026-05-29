@@ -1,0 +1,152 @@
+[
+  {
+    "id": "camp-pendleton",
+    "name": "Camp Pendleton",
+    "location": "Oceanside, CA",
+    "marinePopulation": 100000,
+    "revenue": 38700000,
+    "csatAvg": 4.3,
+    "utilizationAvg": 78,
+    "status": "live"
+  },
+  {
+    "id": "camp-lejeune",
+    "name": "Camp Lejeune",
+    "location": "Jacksonville, NC",
+    "marinePopulation": 155000,
+    "revenue": null,
+    "csatAvg": null,
+    "utilizationAvg": null,
+    "status": "coming-soon"
+  },
+  {
+    "id": "quantico",
+    "name": "MCB Quantico",
+    "location": "Quantico, VA",
+    "marinePopulation": 28000,
+    "revenue": null,
+    "csatAvg": null,
+    "utilizationAvg": null,
+    "status": "coming-soon"
+  },
+  {
+    "id": "mcas-miramar",
+    "name": "MCAS Miramar",
+    "location": "San Diego, CA",
+    "marinePopulation": 24000,
+    "revenue": null,
+    "csatAvg": null,
+    "utilizationAvg": null,
+    "status": "coming-soon"
+  },
+  {
+    "id": "mcb-hawaii",
+    "name": "MCB Hawaii (Kaneohe Bay)",
+    "location": "Kaneohe, HI",
+    "marinePopulation": 18000,
+    "revenue": null,
+    "csatAvg": null,
+    "utilizationAvg": null,
+    "status": "coming-soon"
+  },
+  {
+    "id": "mcas-cherry-point",
+    "name": "MCAS Cherry Point",
+    "location": "Havelock, NC",
+    "marinePopulation": 12000,
+    "revenue": null,
+    "csatAvg": null,
+    "utilizationAvg": null,
+    "status": "coming-soon"
+  },
+  {
+    "id": "mcrd-san-diego",
+    "name": "MCRD San Diego",
+    "location": "San Diego, CA",
+    "marinePopulation": 8000,
+    "revenue": null,
+    "csatAvg": null,
+    "utilizationAvg": null,
+    "status": "coming-soon"
+  },
+  {
+    "id": "mcb-albany",
+    "name": "MCB Albany",
+    "location": "Albany, GA",
+    "marinePopulation": 6000,
+    "revenue": null,
+    "csatAvg": null,
+    "utilizationAvg": null,
+    "status": "coming-soon"
+  },
+  {
+    "id": "mcas-beaufort",
+    "name": "MCAS Beaufort",
+    "location": "Beaufort, SC",
+    "marinePopulation": 9000,
+    "revenue": null,
+    "csatAvg": null,
+    "utilizationAvg": null,
+    "status": "coming-soon"
+  },
+  {
+    "id": "twentynine-palms",
+    "name": "MCAGCC 29 Palms",
+    "location": "Twentynine Palms, CA",
+    "marinePopulation": 22000,
+    "revenue": null,
+    "csatAvg": null,
+    "utilizationAvg": null,
+    "status": "coming-soon"
+  },
+  {
+    "id": "mcas-yuma",
+    "name": "MCAS Yuma",
+    "location": "Yuma, AZ",
+    "marinePopulation": 7000,
+    "revenue": null,
+    "csatAvg": null,
+    "utilizationAvg": null,
+    "status": "coming-soon"
+  },
+  {
+    "id": "okinawa",
+    "name": "MCB Camp Butler (Okinawa)",
+    "location": "Okinawa, Japan",
+    "marinePopulation": 19000,
+    "revenue": null,
+    "csatAvg": null,
+    "utilizationAvg": null,
+    "status": "coming-soon"
+  },
+  {
+    "id": "iwakuni",
+    "name": "MCAS Iwakuni",
+    "location": "Iwakuni, Japan",
+    "marinePopulation": 8000,
+    "revenue": null,
+    "csatAvg": null,
+    "utilizationAvg": null,
+    "status": "coming-soon"
+  },
+  {
+    "id": "eighth-and-i",
+    "name": "Marine Barracks Washington (8th & I)",
+    "location": "Washington, D.C.",
+    "marinePopulation": 1200,
+    "revenue": null,
+    "csatAvg": null,
+    "utilizationAvg": null,
+    "status": "coming-soon"
+  },
+  {
+    "id": "henderson-hall",
+    "name": "Henderson Hall",
+    "location": "Arlington, VA",
+    "marinePopulation": 2000,
+    "revenue": null,
+    "csatAvg": null,
+    "utilizationAvg": null,
+    "status": "coming-soon"
+  }
+]

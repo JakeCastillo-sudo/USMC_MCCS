@@ -1,0 +1,14 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512">
+  <!-- Background — dark navy -->
+  <rect width="512" height="512" fill="#0C2340"/>
+  <!-- Red top bar -->
+  <rect width="512" height="41" fill="#C8102E"/>
+  <!-- Gold bottom bar -->
+  <rect y="471" width="512" height="41" fill="#C9A84C"/>
+  <!-- MCCS wordmark -->
+  <text x="256" y="248" font-family="Arial,Helvetica,sans-serif" font-size="148" font-weight="800"
+    fill="#FFFFFF" text-anchor="middle" dominant-baseline="middle">MCCS</text>
+  <!-- Camp Pendleton subtitle -->
+  <text x="256" y="338" font-family="Arial,Helvetica,sans-serif" font-size="44" font-weight="700"
+    fill="#C9A84C" text-anchor="middle" dominant-baseline="middle" letter-spacing="4">CAMP PENDLETON</text>
+</svg>

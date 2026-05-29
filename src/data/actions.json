@@ -1,0 +1,93 @@
+[
+  {
+    "id": "action-cdc-rebalance",
+    "alertId": "alert-cdc-waitlist",
+    "title": "Rebalance CDC Childcare Slots",
+    "summary": "CDC-1 Mainside has 187 families on waitlist while CDC-3 San Onofre operates at 82% capacity. Reallocate 15 slots from CDC-3 to create satellite waitlist relief and reduce average wait time by ~3 months.",
+    "impact": "high",
+    "category": "childcare",
+    "estimatedPatrons": 15,
+    "estimatedRevenue": 43200,
+    "steps": [
+      { "id": "s1", "label": "Review CDC-3 San Onofre staffing roster",         "owner": "Child & Youth Program Coordinator", "estimatedTime": "30 min" },
+      { "id": "s2", "label": "Confirm 15 available slots at CDC-3",              "owner": "CDC-3 Director",                    "estimatedTime": "1 hour" },
+      { "id": "s3", "label": "Notify top 15 waitlisted families from CDC-1",    "owner": "MCCS Communications",              "estimatedTime": "2 hours" },
+      { "id": "s4", "label": "Update MyMCCS portal availability display",        "owner": "IT Operations",                    "estimatedTime": "45 min" },
+      { "id": "s5", "label": "Schedule 30-day follow-up review",                "owner": "MCCS Director",                    "estimatedTime": "15 min" }
+    ],
+    "status": "pending",
+    "createdAt": "2026-05-25T08:00:00Z"
+  },
+  {
+    "id": "action-paige-staffing",
+    "alertId": "alert-paige-capacity",
+    "title": "Add Weekend Staff at Paige Field House",
+    "summary": "Paige Field House consistently hits 88–95% capacity Saturday mornings. Adding one additional staff member on Saturday 7am–1pm shift will reduce wait times and improve CSAT by an estimated 0.2 points.",
+    "impact": "medium",
+    "category": "fitness",
+    "estimatedPatrons": 120,
+    "estimatedRevenue": 0,
+    "steps": [
+      { "id": "s1", "label": "Review current Saturday shift schedule",          "owner": "Paige Field House Manager", "estimatedTime": "20 min" },
+      { "id": "s2", "label": "Identify available part-time staff",              "owner": "HR Coordinator",            "estimatedTime": "1 hour" },
+      { "id": "s3", "label": "Post and fill Saturday 7am–1pm position",         "owner": "HR Coordinator",            "estimatedTime": "3 days" },
+      { "id": "s4", "label": "Brief new staff member on facility procedures",   "owner": "Paige Field House Manager", "estimatedTime": "2 hours" }
+    ],
+    "status": "pending",
+    "createdAt": "2026-05-25T08:05:00Z"
+  },
+  {
+    "id": "action-pool-csat",
+    "alertId": "alert-21-pool-csat",
+    "title": "21 Area Pool CSAT Recovery Plan",
+    "summary": "21 Area Pool CSAT has declined to 3.7 (−4.2% trend). Primary complaints: inconsistent hours and aging facility. Quick wins: publish reliable hours, post maintenance schedule, coordinate a facility inspection.",
+    "impact": "medium",
+    "category": "recreation",
+    "estimatedPatrons": 340,
+    "estimatedRevenue": 0,
+    "steps": [
+      { "id": "s1", "label": "Audit and publish reliable operating hours",       "owner": "Pool Manager",              "estimatedTime": "1 hour" },
+      { "id": "s2", "label": "Schedule facility inspection with PWD",            "owner": "MCCS Facilities",           "estimatedTime": "2 days" },
+      { "id": "s3", "label": "Post repair timeline on pool signage and app",     "owner": "MCCS Communications",       "estimatedTime": "2 hours" },
+      { "id": "s4", "label": "Send CSAT survey follow-up to recent patrons",    "owner": "Patron Services",           "estimatedTime": "1 hour" }
+    ],
+    "status": "pending",
+    "createdAt": "2026-05-25T08:10:00Z"
+  },
+  {
+    "id": "action-dining-revenue",
+    "alertId": null,
+    "title": "Iron Mike's Lunch Rush Campaign",
+    "summary": "Revenue analysis shows Iron Mike's lunch hour (11am–1pm) averages only 42% seat utilization Tuesday–Thursday. Targeted push notification to on-base staff during morning formation windows could drive 15–20% lunch revenue increase.",
+    "impact": "medium",
+    "category": "dining",
+    "estimatedPatrons": 80,
+    "estimatedRevenue": 8400,
+    "steps": [
+      { "id": "s1", "label": "Design lunch specials menu for Tue–Thu",           "owner": "Iron Mike's Head Chef",     "estimatedTime": "2 hours" },
+      { "id": "s2", "label": "Create push notification copy and imagery",        "owner": "MCCS Marketing",            "estimatedTime": "3 hours" },
+      { "id": "s3", "label": "Schedule notifications for 10am–11am window",     "owner": "IT / App Team",             "estimatedTime": "30 min" },
+      { "id": "s4", "label": "Run 4-week pilot, measure revenue vs baseline",    "owner": "MCCS Analytics",            "estimatedTime": "4 weeks" }
+    ],
+    "status": "pending",
+    "createdAt": "2026-05-25T08:15:00Z"
+  },
+  {
+    "id": "action-warr-expansion",
+    "alertId": null,
+    "title": "WARR Program Capacity Expansion",
+    "summary": "WARR has an 11-week booking backlog with only 1 certified trainer on staff. Adding a second WARR-certified trainer will double throughput and clear the backlog within 30 days, directly supporting readiness outcomes.",
+    "impact": "high",
+    "category": "fitness",
+    "estimatedPatrons": 45,
+    "estimatedRevenue": 0,
+    "steps": [
+      { "id": "s1", "label": "Post WARR Trainer position (must have CSCS cert)", "owner": "HR Coordinator",            "estimatedTime": "1 day" },
+      { "id": "s2", "label": "Review contractor vs. GS hire options",            "owner": "MCCS Director",             "estimatedTime": "3 days" },
+      { "id": "s3", "label": "Schedule WARR certification training for candidate","owner": "Paige Field House Manager", "estimatedTime": "2 weeks" },
+      { "id": "s4", "label": "Open additional WARR appointment slots in portal",  "owner": "IT Operations",             "estimatedTime": "30 min" }
+    ],
+    "status": "pending",
+    "createdAt": "2026-05-25T08:20:00Z"
+  }
+]
